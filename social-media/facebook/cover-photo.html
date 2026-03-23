@@ -10,57 +10,42 @@ body {
     width: 820px;
     height: 312px;
     overflow: hidden;
-    background: #000;
+    background: #0a0a0a;
     font-family: 'DM Sans', sans-serif;
     position: relative;
 }
 
-/* Subtle grid pattern */
+/* Background glow */
 body::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 30%, rgba(79, 172, 254, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 60% 80%, rgba(230, 57, 70, 0.06) 0%, transparent 40%);
+        radial-gradient(circle at 15% 50%, rgba(230, 57, 70, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(79, 172, 254, 0.06) 0%, transparent 35%);
 }
 
-/* Decorative circles */
+/* Decorative circle — bottom right, won't overlap text */
 .circle1 {
     position: absolute;
-    width: 400px; height: 400px;
-    border: 1px solid rgba(230, 57, 70, 0.12);
+    width: 350px; height: 350px;
+    border: 1px solid rgba(230, 57, 70, 0.1);
     border-radius: 50%;
-    top: -100px; right: -50px;
-}
-.circle2 {
-    position: absolute;
-    width: 300px; height: 300px;
-    border: 1px solid rgba(255,255,255, 0.04);
-    border-radius: 50%;
-    bottom: -80px; left: 100px;
+    bottom: -120px; right: -40px;
 }
 
-/* Dot grid */
-.dots {
-    position: absolute;
-    top: 30px; right: 40px;
-    display: grid;
-    grid-template-columns: repeat(5, 8px);
-    gap: 12px;
-}
-.dots span {
-    width: 3px; height: 3px;
-    background: rgba(230, 57, 70, 0.3);
-    border-radius: 50%;
-}
-
-.content {
+/* Layout: two columns */
+.wrapper {
     position: relative;
     z-index: 1;
-    padding: 50px 60px;
+    display: flex;
     height: 100%;
+}
+
+/* Left column — main content */
+.left {
+    flex: 1;
+    padding: 40px 0 40px 55px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,21 +54,26 @@ body::before {
 .logo-row {
     display: flex;
     align-items: baseline;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 6px;
+    margin-bottom: 16px;
 }
 .logo-red {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 900;
     color: #E63946;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
-.logo-dot { color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 900; }
+.logo-dot {
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
 .logo-sub {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: #fff;
     letter-spacing: 1px;
@@ -91,12 +81,13 @@ body::before {
 
 h1 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
-    line-height: 1.05;
+    line-height: 1.08;
     letter-spacing: 1px;
+    max-width: 420px;
 }
 h1 .accent {
     background: linear-gradient(135deg, #E63946 0%, #ff6b8a 40%, #4facfe 100%);
@@ -106,12 +97,59 @@ h1 .accent {
 
 .tagline {
     margin-top: 14px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #888;
     letter-spacing: 0.5px;
 }
-.tagline strong { color: #E63946; }
+.tagline strong { color: #E63946; font-weight: 700; }
 
+/* Right column — features */
+.right {
+    width: 260px;
+    padding: 36px 40px 36px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.feat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.feat .dot {
+    width: 5px; height: 5px;
+    background: #E63946;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Price badge */
+.price-badge {
+    margin-top: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    border: 1px solid rgba(230, 57, 70, 0.4);
+    background: rgba(230, 57, 70, 0.1);
+    text-align: center;
+}
+.price-badge span { color: #E63946; font-size: 1.1rem; }
+
+/* Bottom accent bar */
 .bottom-bar {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -119,58 +157,46 @@ h1 .accent {
     background: linear-gradient(90deg, #E63946, #ff6b8a, #4facfe);
 }
 
-/* Right side feature tags */
-.features {
+/* Dot decoration — top right */
+.dots {
     position: absolute;
-    right: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
+    top: 20px; right: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 8px);
     gap: 10px;
 }
-.feat {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: #888;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.02);
-}
-.feat .dot {
-    display: inline-block;
-    width: 5px; height: 5px;
-    background: #E63946;
+.dots span {
+    width: 2px; height: 2px;
+    background: rgba(230, 57, 70, 0.25);
     border-radius: 50%;
-    margin-right: 8px;
 }
 </style>
 </head>
 <body>
     <div class="circle1"></div>
-    <div class="circle2"></div>
     <div class="dots">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
     </div>
 
-    <div class="content">
-        <div class="logo-row">
-            <span class="logo-red">RED</span><span class="logo-dot">.</span>
-            <span class="logo-sub">Web Studio</span>
+    <div class="wrapper">
+        <div class="left">
+            <div class="logo-row">
+                <span class="logo-red">RED</span><span class="logo-dot">.</span>
+                <span class="logo-sub">Web Studio</span>
+            </div>
+            <h1>Professional Websites<br>For <span class="accent">Small Businesses</span></h1>
+            <p class="tagline">Custom Design &bull; AI Chatbot &bull; SEO &bull; UK Based</p>
         </div>
-        <h1>Professional Websites<br>For <span class="accent">Small Businesses</span></h1>
-        <p class="tagline">Web Design &bull; AI Chatbot &bull; SEO &bull; From <strong>&pound;399</strong></p>
-    </div>
 
-    <div class="features">
-        <div class="feat"><span class="dot"></span>Web Design</div>
-        <div class="feat"><span class="dot"></span>AI Chatbot</div>
-        <div class="feat"><span class="dot"></span>SEO Included</div>
-        <div class="feat"><span class="dot"></span>7-Day Delivery</div>
+        <div class="right">
+            <div class="feat"><span class="dot"></span>Web Design</div>
+            <div class="feat"><span class="dot"></span>AI Chatbot 24/7</div>
+            <div class="feat"><span class="dot"></span>SEO Included</div>
+            <div class="feat"><span class="dot"></span>7-Day Delivery</div>
+            <div class="price-badge">From <span>&pound;399</span></div>
+        </div>
     </div>
 
     <div class="bottom-bar"></div>
