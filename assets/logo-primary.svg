@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <defs>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E63946;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C1121F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- RED handwritten style -->
+  <text x="4" y="50" font-family="'Caveat', 'Brush Script MT', cursive" font-weight="700" font-size="48" fill="url(#redGrad)" font-style="italic">RED</text>
+  <!-- Web Studio -->
+  <text x="108" y="42" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="14" fill="#ffffff" letter-spacing="1">Web Studio</text>
+  <!-- Tagline -->
+  <text x="4" y="70" font-family="'JetBrains Mono', monospace" font-weight="400" font-size="8" fill="#888888" letter-spacing="3">RESULTS. EFFICIENCY. DESIGN.</text>
+</svg>
