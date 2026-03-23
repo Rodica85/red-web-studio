@@ -15,14 +15,16 @@ body {
     position: relative;
 }
 
-/* Background glow */
+/* Background glow — smart/tech look */
 body::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 15% 50%, rgba(230, 57, 70, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 85% 80%, rgba(79, 172, 254, 0.06) 0%, transparent 35%);
+        radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(79, 172, 254, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 60% 80%, rgba(230, 57, 70, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 70%, rgba(79, 172, 254, 0.06) 0%, transparent 30%);
 }
 
 /* Decorative circle — bottom right, won't overlap text */
@@ -187,7 +189,7 @@ h1 .accent {
                 <span class="logo-sub">Web Studio</span>
             </div>
             <h1>Professional Websites<br>For <span class="accent">Small Businesses</span></h1>
-            <p class="tagline">Custom Design &bull; AI Chatbot &bull; SEO &bull; UK Based</p>
+            <p class="tagline">Custom Design &bull; AI Chatbot &bull; SEO &bull; United Kingdom</p>
         </div>
 
         <div class="right">
@@ -195,7 +197,6 @@ h1 .accent {
             <div class="feat"><span class="dot"></span>AI Chatbot 24/7</div>
             <div class="feat"><span class="dot"></span>SEO Included</div>
             <div class="feat"><span class="dot"></span>7-Day Delivery</div>
-            <div class="price-badge">From <span>&pound;399</span></div>
         </div>
     </div>
 
