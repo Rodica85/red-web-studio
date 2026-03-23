@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED Web Studio — Professional Web Design + AI Chatbot | UK</title>
+    <meta name="description" content="RED Web Studio — Professional websites for small businesses in the UK. We build stunning sites and integrate AI chatbot assistants to help you capture leads 24/7.">
+    <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Neural Network Background -->
+    <canvas id="neuralBg"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-red">RED</span>
+                <span class="logo-sub">Web Studio</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#ai-chatbot">AI Chatbot</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact" class="btn btn-accent">Let's Talk</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label fall-in" data-delay="0">Professional Web Design + AI Chatbot</div>
+            <h1>
+                <span class="fall-in" data-delay="1">We Don't Just Build</span>
+                <span class="fall-in" data-delay="2">Websites. We Build</span>
+                <span class="fall-in accent" data-delay="3">
+                    <span class="typewriter" id="typewriter"></span>
+                </span>
+            </h1>
+            <p class="hero-sub fall-in" data-delay="4">Professional web design for small businesses across the UK. Beautiful sites that convert — plus an AI chatbot that captures leads and answers customer questions 24/7.</p>
+            <div class="hero-cta fall-in" data-delay="5">
+                <a href="#contact" class="btn btn-accent btn-lg">Start a Project <span class="btn-arrow">&rarr;</span></a>
+            </div>
+        </div>
+        <!-- Scrolling marquee -->
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>WEB DESIGN</span><span class="marquee-dot"></span>
+                <span>AI CHATBOT</span><span class="marquee-dot"></span>
+                <span>SEO</span><span class="marquee-dot"></span>
+                <span>E-COMMERCE</span><span class="marquee-dot"></span>
+                <span>BRANDING</span><span class="marquee-dot"></span>
+                <span>WEB DESIGN</span><span class="marquee-dot"></span>
+                <span>AI CHATBOT</span><span class="marquee-dot"></span>
+                <span>SEO</span><span class="marquee-dot"></span>
+                <span>E-COMMERCE</span><span class="marquee-dot"></span>
+                <span>BRANDING</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container stats-row">
+            <div class="stat-block enlarge-on-scroll">
+                <span class="stat-num" data-target="7">0</span><span class="stat-unit">Days</span>
+                <p>Average Delivery Time</p>
+            </div>
+            <div class="stat-block enlarge-on-scroll">
+                <span class="stat-num" data-target="50">0</span><span class="stat-unit">+</span>
+                <p>Websites Launched</p>
+            </div>
+            <div class="stat-block enlarge-on-scroll">
+                <span class="stat-num" data-target="3">0</span><span class="stat-unit">x</span>
+                <p>More Leads For Clients</p>
+            </div>
+            <div class="stat-block enlarge-on-scroll">
+                <span class="stat-num" data-target="5">0</span><span class="stat-unit">.0</span>
+                <p>Average Client Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label fall-in">What We Do</div>
+            <h2 class="section-title fall-in">
+                We Build. You Grow.<br>
+                <span class="accent">It's That Simple.</span>
+            </h2>
+        </div>
+        <div class="services-scroll">
+            <div class="service-card fall-in">
+                <span class="card-num">01</span>
+                <h3>Website Design</h3>
+                <p>Beautiful, custom-designed websites that look stunning on every device. Fast, modern, and built to convert visitors into customers.</p>
+                <span class="card-tag">Core Service</span>
+            </div>
+            <div class="service-card fall-in">
+                <span class="card-num">02</span>
+                <h3>SEO Optimisation</h3>
+                <p>We build every site with SEO best practices so your business gets found on Google. On-page SEO, keywords, and local search included.</p>
+                <span class="card-tag">Included</span>
+            </div>
+            <div class="service-card fall-in">
+                <span class="card-num">03</span>
+                <h3>E-Commerce</h3>
+                <p>Full online shops with payment processing, inventory management, and checkout flows designed to maximise your sales.</p>
+                <span class="card-tag">Sell Online</span>
+            </div>
+            <div class="service-card fall-in">
+                <span class="card-num">04</span>
+                <h3>AI Chatbot</h3>
+                <p>We integrate a smart AI assistant on your website that answers customer questions, books appointments, and captures leads — 24/7, while you sleep.</p>
+                <span class="card-tag">24/7 Active</span>
+            </div>
+            <div class="service-card fall-in">
+                <span class="card-num">05</span>
+                <h3>Branding & Logo</h3>
+                <p>Professional brand identity that makes you stand out. Logo design, colour palette, typography, and brand guidelines included.</p>
+                <span class="card-tag">Stand Out</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot Feature -->
+    <section class="how-section" id="ai-chatbot">
+        <div class="container">
+            <div class="section-label fall-in">Exclusive Feature</div>
+            <h2 class="section-title fall-in">Add an AI Assistant<br><span class="accent">To Your Website</span></h2>
+
+            <div class="compare-grid">
+                <div class="compare-col old fall-in">
+                    <h4>Without AI Chatbot</h4>
+                    <ul>
+                        <li><span class="x">&#10007;</span> Miss enquiries outside hours</li>
+                        <li><span class="x">&#10007;</span> Customers leave with no answer</li>
+                        <li><span class="x">&#10007;</span> Manual response to every question</li>
+                        <li><span class="x">&#10007;</span> No lead capture overnight</li>
+                        <li><span class="x">&#10007;</span> Time wasted on repetitive FAQs</li>
+                    </ul>
+                </div>
+                <div class="compare-col new fall-in">
+                    <h4>With AI Chatbot by RED</h4>
+                    <ul>
+                        <li><span class="check">&#10003;</span> Answers questions 24/7</li>
+                        <li><span class="check">&#10003;</span> Books appointments automatically</li>
+                        <li><span class="check">&#10003;</span> Captures leads while you sleep</li>
+                        <li><span class="check">&#10003;</span> Trained on YOUR business</li>
+                        <li><span class="check">&#10003;</span> Saves you 10+ hours/week</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="process-row">
+                <div class="process-item fall-in">
+                    <span class="process-num">01</span>
+                    <h4>Tell Us About Your Business</h4>
+                    <p>A quick 15-minute call. We learn about your business, your customers, and what you need.</p>
+                </div>
+                <div class="process-item fall-in">
+                    <span class="process-num">02</span>
+                    <h4>We Design & Build</h4>
+                    <p>Our team creates a custom website tailored to your brand, with SEO, mobile design, and all the features you need.</p>
+                </div>
+                <div class="process-item fall-in">
+                    <span class="process-num">03</span>
+                    <h4>Add AI Chatbot</h4>
+                    <p>We integrate a smart AI assistant trained on your business. It knows your services, prices, and answers FAQs automatically.</p>
+                </div>
+                <div class="process-item fall-in">
+                    <span class="process-num">04</span>
+                    <h4>Launch & Grow</h4>
+                    <p>Your site goes live with chatbot, SEO, and analytics. We provide ongoing support and optimisation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-label fall-in">Pricing</div>
+            <h2 class="section-title fall-in">Simple Pricing.<br><span class="accent">No Hidden Fees.</span></h2>
+
+            <div class="pricing-grid">
+                <div class="price-card fall-in">
+                    <h3>Starter</h3>
+                    <p class="price-desc">New businesses going online</p>
+                    <div class="price-amount"><span class="pound">£</span>399</div>
+                    <ul>
+                        <li>One-page website</li>
+                        <li>Custom design</li>
+                        <li>Mobile responsive</li>
+                        <li>Basic SEO setup</li>
+                        <li>Contact form</li>
+                        <li>5-day delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+                <div class="price-card featured fall-in">
+                    <div class="featured-tag">Most Popular</div>
+                    <h3>Business + AI</h3>
+                    <p class="price-desc">For businesses that want results</p>
+                    <div class="price-amount"><span class="pound">£</span>799</div>
+                    <ul>
+                        <li>Up to 5 pages</li>
+                        <li>Custom professional design</li>
+                        <li>AI chatbot integrated</li>
+                        <li>Advanced SEO</li>
+                        <li>Blog section</li>
+                        <li>Google Business Profile</li>
+                        <li>7-day delivery</li>
+                        <li>1 month free support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-accent btn-block">Get Started</a>
+                </div>
+                <div class="price-card fall-in">
+                    <h3>E-Commerce + AI</h3>
+                    <p class="price-desc">Sell online with confidence</p>
+                    <div class="price-amount"><span class="pound">£</span>1,499</div>
+                    <ul>
+                        <li>Full online shop</li>
+                        <li>Payment integration</li>
+                        <li>AI chatbot + lead capture</li>
+                        <li>Product management</li>
+                        <li>Checkout optimisation</li>
+                        <li>Analytics dashboard</li>
+                        <li>10-day delivery</li>
+                        <li>2 months free support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+            </div>
+            <p class="pricing-note">All plans include: SSL, hosting setup, and mobile optimisation. AI chatbot available as add-on for Starter plan (£99). <a href="#contact">Need custom?</a></p>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="section-label fall-in">Our Work</div>
+            <h2 class="section-title fall-in">Designed By Us.<br><span class="accent">Loved By Clients.</span></h2>
+
+            <div class="work-grid">
+                <div class="work-card enlarge-on-scroll">
+                    <div class="work-screenshot">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=500&fit=crop" alt="The Italian Place restaurant website" loading="lazy">
+                        <div class="work-overlay-badge">View Project</div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-tag">Restaurant</span>
+                        <span class="work-result">+240% enquiries</span>
+                    </div>
+                    <h4>The Italian Place</h4>
+                    <p>Website with online booking, menu, and AI chatbot handling 60% of reservations automatically.</p>
+                </div>
+                <div class="work-card enlarge-on-scroll">
+                    <div class="work-screenshot">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=500&fit=crop" alt="Glow Beauty Studio website" loading="lazy">
+                        <div class="work-overlay-badge">View Project</div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-tag">Beauty Salon</span>
+                        <span class="work-result">+180% bookings</span>
+                    </div>
+                    <h4>Glow Beauty Studio</h4>
+                    <p>Smart booking system with AI chatbot answering treatment FAQs 24/7.</p>
+                </div>
+                <div class="work-card enlarge-on-scroll">
+                    <div class="work-screenshot">
+                        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&h=500&fit=crop" alt="Smith's Plumbing website" loading="lazy">
+                        <div class="work-overlay-badge">View Project</div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-tag">Tradesperson</span>
+                        <span class="work-result">+320% leads</span>
+                    </div>
+                    <h4>Smith's Plumbing</h4>
+                    <p>Lead-gen site with AI chatbot qualifying emergency callouts — even at 2am.</p>
+                </div>
+                <div class="work-card enlarge-on-scroll">
+                    <div class="work-screenshot">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=500&fit=crop" alt="FitLife Gym website" loading="lazy">
+                        <div class="work-overlay-badge">View Project</div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-tag">Fitness</span>
+                        <span class="work-result">+150% members</span>
+                    </div>
+                    <h4>FitLife Gym</h4>
+                    <p>Membership site with class timetable and AI chatbot converting trials to members.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-label fall-in">Reviews</div>
+            <h2 class="section-title fall-in">What Our <span class="accent">Clients Say</span></h2>
+
+            <div class="testimonial-row">
+                <div class="testimonial fall-in">
+                    <div class="stars">★★★★★</div>
+                    <p>"The AI chatbot alone has saved me 10 hours a week. It handles bookings and answers questions while I focus on my clients."</p>
+                    <div class="testimonial-by"><strong>Sarah K.</strong> — Glow Beauty</div>
+                </div>
+                <div class="testimonial fall-in">
+                    <div class="stars">★★★★★</div>
+                    <p>"RED designed a beautiful website and delivered it in just 5 days. The quality was better than agencies charging 3x more."</p>
+                    <div class="testimonial-by"><strong>James P.</strong> — JP Electrical</div>
+                </div>
+                <div class="testimonial fall-in">
+                    <div class="stars">★★★★★</div>
+                    <p>"Our online orders doubled within a month. The site looks incredible and the chatbot handles customer queries perfectly."</p>
+                    <div class="testimonial-by"><strong>Marco A.</strong> — The Italian Place</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title fall-in">Ready To Get A Website<br><span class="accent">That Actually Works?</span></h2>
+            <p class="fall-in">Free consultation. No obligation. We'll design something amazing for your business.</p>
+            <a href="#contact" class="btn btn-accent btn-lg fall-in">Book Free Consultation <span class="btn-arrow">&rarr;</span></a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-label fall-in">Get In Touch</div>
+            <h2 class="section-title fall-in">Let's Build Something<br><span class="accent">Amazing Together.</span></h2>
+
+            <div class="contact-grid">
+                <form class="contact-form fall-in" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" name="phone" placeholder="+44 7XXX XXXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Business Name</label>
+                            <input type="text" name="business" placeholder="Your Business Ltd">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>What do you need?</label>
+                        <select name="service">
+                            <option value="">Select a package...</option>
+                            <option>Starter (£399)</option>
+                            <option>Business + AI Chatbot (£799) — Most Popular</option>
+                            <option>E-Commerce + AI Chatbot (£1,499)</option>
+                            <option>Custom Project</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tell us about your business</label>
+                        <textarea name="message" rows="4" placeholder="What does your business do? What do you need from your website?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-accent btn-lg btn-block">Send Message <span class="btn-arrow">&rarr;</span></button>
+                </form>
+                <div class="contact-info fall-in">
+                    <div class="info-item">
+                        <strong>Email</strong>
+                        <p>hello@redwebstudio.co.uk</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Call Us</strong>
+                        <p><a href="tel:+447424714686">+44 7424 714686</a></p>
+                    </div>
+                    <div class="info-item whatsapp">
+                        <strong>WhatsApp</strong>
+                        <p><a href="https://wa.me/447424714686" target="_blank">Chat on WhatsApp</a></p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Location</strong>
+                        <p>United Kingdom — Working Remotely</p>
+                    </div>
+                    <div class="social-row">
+                        <a href="#" aria-label="Facebook">Fb</a>
+                        <a href="#" aria-label="Instagram">Ig</a>
+                        <a href="#" aria-label="TikTok">Tk</a>
+                        <a href="#" aria-label="LinkedIn">Li</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <div class="logo"><span class="logo-red">RED</span><span class="logo-sub">Web Studio</span></div>
+                    <p class="footer-tagline">R.E.D. — Results. Efficiency. Design.</p>
+                </div>
+                <div class="footer-links-row">
+                    <a href="#services">Services</a>
+                    <a href="#ai-chatbot">AI Chatbot</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#work">Work</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-contact-row">
+                <a href="mailto:hello@redwebstudio.co.uk">hello@redwebstudio.co.uk</a>
+                <span class="footer-sep">|</span>
+                <a href="tel:+447424714686">+44 7424 714686</a>
+                <span class="footer-sep">|</span>
+                <a href="https://wa.me/447424714686" target="_blank" class="wa-link">WhatsApp</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RED Web Studio. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#">Fb</a>
+                    <a href="#">Ig</a>
+                    <a href="#">Tk</a>
+                    <a href="#">Li</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat -->
+    <div class="ai-chat" id="aiChat">
+        <button class="ai-chat-toggle" id="aiChatToggle">
+            <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <span class="chat-badge">AI</span>
+        </button>
+        <div class="chat-window" id="aiChatWindow">
+            <div class="chat-head"><strong>RED AI Assistant</strong><span class="online-dot"></span></div>
+            <div class="chat-body" id="aiChatBody">
+                <div class="ai-msg bot"><p>Hi! I'm RED's AI assistant. This is an example of what we can add to YOUR website. How can I help?</p>
+                    <div class="quick-btns">
+                        <button data-msg="I need a website">I need a website</button>
+                        <button data-msg="What are your prices?">Prices?</button>
+                        <button data-msg="Tell me about the AI chatbot">AI Chatbot?</button>
+                        <button data-msg="Book a free call">Book a call</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input"><input type="text" id="aiInput" placeholder="Type a message..." autocomplete="off"><button id="aiSend">&rarr;</button></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
