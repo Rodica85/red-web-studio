@@ -15,25 +15,32 @@ body {
     position: relative;
 }
 
-/* Background glow — smart/tech look */
+/* Background glow — vibrant tech look */
 body::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.18) 0%, transparent 50%),
-        radial-gradient(circle at 80% 30%, rgba(79, 172, 254, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 60% 80%, rgba(230, 57, 70, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 70%, rgba(79, 172, 254, 0.06) 0%, transparent 30%);
+        radial-gradient(ellipse 600px 400px at 10% 60%, rgba(230, 57, 70, 0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 350px at 85% 20%, rgba(79, 172, 254, 0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 300px at 50% 90%, rgba(150, 50, 200, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 400px 250px at 70% 60%, rgba(79, 172, 254, 0.1) 0%, transparent 50%);
 }
 
-/* Decorative circle — bottom right, won't overlap text */
+/* Decorative circles */
 .circle1 {
     position: absolute;
     width: 350px; height: 350px;
-    border: 1px solid rgba(230, 57, 70, 0.1);
+    border: 1.5px solid rgba(230, 57, 70, 0.18);
     border-radius: 50%;
     bottom: -120px; right: -40px;
+}
+.circle2 {
+    position: absolute;
+    width: 250px; height: 250px;
+    border: 1px solid rgba(79, 172, 254, 0.1);
+    border-radius: 50%;
+    top: -80px; right: 150px;
 }
 
 /* Layout: two columns */
@@ -122,8 +129,8 @@ h1 .accent {
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 7px 14px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -176,6 +183,7 @@ h1 .accent {
 </head>
 <body>
     <div class="circle1"></div>
+    <div class="circle2"></div>
     <div class="dots">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
