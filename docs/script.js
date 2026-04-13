@@ -213,7 +213,7 @@ const responses = {
     'I need a website': "We design professional websites for small businesses across the UK. Packages start from £399 and include custom design, SEO, and mobile responsiveness. Plus we can add an AI chatbot like me! What type of business do you have?",
     'What are your prices?': "Our packages:\n\n• Starter — £399 (1-page site)\n• Business + AI — £799 (5 pages + chatbot)\n• E-Commerce + AI — £1,499 (full shop + chatbot)\n\nAll include custom design and SEO. Want a free quote?",
     'Tell me about the AI chatbot': "Great question! We can integrate a smart AI assistant (like me!) on your website. It:\n\n1. Answers customer questions 24/7\n2. Books appointments automatically\n3. Captures leads while you sleep\n4. Is trained on YOUR business\n\nIt's included in our Business and E-Commerce plans, or £99 add-on for Starter.",
-    'Book a free call': "Fill in the contact form below or email us at hello@redwebstudio.co.uk — we'll get back within 24 hours!",
+    'Book a free call': "Fill in the contact form below or email us at contact@redwebstudio.com — we'll get back within 24 hours!",
 };
 const defaults = [
     "Thanks! Book a free consultation — scroll to the contact form below.",
