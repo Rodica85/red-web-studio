@@ -171,15 +171,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// ---- Contact Form ----
+// ---- Contact Form (Formspree) ----
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
+    const form = this;
+    const btn = form.querySelector('button[type="submit"]');
     const orig = btn.innerHTML;
-    btn.innerHTML = '&#10003; SENT!';
-    btn.style.background = 'var(--green)'; btn.style.color = '#000';
+    btn.innerHTML = 'Sending...';
     btn.disabled = true;
-    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; this.reset(); }, 3000);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+            btn.innerHTML = '&#10003; Message Sent!';
+            btn.style.background = 'var(--green)'; btn.style.color = '#000';
+            form.reset();
+            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 4000);
+        } else {
+            btn.innerHTML = '&#10007; Error — Try Again';
+            btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
+            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
+        }
+    }).catch(() => {
+        btn.innerHTML = '&#10007; Error — Try Again';
+        btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
+        setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
+    });
 });
 
 // ---- AI Chat ----

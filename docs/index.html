@@ -5,9 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RED Web Studio — Professional Web Design + AI Chatbot | UK</title>
     <meta name="description" content="RED Web Studio — Professional websites for small businesses in the UK. We build stunning sites and integrate AI chatbot assistants to help you capture leads 24/7.">
+    <meta name="keywords" content="web design UK, small business website, AI chatbot, affordable web design, SEO, e-commerce website, professional website design">
+    <meta name="author" content="RED Web Studio">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RED Web Studio — Professional Web Design + AI Chatbot">
+    <meta property="og:description" content="Professional websites for small businesses in the UK. Beautiful sites that convert — plus an AI chatbot that captures leads 24/7.">
+    <meta property="og:url" content="https://redwebstudio.co.uk">
+    <meta property="og:site_name" content="RED Web Studio">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RED Web Studio — Professional Web Design + AI Chatbot">
+    <meta name="twitter:description" content="Professional websites for small businesses in the UK. Beautiful sites that convert — plus an AI chatbot that captures leads 24/7.">
+
+    <link rel="canonical" href="https://redwebstudio.co.uk">
     <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "RED Web Studio",
+        "description": "Professional web design and AI chatbot integration for small businesses in the UK.",
+        "url": "https://redwebstudio.co.uk",
+        "telephone": "+447424714686",
+        "email": "hello@redwebstudio.co.uk",
+        "areaServed": "United Kingdom",
+        "priceRange": "£399 - £1,499",
+        "serviceType": ["Web Design", "AI Chatbot Integration", "SEO", "E-Commerce"],
+        "sameAs": []
+    }
+    </script>
 </head>
 <body>
     <!-- Neural Network Background -->
@@ -346,7 +379,9 @@
             <h2 class="section-title fall-in">Let's Build Something<br><span class="accent">Amazing Together.</span></h2>
 
             <div class="contact-grid">
-                <form class="contact-form fall-in" id="contactForm">
+                <form class="contact-form fall-in" id="contactForm" action="https://formspree.io/f/xpwzgqkl" method="POST">
+                    <input type="hidden" name="_subject" value="New enquiry from RED Web Studio">
+                    <input type="text" name="_gotcha" style="display:none">
                     <div class="form-row">
                         <div class="form-group">
                             <label>Your Name *</label>
