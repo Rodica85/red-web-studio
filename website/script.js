@@ -171,34 +171,50 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// ---- Contact Form (Formspree) ----
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = this;
-    const btn = form.querySelector('button[type="submit"]');
-    const orig = btn.innerHTML;
-    btn.innerHTML = 'Sending...';
-    btn.disabled = true;
+// ---- Formspree Submit Handler (shared by Contact + Audit forms) ----
+function attachFormspree(formId, successText) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const orig = btn.innerHTML;
+        btn.innerHTML = 'Sending...';
+        btn.disabled = true;
 
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            btn.innerHTML = '&#10003; Message Sent!';
-            btn.style.background = 'var(--green)'; btn.style.color = '#000';
-            form.reset();
-            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 4000);
-        } else {
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                btn.innerHTML = '&#10003; ' + successText;
+                btn.style.background = 'var(--green)'; btn.style.color = '#000';
+                form.reset();
+                setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 4000);
+            } else {
+                btn.innerHTML = '&#10007; Error — Try Again';
+                btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
+                setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
+            }
+        }).catch(() => {
             btn.innerHTML = '&#10007; Error — Try Again';
             btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
             setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
+        });
+    });
+}
+attachFormspree('contactForm', 'Message Sent!');
+attachFormspree('auditForm', 'Audit Requested!');
+
+// ---- FAQ accordion: only one open at a time ----
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('toggle', () => {
+        if (item.open) {
+            document.querySelectorAll('.faq-item').forEach(other => {
+                if (other !== item) other.open = false;
+            });
         }
-    }).catch(() => {
-        btn.innerHTML = '&#10007; Error — Try Again';
-        btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
-        setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
     });
 });
 
@@ -210,9 +226,9 @@ const aiInput = document.getElementById('aiInput');
 const aiSend = document.getElementById('aiSend');
 
 const responses = {
-    'I need a website': "We design professional websites for small businesses across the UK. Packages start from £399 and include custom design, SEO, and mobile responsiveness. Plus we can add an AI chatbot like me! What type of business do you have?",
-    'What are your prices?': "Our packages:\n\n• Starter — £399 (1-page site)\n• Business + AI — £799 (5 pages + chatbot)\n• E-Commerce + AI — £1,499 (full shop + chatbot)\n\nAll include custom design and SEO. Want a free quote?",
-    'Tell me about the AI chatbot': "Great question! We can integrate a smart AI assistant (like me!) on your website. It:\n\n1. Answers customer questions 24/7\n2. Books appointments automatically\n3. Captures leads while you sleep\n4. Is trained on YOUR business\n\nIt's included in our Business and E-Commerce plans, or £99 add-on for Starter.",
+    'I need a website': "We design professional websites for small businesses across the UK — custom design, SEO, mobile-first, and an optional AI chatbot like me. Every project is quoted to your needs. What type of business do you have?",
+    'What are your prices?': "Every project is custom-quoted based on your needs — pages, features, integrations. The fastest way to get a real number is our free audit (scroll up) or the contact form below — we'll reply within 24 hours with a tailored quote.",
+    'Tell me about the AI chatbot': "Great question! We can integrate a smart AI assistant (like me!) on your website. It:\n\n1. Answers customer questions 24/7\n2. Books appointments automatically\n3. Captures leads while you sleep\n4. Is trained on YOUR business\n\nIt's available on every plan — book a free consultation to see how it'd work for you.",
     'Book a free call': "Fill in the contact form below or email us at contact@redwebstudio.com — we'll get back within 24 hours!",
 };
 const defaults = [
