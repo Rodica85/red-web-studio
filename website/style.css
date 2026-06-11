@@ -211,7 +211,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 .logo:hover { opacity: 0.75; }
 .logo-row {
     display: inline-flex;
-    align-items: baseline;
+    align-items: center;
     gap: 10px;
 }
 .logo-tagline {
