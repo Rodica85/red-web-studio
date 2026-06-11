@@ -1011,28 +1011,31 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 .info-item.whatsapp a { color: var(--sage); font-weight: 600; }
 .info-item.whatsapp a:hover { color: var(--accent); }
 
-.social-row { display: flex; gap: 14px; margin-top: 32px; }
-.social-row a {
-    width: 40px;
-    height: 40px;
+.social-row { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+.social-row .social-fb {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    font-family: var(--font-sans);
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--ink);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-.social-row a:hover {
-    background: var(--accent);
-    border-color: var(--accent);
+    gap: 10px;
+    padding: 9px 18px 9px 14px;
+    background: #1877F2;
     color: var(--white);
+    border-radius: 100px;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s var(--ease);
+    box-shadow: 0 2px 8px rgba(24, 119, 242, 0.25);
+}
+.social-row .social-fb svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+.social-row .social-fb:hover {
+    background: #0F66DC;
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(24, 119, 242, 0.35);
 }
 
 /* ---- Footer ---- */
@@ -1101,24 +1104,27 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     text-align: center;
 }
 .footer-social { display: flex; gap: 12px; }
-.footer-social a {
-    width: 36px; height: 36px;
+.footer-social .social-fb {
+    width: 38px;
+    height: 38px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.78rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-.footer-social a:hover {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: #1877F2;
     color: var(--white);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s var(--ease);
+    box-shadow: 0 2px 6px rgba(24, 119, 242, 0.25);
+}
+.footer-social .social-fb svg {
+    width: 20px;
+    height: 20px;
+}
+.footer-social .social-fb:hover {
+    background: #0F66DC;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.35);
 }
 
 /* ---- AI Chat Widget ---- */
