@@ -27,26 +27,7 @@ document.querySelectorAll('.fall-in').forEach(el => fallObserver.observe(el));
 
 // (enlarge-on-scroll removed — too jumpy for editorial design)
 
-// ---- Counter Animation ----
-function animateNum(el, target) {
-    const dur = 2000, start = performance.now();
-    function update(now) {
-        const p = Math.min((now - start) / dur, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 4)));
-        if (p < 1) requestAnimationFrame(update);
-    }
-    requestAnimationFrame(update);
-}
-const numObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            const t = parseInt(e.target.dataset.target);
-            if (t) animateNum(e.target, t);
-            numObserver.unobserve(e.target);
-        }
-    });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-num[data-target]').forEach(el => numObserver.observe(el));
+// (counter animation removed — values section uses words, not numbers)
 
 // ---- Navbar ----
 const navbar = document.getElementById('navbar');
