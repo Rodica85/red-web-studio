@@ -90,7 +90,7 @@ h2 {
 h3 { font-size: 1.5rem; font-weight: 600; }
 h4 { font-size: 1.15rem; font-weight: 600; }
 
-.accent { color: var(--accent); font-style: italic; font-weight: 500; }
+.accent { color: var(--accent); font-weight: 600; }
 
 .section-label {
     display: inline-block;
@@ -212,9 +212,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     color: var(--accent);
     letter-spacing: -0.02em;
     line-height: 1;
-    font-style: italic;
 }
-.logo-red::after { content: '.'; color: var(--ink); font-style: normal; }
+.logo-red::after { content: '.'; color: var(--ink); }
 .logo-sub {
     font-family: var(--font-sans);
     font-size: 0.75rem;
@@ -282,7 +281,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 }
 .hero .container { position: relative; z-index: 1; }
 .hero h1 span { display: block; }
-.hero h1 .typewriter { font-style: italic; color: var(--accent); }
+.hero h1 .typewriter { color: var(--accent); }
 .hero-label {
     display: inline-block;
     font-family: var(--font-sans);
@@ -363,7 +362,6 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     font-size: clamp(1.5rem, 3vw, 2.4rem);
     font-weight: 500;
     color: var(--accent);
-    font-style: italic;
 }
 .stat-block p {
     font-size: 0.92rem;
@@ -403,9 +401,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 .card-num {
     font-family: var(--font-serif);
     font-size: 2.2rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--accent);
-    font-style: italic;
     display: block;
     margin-bottom: 16px;
     line-height: 1;
@@ -504,9 +501,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 .process-num {
     font-family: var(--font-serif);
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--accent);
-    font-style: italic;
     display: block;
     margin-bottom: 12px;
     line-height: 1;
@@ -562,11 +558,10 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 .placeholder-initial {
     font-family: var(--font-serif);
     font-size: 8rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--accent);
     line-height: 1;
     letter-spacing: -0.04em;
-    font-style: italic;
 }
 .about-photo-placeholder p {
     font-family: var(--font-sans);
@@ -596,8 +591,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     color: var(--ink);
     line-height: 1.4;
     margin-bottom: 24px;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 500;
     font-variation-settings: "opsz" 144;
 }
 .about-content > p:not(.about-lead) {
@@ -618,12 +612,11 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     display: block;
     font-family: var(--font-serif);
     font-size: 1.7rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--accent);
     line-height: 1;
     margin-bottom: 8px;
     letter-spacing: -0.02em;
-    font-style: italic;
 }
 .about-stat span {
     font-family: var(--font-sans);
@@ -657,7 +650,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     font-family: var(--font-serif);
     font-size: 1.3rem;
     color: var(--accent);
-    font-style: italic;
+    font-weight: 600;
     display: block;
     margin-bottom: 14px;
     line-height: 1;
@@ -715,7 +708,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     color: var(--ink);
     line-height: 1.45;
     margin-bottom: 32px;
-    font-style: italic;
+    font-weight: 500;
 }
 .audit-checks {
     list-style: none;
