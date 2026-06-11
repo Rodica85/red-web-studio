@@ -1,98 +1,4 @@
-// RED Web Studio — Bold Fusion-style Script
-
-// ---- Neural Network Background ----
-(function() {
-    const canvas = document.getElementById('neuralBg');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let w, h, particles = [], mouse = { x: -1000, y: -1000 };
-
-    function resize() {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-    document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-
-    const PARTICLE_COUNT = 80;
-    const CONNECTION_DIST = 160;
-    const MOUSE_DIST = 200;
-
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-        particles.push({
-            x: Math.random() * w,
-            y: Math.random() * h,
-            vx: (Math.random() - 0.5) * 0.4,
-            vy: (Math.random() - 0.5) * 0.4,
-            r: Math.random() * 2 + 1,
-            // Color: mix of red/pink and cyan/blue
-            color: Math.random() > 0.5
-                ? `rgba(230, ${Math.floor(57 + Math.random() * 100)}, ${Math.floor(70 + Math.random() * 120)}, `
-                : `rgba(${Math.floor(50 + Math.random() * 80)}, ${Math.floor(150 + Math.random() * 105)}, 255, `
-        });
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, w, h);
-
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < CONNECTION_DIST) {
-                    const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(230, 57, 120, ${alpha})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-
-            // Mouse connections
-            const mdx = particles[i].x - mouse.x;
-            const mdy = particles[i].y - mouse.y;
-            const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
-            if (mDist < MOUSE_DIST) {
-                const alpha = (1 - mDist / MOUSE_DIST) * 0.3;
-                ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(mouse.x, mouse.y);
-                ctx.strokeStyle = `rgba(230, 57, 70, ${alpha})`;
-                ctx.lineWidth = 0.8;
-                ctx.stroke();
-            }
-        }
-
-        // Draw particles
-        for (const p of particles) {
-            // Glow
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
-            ctx.fillStyle = p.color + '0.05)';
-            ctx.fill();
-
-            // Core
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = p.color + '0.6)';
-            ctx.fill();
-
-            // Move
-            p.x += p.vx;
-            p.y += p.vy;
-            if (p.x < 0 || p.x > w) p.vx *= -1;
-            if (p.y < 0 || p.y > h) p.vy *= -1;
-        }
-
-        requestAnimationFrame(draw);
-    }
-    draw();
-})();
+// RED Web Studio — Editorial Premium
 
 // ---- Typewriter Effect ----
 const words = ['Growth.', 'Results.', 'Customers.', 'Revenue.', 'Success.'];
@@ -119,18 +25,7 @@ const fallObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fall-in').forEach(el => fallObserver.observe(el));
 
-// ---- Enlarge on Scroll ----
-const enlargeEls = document.querySelectorAll('.enlarge-on-scroll');
-function handleEnlarge() {
-    enlargeEls.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const center = window.innerHeight / 2;
-        const dist = Math.abs(rect.top + rect.height / 2 - center);
-        const scale = Math.max(0.92, 1 - dist / (window.innerHeight * 1.5));
-        el.style.transform = `scale(${Math.min(scale + 0.05, 1.05)})`;
-    });
-}
-window.addEventListener('scroll', handleEnlarge, { passive: true });
+// (enlarge-on-scroll removed — too jumpy for editorial design)
 
 // ---- Counter Animation ----
 function animateNum(el, target) {

@@ -27,7 +27,10 @@
 
     <link rel="canonical" href="https://redwebstudio.com">
     <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#FBF7F1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <!-- Structured Data -->
@@ -43,7 +46,17 @@
         "areaServed": "United Kingdom",
         "priceRange": "££",
         "serviceType": ["Web Design", "AI Chatbot Integration", "SEO", "E-Commerce"],
-        "sameAs": ["https://www.facebook.com/profile.php?id=61577439808035"]
+        "sameAs": ["https://www.facebook.com/profile.php?id=61577439808035"],
+        "founder": {
+            "@type": "Person",
+            "name": "Rodica",
+            "jobTitle": "Founder & Web Designer",
+            "image": "https://redwebstudio.com/founder.jpg",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "RED Web Studio"
+            }
+        }
     }
     </script>
 
@@ -66,9 +79,6 @@
     </script>
 </head>
 <body>
-    <!-- Neural Network Background -->
-    <canvas id="neuralBg"></canvas>
-
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -79,6 +89,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#ai-chatbot">AI Chatbot</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#industries">Industries</a></li>
                 <li><a href="#audit">Free Audit</a></li>
                 <li><a href="#contact" class="btn btn-accent">Let's Talk</a></li>
@@ -102,22 +113,13 @@
             </h1>
             <p class="hero-sub fall-in" data-delay="4">Professional web design for small businesses across the UK. Beautiful sites that convert — plus an AI chatbot that captures leads and answers customer questions 24/7.</p>
             <div class="hero-cta fall-in" data-delay="5">
-                <a href="#contact" class="btn btn-accent btn-lg">Start a Project <span class="btn-arrow">&rarr;</span></a>
+                <a href="#audit" class="btn btn-accent btn-lg">Get A Free Audit <span class="btn-arrow">&rarr;</span></a>
+                <a href="#work" class="btn btn-ghost btn-lg">See Our Work</a>
             </div>
-        </div>
-        <!-- Scrolling marquee -->
-        <div class="marquee">
-            <div class="marquee-track">
-                <span>WEB DESIGN</span><span class="marquee-dot"></span>
-                <span>AI CHATBOT</span><span class="marquee-dot"></span>
-                <span>SEO</span><span class="marquee-dot"></span>
-                <span>E-COMMERCE</span><span class="marquee-dot"></span>
-                <span>BRANDING</span><span class="marquee-dot"></span>
-                <span>WEB DESIGN</span><span class="marquee-dot"></span>
-                <span>AI CHATBOT</span><span class="marquee-dot"></span>
-                <span>SEO</span><span class="marquee-dot"></span>
-                <span>E-COMMERCE</span><span class="marquee-dot"></span>
-                <span>BRANDING</span><span class="marquee-dot"></span>
+            <div class="hero-trust fall-in" data-delay="6">
+                <span class="trust-tag">🇬🇧 UK-Based</span>
+                <span class="trust-tag">14-Day Money-Back</span>
+                <span class="trust-tag">100% Site Ownership</span>
             </div>
         </div>
     </section>
@@ -237,6 +239,45 @@
                     <span class="process-num">04</span>
                     <h4>Launch & Grow</h4>
                     <p>Your site goes live with chatbot, SEO, and analytics. We provide ongoing support and optimisation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Meet The Designer -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-photo fall-in">
+                    <img src="founder.jpg" alt="Rodica — Founder of RED Web Studio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="about-photo-placeholder">
+                        <span class="placeholder-initial">R</span>
+                        <p>Founder photo<br>coming soon</p>
+                    </div>
+                    <div class="about-photo-badge">Founder</div>
+                </div>
+                <div class="about-content fall-in">
+                    <div class="section-label">Meet The Designer</div>
+                    <h2>Hi, I'm <span class="accent">Rodica.</span></h2>
+                    <p class="about-lead">I started RED Web Studio because UK small businesses deserve better than £29/month templated sites — and shouldn't have to pay £5,000+ to a faceless agency for a real one.</p>
+                    <p>Every site I build, I personally design and code. No outsourcing. No junior handover. When you work with RED, you work with me — direct WhatsApp access, daily progress updates, and a designer who actually cares whether your business grows.</p>
+
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <strong>1-on-1</strong>
+                            <span>Personal Service</span>
+                        </div>
+                        <div class="about-stat">
+                            <strong>Daily</strong>
+                            <span>Progress Updates</span>
+                        </div>
+                        <div class="about-stat">
+                            <strong>14-Day</strong>
+                            <span>Money-Back</span>
+                        </div>
+                    </div>
+
+                    <a href="#audit" class="btn btn-accent">Get A Free Audit From Me <span class="btn-arrow">&rarr;</span></a>
                 </div>
             </div>
         </div>
@@ -558,6 +599,7 @@
                 <div class="footer-links-row">
                     <a href="#services">Services</a>
                     <a href="#ai-chatbot">AI Chatbot</a>
+                    <a href="#about">About</a>
                     <a href="#industries">Industries</a>
                     <a href="#audit">Free Audit</a>
                     <a href="#faq">FAQ</a>
