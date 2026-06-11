@@ -195,16 +195,34 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 76px;
+    min-height: 76px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 .logo {
     display: flex;
-    align-items: baseline;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     text-decoration: none;
     transition: opacity 0.3s ease;
+    line-height: 1;
 }
 .logo:hover { opacity: 0.75; }
+.logo-row {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+}
+.logo-tagline {
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
 .logo-red {
     font-family: var(--font-serif);
     font-size: 1.75rem;
