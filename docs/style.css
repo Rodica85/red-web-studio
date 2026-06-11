@@ -373,64 +373,65 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     color: var(--ink-soft);
 }
 
-/* ---- Services ---- */
+/* ---- Services (editorial table-of-contents) ---- */
 .services { padding: 120px 0; background: var(--cream); }
-.services-scroll {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    padding: 4px 28px 32px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+.services-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border);
 }
-.services-scroll::-webkit-scrollbar { display: none; }
-
-.service-card {
-    min-width: 320px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    background: var(--white);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--r-lg);
-    padding: 40px 32px;
-    transition: all 0.4s var(--ease);
-    box-shadow: var(--shadow-sm);
+.service-row {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 28px;
+    align-items: start;
+    padding: 32px 8px;
+    border-bottom: 1px solid var(--border);
+    transition: padding-left 0.3s var(--ease);
 }
-.service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent-tint);
+.service-row:hover {
+    padding-left: 16px;
 }
-.card-num {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
+.service-num {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--accent);
-    display: block;
-    margin-bottom: 16px;
-    line-height: 1;
+    letter-spacing: 0.06em;
+    padding-top: 8px;
 }
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 14px;
+.service-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.service-body h3 {
+    font-size: 1.55rem;
+    font-weight: 600;
     color: var(--ink);
+    transition: color 0.3s ease;
 }
-.service-card p {
-    font-size: 0.97rem;
-    line-height: 1.7;
+.service-row:hover .service-body h3 { color: var(--accent); }
+.service-body p {
+    font-size: 1rem;
+    line-height: 1.65;
     color: var(--ink-soft);
+    max-width: 720px;
 }
-.card-tag {
-    display: inline-block;
-    margin-top: 24px;
+.service-tag {
     font-family: var(--font-sans);
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--sage);
     background: var(--sage-tint);
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 100px;
     letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
 /* ---- How AI / Compare ---- */
@@ -1391,7 +1392,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    .service-card { min-width: 280px; }
+    .service-row { padding: 28px 4px; gap: 20px; grid-template-columns: 52px 1fr; }
     .work-screenshot { height: 220px; }
     .chat-window { width: calc(100vw - 48px); right: -12px; }
 }
@@ -1400,7 +1401,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     .values-row { grid-template-columns: 1fr 1fr; }
     .process-row { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .service-card { min-width: 260px; padding: 32px 24px; }
+    .service-body h3 { font-size: 1.35rem; }
+    .service-head { flex-direction: column; align-items: flex-start; gap: 8px; }
     .hero { padding: 120px 0 60px; min-height: auto; }
     .hero-sub { font-size: 1.05rem; }
     .hero-cta { flex-direction: column; align-items: stretch; }
@@ -1417,8 +1419,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 
 @media (max-width: 390px) {
     .container { padding: 0 20px; }
-    .services-scroll { padding: 4px 20px 32px; }
-    .service-card { min-width: calc(100vw - 56px); padding: 28px 22px; }
+    .service-row { padding: 24px 0; gap: 16px; grid-template-columns: 44px 1fr; }
     .about-stats { gap: 16px; }
     .about-stat strong { font-size: 1.4rem; }
 }
