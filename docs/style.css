@@ -1409,18 +1409,24 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     .service-row { padding: 28px 4px; gap: 20px; grid-template-columns: 52px 1fr; }
     .work-screenshot { height: 220px; }
     .chat-window { width: calc(100vw - 48px); right: -12px; }
+    /* Compact navbar logo on tablet */
+    .logo-red { font-size: 1.5rem; }
+    .logo-sub { font-size: 0.7rem; }
+    .logo-tagline { font-size: 0.55rem; letter-spacing: 0.14em; }
 }
 
 @media (max-width: 640px) {
-    .values-row { grid-template-columns: 1fr 1fr; }
+    .values-row { grid-template-columns: 1fr 1fr; gap: 24px; }
     .process-row { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .service-body h3 { font-size: 1.35rem; }
     .service-head { flex-direction: column; align-items: flex-start; gap: 8px; }
-    .hero { padding: 120px 0 60px; min-height: auto; }
+    .hero { padding: 112px 0 56px; min-height: auto; }
     .hero-sub { font-size: 1.05rem; }
     .hero-cta { flex-direction: column; align-items: stretch; }
     .hero-cta .btn-lg { width: 100%; justify-content: center; }
+    .hero-trust { gap: 8px; }
+    .trust-tag { font-size: 0.75rem; padding: 7px 14px; }
     .industries-grid { grid-template-columns: 1fr; max-width: 100%; }
     .audit-form { padding: 32px 24px; }
     .faq-item { padding: 0 22px; }
@@ -1429,13 +1435,38 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     .work-card > h4, .work-card > p, .work-card > .work-meta { padding-left: 24px; padding-right: 24px; }
     .work-screenshot { height: 200px; }
     .work-meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+    /* Compact navbar */
+    .logo-red { font-size: 1.4rem; }
+    .logo-sub { font-size: 0.68rem; }
+    .logo-tagline { font-size: 0.52rem; }
+    .nav-container { min-height: 64px; }
 }
 
 @media (max-width: 390px) {
-    .container { padding: 0 20px; }
-    .service-row { padding: 24px 0; gap: 16px; grid-template-columns: 44px 1fr; }
-    .about-photo { width: 120px; height: 120px; }
-    .about-pill { font-size: 0.75rem; padding: 7px 14px; }
+    .container { padding: 0 18px; }
+    .service-row { padding: 24px 0; gap: 14px; grid-template-columns: 38px 1fr; }
+    .service-body h3 { font-size: 1.2rem; }
+    .about-photo { width: 110px; height: 110px; }
+    .about-pill { font-size: 0.72rem; padding: 7px 14px; }
+    .about-name { font-size: 1.85rem; }
+    /* Smallest navbar */
+    .logo-red { font-size: 1.25rem; }
+    .logo-sub { font-size: 0.65rem; }
+    .logo-tagline { font-size: 0.5rem; letter-spacing: 0.12em; }
+    .nav-container { min-height: 60px; padding-top: 8px; padding-bottom: 8px; }
+    /* Tighter hero */
+    .hero { padding: 96px 0 48px; }
+    .hero-label { font-size: 0.7rem; padding: 6px 12px; }
+    .btn-lg { padding: 16px 28px; font-size: 0.95rem; }
+    /* Tighter sections */
+    .values-section { padding: 56px 0; }
+    .value-block h3 { font-size: 1.4rem; }
+    .about { padding: 64px 0; }
+    .industries { padding: 64px 0; }
+    .audit-section { padding: 64px 0; }
+    .work { padding: 64px 0; }
+    .faq { padding: 64px 0; }
+    .contact { padding: 64px 0; }
 }
 
 /* Reduced motion */
