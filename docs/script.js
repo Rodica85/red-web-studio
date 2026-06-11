@@ -69,12 +69,12 @@ function attachFormspree(formId, successText) {
                 form.reset();
                 setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 4000);
             } else {
-                btn.innerHTML = '&#10007; Error — Try Again';
+                btn.innerHTML = '&#10007; Error, Try Again';
                 btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
                 setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
             }
         }).catch(() => {
-            btn.innerHTML = '&#10007; Error — Try Again';
+            btn.innerHTML = '&#10007; Error, Try Again';
             btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
             setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
         });
@@ -102,13 +102,13 @@ const aiInput = document.getElementById('aiInput');
 const aiSend = document.getElementById('aiSend');
 
 const responses = {
-    'I need a website': "We design professional websites for small businesses across the UK — custom design, SEO, mobile-first, and an optional AI chatbot like me. Every project is quoted to your needs. What type of business do you have?",
-    'What are your prices?': "Every project is custom-quoted based on your needs — pages, features, integrations. The fastest way to get a real number is our free audit (scroll up) or the contact form below — we'll reply within 24 hours with a tailored quote.",
-    'Tell me about the AI chatbot': "Great question! We can integrate a smart AI assistant (like me!) on your website. It:\n\n1. Answers customer questions 24/7\n2. Books appointments automatically\n3. Captures leads while you sleep\n4. Is trained on YOUR business\n\nIt's available on every plan — book a free consultation to see how it'd work for you.",
-    'Book a free call': "Fill in the contact form below or email us at contact@redwebstudio.com — we'll get back within 24 hours!",
+    'I need a website': "We design professional websites for small businesses across the UK: custom design, SEO, mobile-first, and an optional AI chatbot like me. Every project is quoted to your needs. What type of business do you have?",
+    'What are your prices?': "Every project is custom-quoted based on your needs: pages, features, integrations. The fastest way to get a real number is our free audit (scroll up) or the contact form below. We'll reply within 24 hours with a tailored quote.",
+    'Tell me about the AI chatbot': "Great question! We can integrate a smart AI assistant (like me!) on your website. It:\n\n1. Answers customer questions 24/7\n2. Books appointments automatically\n3. Captures leads while you sleep\n4. Is trained on YOUR business\n\nIt's available on every plan. Book a free consultation to see how it'd work for you.",
+    'Book a free call': "Fill in the contact form below or email us at contact@redwebstudio.com. We'll get back within 24 hours!",
 };
 const defaults = [
-    "Thanks! Book a free consultation — scroll to the contact form below.",
+    "Thanks! Book a free consultation. Scroll to the contact form below.",
     "Great question! Our team would love to discuss. Want a 15-minute call?",
     "Drop your details in the form below and we'll reply within 24 hours.",
 ];
