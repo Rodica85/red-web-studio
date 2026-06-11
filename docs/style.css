@@ -813,6 +813,9 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     overflow: hidden;
     transition: all 0.4s var(--ease);
     box-shadow: var(--shadow-sm);
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 .work-card:hover {
     transform: translateY(-6px);
