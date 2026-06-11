@@ -529,8 +529,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 }
 .about-grid {
     display: grid;
-    grid-template-columns: 0.65fr 1.35fr;
-    gap: 64px;
+    grid-template-columns: 0.5fr 1.5fr;
+    gap: 56px;
     align-items: center;
 }
 .about-photo {
@@ -1353,8 +1353,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 @media (max-width: 968px) {
     .values-row { grid-template-columns: 1fr 1fr; gap: 32px; }
     .compare-grid { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .about-photo { max-width: 280px; margin: 0 auto; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-photo { max-width: 220px; margin: 0 auto; }
     .about-content { max-width: 560px; margin: 0 auto; }
     .about-stats { gap: 24px; flex-wrap: wrap; justify-content: space-between; }
     .industries-grid { grid-template-columns: 1fr 1fr; }
