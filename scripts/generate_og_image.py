@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Generate the Open Graph / social share card (1200x630) for RED Web Studio.
 
+Matches the live site UI: cream/editorial palette, Fraunces-style serif,
+terracotta + sage accents.
+
 Run: python3 scripts/generate_og_image.py
 Outputs og-image.png into website/ and docs/.
 """
@@ -10,97 +13,105 @@ from PIL import Image, ImageDraw, ImageFont
 W, H = 1200, 630
 FONTS = "/mnt/skills/examples/canvas-design/canvas-fonts"
 
-# Brand colours
-NAVY = (26, 26, 46)        # #1A1A2E
-CHARCOAL = (45, 45, 68)    # #2D2D44
-RED = (230, 57, 70)        # #E63946
-RED_DARK = (193, 18, 31)   # #C1121F
-WHITE = (255, 255, 255)
-MUTED = (176, 176, 196)
+# Live-site palette (from style.css :root)
+CREAM = (251, 247, 241)       # --cream  #FBF7F1
+CREAM_DEEP = (244, 239, 230)  # --cream-deep
+PAPER = (253, 251, 247)       # --paper
+INK = (31, 27, 23)            # --ink  #1F1B17
+INK_SOFT = (92, 84, 75)       # --ink-soft
+INK_MUTE = (139, 131, 120)    # --ink-mute
+ACCENT = (200, 69, 59)        # --accent  #C8453B
+ACCENT_DEEP = (139, 47, 38)   # --accent-deep
+ACCENT_TINT = (251, 234, 231) # --accent-tint
+SAGE = (95, 122, 90)          # --sage  #5F7A5A
+BORDER = (229, 223, 213)      # --border
 
 def font(name, size):
     return ImageFont.truetype(os.path.join(FONTS, name), size)
 
-# Fonts (closest match to site: Fraunces serif headline + Inter sans)
-f_logo   = font("Lora-BoldItalic.ttf", 70)
-f_studio = font("WorkSans-Bold.ttf", 26)
-f_head   = font("Lora-Bold.ttf", 70)
-f_sub    = font("WorkSans-Regular.ttf", 30)
-f_pill   = font("WorkSans-Bold.ttf", 30)
-f_chip   = font("WorkSans-Bold.ttf", 22)
+# Fraunces -> Lora (serif). Inter -> Work Sans (sans).
+f_logo    = font("Lora-Bold.ttf", 58)
+f_studio  = font("WorkSans-Medium.ttf", 24) if os.path.exists(os.path.join(FONTS, "WorkSans-Medium.ttf")) else font("WorkSans-Regular.ttf", 24)
+f_tagline = font("WorkSans-Bold.ttf", 16)
+f_head    = font("Lora-Bold.ttf", 74)
+f_sub     = font("WorkSans-Regular.ttf", 30)
+f_pill    = font("WorkSans-Bold.ttf", 30)
+f_chip    = font("WorkSans-Bold.ttf", 22)
 
-img = Image.new("RGB", (W, H), NAVY)
+img = Image.new("RGB", (W, H), CREAM)
 draw = ImageDraw.Draw(img)
 
-# --- Background: diagonal navy gradient ---
+# --- Background: very subtle cream gradient ---
 for y in range(H):
     t = y / H
-    r = int(NAVY[0] + (CHARCOAL[0] - NAVY[0]) * t)
-    g = int(NAVY[1] + (CHARCOAL[1] - NAVY[1]) * t)
-    b = int(NAVY[2] + (CHARCOAL[2] - NAVY[2]) * t)
+    r = int(PAPER[0] + (CREAM_DEEP[0] - PAPER[0]) * t)
+    g = int(PAPER[1] + (CREAM_DEEP[1] - PAPER[1]) * t)
+    b = int(PAPER[2] + (CREAM_DEEP[2] - PAPER[2]) * t)
     draw.line([(0, y), (W, y)], fill=(r, g, b))
 
-# --- Soft red glow (top-right) ---
+# --- Soft warm accent glow (top-right) ---
 glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 gd = ImageDraw.Draw(glow)
-cx, cy, rad = 1080, 90, 360
+cx, cy, rad = 1120, 70, 380
 for i in range(rad, 0, -2):
-    a = int(70 * (1 - i / rad))
-    gd.ellipse([cx - i, cy - i, cx + i, cy + i], fill=(RED[0], RED[1], RED[2], a))
-img = Image.alpha_composite(img.convert("RGBA"), glow).convert("RGB")
+    a = int(90 * (1 - i / rad))
+    gd.ellipse([cx - i, cy - i, cx + i, cy + i], fill=(ACCENT[0], ACCENT[1], ACCENT[2], a))
+img = Image.alpha_composite(img.convert("RGBA"), glow.point(lambda p: p)).convert("RGB")
 draw = ImageDraw.Draw(img)
 
+# --- Thin editorial inner frame ---
+draw.rectangle([28, 28, W - 29, H - 29], outline=BORDER, width=2)
+
 # --- Left accent bar ---
-draw.rectangle([0, 0, 14, H], fill=RED)
+draw.rectangle([28, 28, 42, H - 29], fill=ACCENT)
 
-MARGIN = 80
+MARGIN = 84
 
-# --- Logo: RED (red) + WEB STUDIO (white, tracked) ---
-logo_y = 64
-draw.text((MARGIN, logo_y), "RED", font=f_logo, fill=RED)
+# --- Logo: RED (terracotta serif) + Web Studio (ink-mute) + tagline ---
+logo_y = 74
+draw.text((MARGIN, logo_y), "RED", font=f_logo, fill=ACCENT)
 red_w = draw.textbbox((0, 0), "RED", font=f_logo)[2]
-# tracked uppercase "WEB STUDIO"
-sx = MARGIN + red_w + 22
-sy = logo_y + 34
-for ch in "WEB STUDIO":
-    draw.text((sx, sy), ch, font=f_studio, fill=WHITE)
-    sx += draw.textbbox((0, 0), ch, font=f_studio)[2] + 4
+draw.text((MARGIN + red_w + 18, logo_y + 24), "Web Studio", font=f_studio, fill=INK_MUTE)
+# tagline (tracked uppercase, terracotta)
+tx = MARGIN + 2
+ty = logo_y + 66
+for ch in "RESULTS. EFFICIENCY. DESIGN.":
+    draw.text((tx, ty), ch, font=f_tagline, fill=ACCENT)
+    tx += draw.textbbox((0, 0), ch, font=f_tagline)[2] + 3
 
-# --- Headline (two lines) ---
-hy = 230
-draw.text((MARGIN, hy), "Professional Web Design", font=f_head, fill=WHITE)
-# second line with red accent word
-line2_a = "+ "
-line2_b = "AI Chatbot"
-draw.text((MARGIN, hy + 86), line2_a, font=f_head, fill=WHITE)
-aw = draw.textbbox((0, 0), line2_a, font=f_head)[2]
-draw.text((MARGIN + aw, hy + 86), line2_b, font=f_head, fill=RED)
+# --- Headline (serif, ink) ---
+hy = 224
+draw.text((MARGIN, hy), "Professional Web Design", font=f_head, fill=INK)
+a = "+ "
+b = "AI Chatbot"
+draw.text((MARGIN, hy + 92), a, font=f_head, fill=INK)
+aw = draw.textbbox((0, 0), a, font=f_head)[2]
+draw.text((MARGIN + aw, hy + 92), b, font=f_head, fill=ACCENT)
 
 # --- Subheadline ---
-draw.text((MARGIN, hy + 188),
+draw.text((MARGIN, hy + 198),
           "Beautiful websites that convert for UK small businesses.",
-          font=f_sub, fill=MUTED)
+          font=f_sub, fill=INK_SOFT)
 
 # --- Bottom row: URL pill + feature chip ---
-by = 540
-# URL pill (red rounded)
+by = 524
+# URL pill (terracotta, cream text)
 url = "redwebstudio.com"
 pad_x, pad_y = 30, 16
 tw = draw.textbbox((0, 0), url, font=f_pill)[2]
 pill_w = tw + pad_x * 2
 ph = 60
-draw.rounded_rectangle([MARGIN, by, MARGIN + pill_w, by + ph], radius=30, fill=RED)
-draw.text((MARGIN + pad_x, by + pad_y), url, font=f_pill, fill=WHITE)
+draw.rounded_rectangle([MARGIN, by, MARGIN + pill_w, by + ph], radius=30, fill=ACCENT)
+draw.text((MARGIN + pad_x, by + pad_y), url, font=f_pill, fill=PAPER)
 
-# Feature chip
+# Feature chip (sage outline)
 chip = "Lead-capturing AI included"
-chx = MARGIN + pill_w + 28
+chx = MARGIN + pill_w + 26
 chip_tw = draw.textbbox((0, 0), chip, font=f_chip)[2]
-draw.rounded_rectangle([chx, by + 6, chx + chip_tw + 48, by + ph - 6],
-                       radius=24, outline=RED, width=2)
-# small dot
-draw.ellipse([chx + 18, by + 24, chx + 30, by + 36], fill=RED)
-draw.text((chx + 40, by + 16), chip, font=f_chip, fill=WHITE)
+draw.rounded_rectangle([chx, by + 6, chx + chip_tw + 50, by + ph - 6],
+                       radius=24, outline=SAGE, width=2)
+draw.ellipse([chx + 18, by + 24, chx + 30, by + 36], fill=SAGE)
+draw.text((chx + 42, by + 16), chip, font=f_chip, fill=INK_SOFT)
 
 # --- Save ---
 for out in ("website/og-image.png", "docs/og-image.png"):
