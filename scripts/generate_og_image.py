@@ -79,18 +79,15 @@ for ch in "RESULTS. EFFICIENCY. DESIGN.":
     draw.text((tx, ty), ch, font=f_tagline, fill=ACCENT)
     tx += draw.textbbox((0, 0), ch, font=f_tagline)[2] + 3
 
-# --- Headline (serif, ink) ---
-hy = 224
-draw.text((MARGIN, hy), "Professional Web Design", font=f_head, fill=INK)
-a = "+ "
-b = "AI Chatbot"
-draw.text((MARGIN, hy + 92), a, font=f_head, fill=INK)
-aw = draw.textbbox((0, 0), a, font=f_head)[2]
-draw.text((MARGIN + aw, hy + 92), b, font=f_head, fill=ACCENT)
+# --- Headline (serif) — brand tagline, distinct from the link title below ---
+f_big = font("Lora-Bold.ttf", 100)
+hy = 206
+draw.text((MARGIN, hy), "We Build.", font=f_big, fill=INK)
+draw.text((MARGIN, hy + 104), "You Grow.", font=f_big, fill=ACCENT)
 
 # --- Subheadline ---
-draw.text((MARGIN, hy + 198),
-          "Beautiful websites that convert for UK small businesses.",
+draw.text((MARGIN, hy + 230),
+          "Custom websites with a built-in AI assistant.",
           font=f_sub, fill=INK_SOFT)
 
 # --- Bottom row: URL pill + feature chip ---
@@ -105,7 +102,7 @@ draw.rounded_rectangle([MARGIN, by, MARGIN + pill_w, by + ph], radius=30, fill=A
 draw.text((MARGIN + pad_x, by + pad_y), url, font=f_pill, fill=PAPER)
 
 # Feature chip (sage outline)
-chip = "Lead-capturing AI included"
+chip = "Free website audit"
 chx = MARGIN + pill_w + 26
 chip_tw = draw.textbbox((0, 0), chip, font=f_chip)[2]
 draw.rounded_rectangle([chx, by + 6, chx + chip_tw + 50, by + ph - 6],
