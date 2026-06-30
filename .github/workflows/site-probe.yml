@@ -1,0 +1,32 @@
+name: site-probe
+on:
+  push:
+    paths:
+      - '.github/workflows/site-probe.yml'
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe custom domain and github.io
+        run: |
+          probe() {
+            url="$1"
+            echo "=== $url ==="
+            code=$(curl -sS -o body.html -w "%{http_code}" -L --max-time 30 "$url" || echo "000")
+            echo "HTTP $code"
+            if grep -qi "RED Web Studio\|<title" body.html; then
+              echo "RESULT: looks like a REAL page"
+              grep -i "<title" body.html | head -1
+            fi
+            if grep -qi "File not found\|There isn't a GitHub Pages site here\|site configured at this address" body.html; then
+              echo "RESULT: GitHub Pages 404 / not-found page"
+            fi
+            echo "--- first 300 chars of body ---"
+            head -c 300 body.html
+            echo ""
+            echo ""
+          }
+          probe "https://redwebstudio.com/"
+          probe "https://www.redwebstudio.com/"
+          probe "https://rodica85.github.io/red-web-studio/"
