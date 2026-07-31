@@ -140,5 +140,3 @@ document.querySelectorAll('.quick-btns button').forEach(b => {
 });
 aiSend.addEventListener('click', () => { const t = aiInput.value.trim(); if (t) { processMsg(t); aiInput.value = ''; } });
 aiInput.addEventListener('keypress', e => { if (e.key === 'Enter') { const t = aiInput.value.trim(); if (t) { processMsg(t); aiInput.value = ''; } } });
-
-setTimeout(() => { if (!aiChat.classList.contains('open')) { aiChat.classList.add('open'); setTimeout(() => aiChat.classList.remove('open'), 3000); } }, 5000);
