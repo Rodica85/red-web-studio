@@ -17,7 +17,7 @@ function typewrite() {
         setTimeout(typewrite, 100);
     }
 }
-typewrite();
+if (typeEl) typewrite();
 
 // ---- Fall-in on Scroll ----
 const fallObserver = new IntersectionObserver((entries) => {
@@ -47,41 +47,42 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// ---- Formspree Submit Handler (shared by Contact + Audit forms) ----
-function attachFormspree(formId, successText) {
+// ---- WhatsApp Submit Handler (shared by Contact + Audit forms) ----
+const WHATSAPP_NUMBER = '447424714686';
+
+function attachWhatsAppForm(formId, buildMessage) {
     const form = document.getElementById(formId);
     if (!form) return;
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+        if (!form.reportValidity()) return;
         const btn = form.querySelector('button[type="submit"]');
         const orig = btn.innerHTML;
-        btn.innerHTML = 'Sending...';
+        const message = buildMessage(new FormData(form));
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+        btn.innerHTML = 'Opening WhatsApp...';
         btn.disabled = true;
-
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-                btn.innerHTML = '&#10003; ' + successText;
-                btn.style.background = 'var(--green)'; btn.style.color = '#000';
-                form.reset();
-                setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 4000);
-            } else {
-                btn.innerHTML = '&#10007; Error, Try Again';
-                btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
-                setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
-            }
-        }).catch(() => {
-            btn.innerHTML = '&#10007; Error, Try Again';
-            btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
-            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }, 3000);
-        });
+        setTimeout(() => { btn.innerHTML = orig; btn.disabled = false; form.reset(); }, 2500);
     });
 }
-attachFormspree('contactForm', 'Message Sent!');
-attachFormspree('auditForm', 'Audit Requested!');
+
+attachWhatsAppForm('contactForm', (data) => (
+    `Hi RED Web Studio! I'm interested in working with you.\n\n` +
+    `Name: ${data.get('name') || '-'}\n` +
+    `Email: ${data.get('email') || '-'}\n` +
+    `Phone: ${data.get('phone') || '-'}\n` +
+    `Business: ${data.get('business') || '-'}\n` +
+    `Service needed: ${data.get('service') || '-'}\n` +
+    `Message: ${data.get('message') || '-'}`
+));
+
+attachWhatsAppForm('auditForm', (data) => (
+    `Hi RED Web Studio! I'd like a free website audit.\n\n` +
+    `Website: ${data.get('website') || '-'}\n` +
+    `Name: ${data.get('name') || '-'}\n` +
+    `Email: ${data.get('email') || '-'}\n` +
+    `Business type: ${data.get('business_type') || '-'}`
+));
 
 // ---- FAQ accordion: only one open at a time ----
 document.querySelectorAll('.faq-item').forEach(item => {

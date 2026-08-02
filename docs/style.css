@@ -459,6 +459,18 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     color: var(--ink-soft);
     max-width: 720px;
 }
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+.service-link .btn-arrow { transition: transform 0.3s ease; }
+.service-link:hover .btn-arrow { transform: translateX(6px); }
 .service-tag {
     font-family: var(--font-sans);
     font-size: 0.75rem;
@@ -1166,6 +1178,119 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     box-shadow: 0 4px 12px rgba(24, 119, 242, 0.35);
 }
 
+/* ---- Service Page ---- */
+.service-hero {
+    min-height: auto;
+    padding: 150px 0 70px;
+}
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    margin-bottom: 24px;
+}
+.breadcrumb a { color: var(--ink-mute); }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { color: var(--border); }
+.breadcrumb .current { color: var(--ink-soft); }
+.service-hero h1 {
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    max-width: 820px;
+    margin-bottom: 20px;
+}
+
+.service-content { padding: 20px 0 100px; background: var(--cream); }
+.service-content .container { max-width: 900px; }
+.service-lead {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+}
+.service-content p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+}
+.service-content h2 {
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    margin: 56px 0 22px;
+}
+.service-content h2:first-of-type { margin-top: 8px; }
+.service-content ul.service-check-list {
+    list-style: none;
+    margin: 28px 0;
+    display: grid;
+    gap: 14px;
+}
+.service-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+.service-check-list .check {
+    color: var(--sage);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+.service-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 32px 0 12px;
+}
+.service-feature-card {
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--r);
+    padding: 28px;
+}
+.service-feature-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+.service-feature-card p { margin-bottom: 0; font-size: 0.96rem; }
+.service-content blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 24px;
+    margin: 32px 0;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--ink);
+}
+.service-related {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+}
+.service-related h4 { margin-bottom: 16px; }
+.service-related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.service-related-links a {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 9px 18px;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+.service-related-links a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-tint); }
+
 /* ---- AI Chat Widget ---- */
 .ai-chat {
     position: fixed;
@@ -1407,6 +1532,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
     .service-row { padding: 28px 4px; gap: 20px; grid-template-columns: 52px 1fr; }
+    .service-feature-grid { grid-template-columns: 1fr; }
     .work-screenshot { height: 220px; }
     .chat-window { width: calc(100vw - 48px); right: -12px; }
     /* Compact navbar logo on tablet */
@@ -1422,6 +1548,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     .service-body h3 { font-size: 1.35rem; }
     .service-head { flex-direction: column; align-items: flex-start; gap: 8px; }
     .hero { padding: 112px 0 56px; min-height: auto; }
+    .service-hero { padding: 100px 0 48px; }
+    .service-content h2 { margin-top: 44px; }
     .hero-sub { font-size: 1.05rem; }
     .hero-cta { flex-direction: column; align-items: stretch; }
     .hero-cta .btn-lg { width: 100%; justify-content: center; }

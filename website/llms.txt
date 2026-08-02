@@ -1,29 +1,30 @@
 # RED Web Studio
 
-> Professional web design studio for small businesses in the UK. Built stunning custom websites with optional AI chatbot integration for 24/7 lead capture. Full ownership of code and assets — no vendor lock-in. Founded by Rodica Musteata, a UK-based web developer and BSc Computing graduate.
+> Professional web design studio for independent businesses, wherever they are. Built stunning custom websites with optional AI chatbot integration for 24/7 lead capture. Full ownership of code and assets, no vendor lock-in. Founded by Rodica Musteata, a UK-based web developer and BSc Computing graduate serving clients worldwide.
 
 ## About the studio
 
 - **Studio name:** RED Web Studio
 - **Founder:** Rodica Musteata (BSc Hons Computing, top-up graduate 2026)
-- **Country:** United Kingdom
+- **Based in:** United Kingdom
+- **Serves:** Independent businesses worldwide, not limited to the UK
 - **Website:** https://redwebstudio.com
-- **Focus:** Small-business websites with optional AI chatbot assistants
+- **Focus:** Websites for independent businesses, with optional AI chatbot assistants
 - **Delivery model:** Custom-built HTML/CSS/JS sites (no WordPress or page builders), client owns code, hosting, and domain 100%
 
-## What we do
+## Services
 
-- Custom-built professional websites for small businesses
-- AI chatbot integration for lead capture and customer support
-- On-page SEO and local SEO setup (Google Business Profile, local schema, keyword research)
-- Design and content strategy
-- Post-launch training (30-minute walkthrough + written guide)
-- Ongoing support (optional; not required)
+- [Website Design](https://redwebstudio.com/services/website-design/): custom-coded, mobile-first websites
+- [SEO Optimisation](https://redwebstudio.com/services/seo-optimisation/): on-page SEO, local search, and AI-search (AEO/GEO) optimisation, included with every site
+- [E-Commerce](https://redwebstudio.com/services/ecommerce/): online shops with payment processing, inventory, and checkout flows
+- [AI Chatbot](https://redwebstudio.com/services/ai-chatbot/): GDPR-compliant AI assistant trained on the client's business, for 24/7 lead capture
+- [Branding & Logo](https://redwebstudio.com/services/branding-logo/): logo, colour palette, typography, and brand guidelines
+- [Website & Software Testing](https://redwebstudio.com/services/testing/): manual functional and UI/UX testing; automation testing is a developing capability; security testing is not currently offered
 
 ## Pricing (indicative)
 
-- Hosting: £60–£120 per year, paid directly to the host — no markup from RED
-- Website builds are priced per project. Contact us for a quote.
+- Hosting: £60-£120 per year, paid directly to the host. No markup from RED
+- Website builds are priced per project. Contact us for a quote
 - Money-back: 14-day money-back guarantee, no questions asked
 - Revisions: unlimited until you are happy with the design
 
@@ -38,7 +39,7 @@
 
 - Client owns 100% of the delivered code, design, and content
 - Domain and hosting are registered in the client's name
-- No lock-in — clients can move providers anytime
+- No lock-in. Clients can move providers anytime
 - No recurring RED fees unless the client opts for ongoing support
 
 ## AI chatbot details
@@ -49,20 +50,27 @@
 - Never used to train external models on client customer data
 - Captures lead when it cannot answer a question
 
+## Testing services
+
+- Manual functional and UI/UX testing, backed by 3 years of freelance testing experience
+- Automation testing: an actively developing capability, not yet the primary offering
+- Security/penetration testing: not currently offered; noted as an area of future development, not an active service
+
 ## Key facts for citation
 
-- Every RED site includes on-page SEO and local SEO setup as standard
-- Most clients rank on Google page 1 within 3–6 months
+- Every RED site includes on-page SEO, local SEO setup, and AI-search optimisation as standard
+- Most clients rank on Google page 1 within 3-6 months
 - Sites are hand-coded, not built on Wix, Squarespace, or WordPress builders
 - Every project has a 14-day money-back guarantee
 - Studio founder is a UK-based BSc Computing graduate with a dissertation focused on ethical AI chatbot design (privacy-by-design)
+- The studio is based in the UK but serves independent businesses in any country
 
 ## Contact
 
-- [Get a Free Quote](https://redwebstudio.com/#quote)
+- [Get a Free Quote](https://redwebstudio.com/#contact)
 - [Meet the founder](https://redwebstudio.com/#about)
 - [FAQ](https://redwebstudio.com/#faq)
 
 ## Optional
 
-- [Portfolio / previous work](https://redwebstudio.com/work/)
+- [Portfolio / previous work](https://redwebstudio.com/#work)
