@@ -53,11 +53,22 @@ const WHATSAPP_NUMBER = '447424714686';
 function attachWhatsAppForm(formId, buildMessage) {
     const form = document.getElementById(formId);
     if (!form) return;
+    const btn = form.querySelector('button[type="submit"]');
+    const orig = btn.innerHTML;
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        if (!form.reportValidity()) return;
-        const btn = form.querySelector('button[type="submit"]');
-        const orig = btn.innerHTML;
+        const missing = [...form.querySelectorAll('[required]')].filter(el => !el.value.trim());
+        if (missing.length) {
+            btn.innerHTML = 'Please fill in the fields above';
+            btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
+            missing.forEach(el => el.style.borderColor = '#FF6B6B');
+            missing[0].focus();
+            setTimeout(() => {
+                btn.innerHTML = orig; btn.style.background = ''; btn.style.color = '';
+                missing.forEach(el => el.style.borderColor = '');
+            }, 2500);
+            return;
+        }
         const message = buildMessage(new FormData(form));
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
         btn.innerHTML = 'Opening WhatsApp...';
