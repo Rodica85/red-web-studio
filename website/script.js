@@ -55,7 +55,7 @@ function attachWhatsAppForm(formId, buildMessage) {
     if (!form) return;
     const btn = form.querySelector('button[type="submit"]');
     const orig = btn.innerHTML;
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
         const missing = [...form.querySelectorAll('[required]')].filter(el => !el.value.trim());
         if (missing.length) {
@@ -69,10 +69,11 @@ function attachWhatsAppForm(formId, buildMessage) {
             }, 2500);
             return;
         }
-        const message = buildMessage(new FormData(form));
+        btn.disabled = true;
+        const setStatus = (text) => { btn.innerHTML = text; };
+        const message = await buildMessage(new FormData(form), setStatus);
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
         btn.innerHTML = 'Opening WhatsApp...';
-        btn.disabled = true;
         setTimeout(() => { btn.innerHTML = orig; btn.disabled = false; form.reset(); }, 2500);
     });
 }
@@ -87,13 +88,66 @@ attachWhatsAppForm('contactForm', (data) => (
     `Message: ${data.get('message') || '-'}`
 ));
 
-attachWhatsAppForm('auditForm', (data) => (
-    `Hi RED Web Studio! I'd like a free website audit.\n\n` +
-    `Website: ${data.get('website') || '-'}\n` +
-    `Name: ${data.get('name') || '-'}\n` +
-    `Email: ${data.get('email') || '-'}\n` +
-    `Business type: ${data.get('business_type') || '-'}`
-));
+// ---- Free Audit: automated PageSpeed Insights check ----
+const PSI_ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+const PSI_API_KEY = 'AIzaSyB9nNIJUTXMEr0JwHxiXUQj_1yuWZAym0c';
+
+function normaliseUrl(raw) {
+    const url = raw.trim();
+    return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+}
+
+async function runPageSpeedCheck(rawUrl) {
+    const params = new URLSearchParams();
+    params.append('url', normaliseUrl(rawUrl));
+    params.append('strategy', 'mobile');
+    params.append('key', PSI_API_KEY);
+    ['performance', 'seo', 'accessibility', 'best-practices'].forEach(c => params.append('category', c));
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 25000);
+    try {
+        const res = await fetch(`${PSI_ENDPOINT}?${params.toString()}`, { signal: controller.signal });
+        if (!res.ok) throw new Error('PSI request failed');
+        const data = await res.json();
+        const cats = data.lighthouseResult && data.lighthouseResult.categories;
+        if (!cats) throw new Error('No categories in PSI response');
+        const score = (c) => (cats[c] && cats[c].score != null) ? Math.round(cats[c].score * 100) : null;
+        return {
+            performance: score('performance'),
+            seo: score('seo'),
+            accessibility: score('accessibility'),
+            bestPractices: score('best-practices'),
+        };
+    } catch (err) {
+        return null;
+    } finally {
+        clearTimeout(timer);
+    }
+}
+
+attachWhatsAppForm('auditForm', async (data, setStatus) => {
+    const website = (data.get('website') || '').trim();
+    let scoreBlock = "Automated scan: couldn't complete in time, please check this one manually.";
+    if (website) {
+        setStatus('Analysing your site...');
+        const result = await runPageSpeedCheck(website);
+        if (result) {
+            scoreBlock =
+                `Automated scores (mobile, via Google PageSpeed):\n` +
+                `- Performance: ${result.performance ?? '-'}/100\n` +
+                `- SEO: ${result.seo ?? '-'}/100\n` +
+                `- Accessibility: ${result.accessibility ?? '-'}/100\n` +
+                `- Best Practices: ${result.bestPractices ?? '-'}/100`;
+        }
+    }
+    return `Hi RED Web Studio! I'd like a free website audit.\n\n` +
+        `Website: ${website || '-'}\n` +
+        `Name: ${data.get('name') || '-'}\n` +
+        `Email: ${data.get('email') || '-'}\n` +
+        `Business type: ${data.get('business_type') || '-'}\n\n` +
+        `${scoreBlock}`;
+});
 
 // ---- FAQ accordion: only one open at a time ----
 document.querySelectorAll('.faq-item').forEach(item => {
