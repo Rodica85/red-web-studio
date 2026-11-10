@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Sharp &amp; Co. Barbers | Barbershop in Bristol</title>
+<meta name="description" content="Sharp &amp; Co. Barbers: skin fades, classic cuts and hot-towel shaves in Bristol. Walk-ins welcome, book online in seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HairSalon","name":"Sharp & Co. Barbers","telephone":"+447700900201","address":{"@type":"PostalAddress","streetAddress":"12 Example Street","addressLocality":"Bristol","addressCountry":"GB"},"openingHours":["Tu-Fr 09:00-19:00","Sa 08:00-17:00","Su 10:00-15:00"],"priceRange":"££"}
+</script>
+<style>
+:root{--bg:#121212;--bg2:#1b1b1b;--line:#2c2c2c;--text:#f1ede6;--muted:#a39d93;--brass:#c9a227;--brass2:#e6c65a;--head:'Bebas Neue',Impact,sans-serif;--body:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:104px}
+body{background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul{list-style:none}
+.wrap{width:min(1140px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);font-weight:400;letter-spacing:.02em;line-height:1}
+h2{font-size:clamp(2.4rem,5vw,3.6rem)}
+.eyebrow{color:var(--brass);font-weight:700;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:2px;font-weight:700;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s;border:2px solid var(--brass);cursor:pointer}
+.btn--gold{background:var(--brass);color:#121212}.btn--gold:hover{background:var(--brass2);border-color:var(--brass2)}
+.btn--ghost{color:var(--text)}.btn--ghost:hover{background:var(--brass);color:#121212}
+/* demo bar */
+.demo-bar{position:fixed;inset:0 0 auto;z-index:70;height:32px;display:flex;align-items:center;justify-content:center;padding:0 12px;background:#f2c14e;color:#1a0e07;font:700 .72rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* header */
+.header{position:fixed;top:32px;left:0;right:0;z-index:50;background:rgba(18,18,18,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header__in{display:flex;align-items:center;gap:28px;height:72px}
+.logo{font-family:var(--head);font-size:1.8rem;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border:2px solid var(--brass);border-radius:50%;display:grid;place-items:center;font-style:normal;color:var(--brass);font-size:1.1rem}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-size:.9rem;color:var(--muted);font-weight:500}.nav a:hover{color:var(--text)}
+.header .btn{padding:10px 18px;font-size:.8rem}
+.burger{display:none;margin-left:auto;background:none;border:0;width:40px;height:40px;flex-direction:column;justify-content:center;gap:6px;padding:8px;cursor:pointer}
+.burger span{height:2px;background:var(--text)}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 0 80px;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,12,12,.95) 0%,rgba(12,12,12,.75) 45%,rgba(12,12,12,.3) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(3.6rem,10vw,7.5rem);max-width:760px}
+.hero h1 span{color:var(--brass)}
+.hero p{max-width:480px;color:#d8d2c8;font-size:1.1rem;margin:20px 0 32px}
+.hero__btns{display:flex;flex-wrap:wrap;gap:14px}
+.hero__facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:48px;color:var(--muted);font-size:.9rem}
+.hero__facts b{display:block;color:var(--text);font-family:var(--head);font-size:2rem;font-weight:400;letter-spacing:.03em}
+/* sections */
+.section{padding:110px 0}
+.section--alt{background:var(--bg2)}
+.head{max-width:620px;margin-bottom:56px}
+.head p{color:var(--muted);margin-top:14px}
+/* price list */
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:20px 64px}
+.price{display:flex;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1px dashed var(--line)}
+.price h3{font-size:1.6rem}
+.price small{display:block;color:var(--muted);font-family:var(--body);font-size:.88rem;letter-spacing:0;margin-top:4px}
+.price .dots{flex:1}
+.price b{font-family:var(--head);font-size:1.9rem;font-weight:400;color:var(--brass)}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about__img{position:relative}
+.about__img img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.about__img:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--brass);z-index:-1}
+.about p{color:#cfc9bf;margin-bottom:16px}
+.ticks{margin-top:24px;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:center}
+.ticks li:before{content:"✓";color:var(--brass);font-weight:700}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{width:100%;height:280px;object-fit:cover;filter:grayscale(.3);transition:.3s}
+.gallery img:hover{filter:none}
+.gallery img:first-child{grid-column:span 2}
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:var(--bg);border:1px solid var(--line);padding:28px}
+.review .stars{color:var(--brass);letter-spacing:3px;margin-bottom:12px}
+.review p{color:#d8d2c8}
+.review cite{display:block;margin-top:16px;color:var(--muted);font-style:normal;font-size:.9rem}
+.note{color:var(--muted);font-size:.8rem;margin-top:16px}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.hours li span:last-child{color:var(--brass);font-weight:700}
+.contact-list{margin:28px 0;display:grid;gap:10px}
+.contact-list a{display:flex;gap:12px;align-items:center;font-weight:500}
+.contact-list a span{color:var(--brass);width:22px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(1) invert(.9) contrast(.9)}
+/* footer */
+.footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.85rem}
+.footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(37,211,102,.6)}
+.wa svg{width:30px;fill:#fff}
+@media (max-width:900px){
+  .nav{position:fixed;top:104px;left:0;right:0;flex-direction:column;gap:0;background:rgba(18,18,18,.98);padding:8px 16px 20px;border-bottom:1px solid var(--line);transform:translateY(-130%);visibility:hidden;transition:.3s;z-index:-1}
+  .nav.open{transform:none;visibility:visible}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line);color:var(--text);font-size:1.05rem}
+  .header .btn{display:none}.burger{display:flex}
+  .prices,.about,.visit{grid-template-columns:1fr}
+  .about{gap:48px}.about__img{margin-right:18px}
+  .reviews{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}.gallery img{height:200px}
+  .section{padding:80px 0}
+  .hero{align-items:flex-end}
+  .hero:after{background:linear-gradient(0deg,rgba(12,12,12,.97) 0%,rgba(12,12,12,.8) 50%,rgba(12,12,12,.4) 100%)}
+}
+@media (max-width:400px){.demo-bar{font-size:.6rem;letter-spacing:.05em}.price h3{font-size:1.35rem}}
+</style>
+</head>
+<body>
+<div class="demo-bar" role="note">Demo template · Starter £349 – by Red Web Studio</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a href="#top" class="logo"><i>S</i>Sharp &amp; Co.</a>
+    <nav class="nav" id="nav">
+      <a href="#prices">Prices</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#visit">Visit us</a>
+    </nav>
+    <a href="#visit" class="btn btn--gold">Book now</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1800&q=80" alt="Inside the barbershop">
+    <div class="wrap">
+      <p class="eyebrow">Barbershop · Bristol</p>
+      <h1>Sharp cuts.<br><span>No waiting.</span></h1>
+      <p>Skin fades, classic scissor cuts and hot-towel shaves from barbers who take their time. Walk in or book your chair in seconds.</p>
+      <div class="hero__btns">
+        <a href="https://wa.me/447700900201?text=Hi%20Sharp%20%26%20Co%2C%20I%27d%20like%20to%20book%20a%20cut." class="btn btn--gold" target="_blank" rel="noopener">Book on WhatsApp</a>
+        <a href="#prices" class="btn btn--ghost">See prices</a>
+      </div>
+      <div class="hero__facts">
+        <div><b>4.9 ★</b>Google rating</div>
+        <div><b>10+ yrs</b>Behind the chair</div>
+        <div><b>7 days</b>Open every week</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="prices">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Price list</p><h2>Cuts &amp; shaves</h2><p>Clear prices, no surprises. Every cut includes a wash, hot towel and styling.</p></div>
+      <div class="prices">
+        <div class="price"><div><h3>Classic cut</h3><small>Scissor or clipper, finished with a style</small></div><span class="dots"></span><b>£18</b></div>
+        <div class="price"><div><h3>Skin fade</h3><small>Bald or zero fade, blended to perfection</small></div><span class="dots"></span><b>£22</b></div>
+        <div class="price"><div><h3>Beard trim &amp; shape</h3><small>Line-up, trim and hot towel</small></div><span class="dots"></span><b>£12</b></div>
+        <div class="price"><div><h3>Cut &amp; beard</h3><small>The full works, our most booked</small></div><span class="dots"></span><b>£28</b></div>
+        <div class="price"><div><h3>Hot-towel shave</h3><small>Traditional cut-throat razor shave</small></div><span class="dots"></span><b>£20</b></div>
+        <div class="price"><div><h3>Kids' cut</h3><small>Under 12s, any style</small></div><span class="dots"></span><b>£13</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="about">
+    <div class="wrap about">
+      <div class="about__img"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=80" alt="Barber giving a skin fade" loading="lazy"></div>
+      <div>
+        <p class="eyebrow">About us</p>
+        <h2>A proper barbershop</h2>
+        <p style="margin-top:20px">We opened Sharp &amp; Co. to bring back the old-school barbershop: good chat, sharp tools and no rushing. Every barber on our team has at least five years of experience.</p>
+        <p>Whether it's your weekly fade or a shave before the big day, you'll leave looking your best.</p>
+        <ul class="ticks"><li>Walk-ins welcome, or book ahead</li><li>Card, cash and Apple Pay</li><li>Free coffee or a cold drink while you wait</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Gallery</p><h2>Fresh from the chair</h2></div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80" alt="Barber at work" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80" alt="Barber tools" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?w=600&q=80" alt="Vintage barber chair" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=600&q=80" alt="Barbershop interior" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&q=80" alt="Fade haircut" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&q=80" alt="Barbershop chairs" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="reviews">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Reviews</p><h2>What clients say</h2></div>
+      <div class="reviews">
+        <blockquote class="review"><div class="stars">★★★★★</div><p>"Best fade I've had in years. Booked on WhatsApp, in and out in 30 minutes."</p><cite>Sample review</cite></blockquote>
+        <blockquote class="review"><div class="stars">★★★★★</div><p>"Took my son for his first proper haircut. Patient, friendly and great result."</p><cite>Sample review</cite></blockquote>
+        <blockquote class="review"><div class="stars">★★★★★</div><p>"The hot-towel shave is worth every penny. Feels like a proper treat."</p><cite>Sample review</cite></blockquote>
+      </div>
+      <p class="note">Sample reviews for this demo. Your real Google reviews go here.</p>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="wrap visit">
+      <div>
+        <p class="eyebrow">Visit us</p>
+        <h2>Opening hours</h2>
+        <ul class="hours" style="margin-top:24px">
+          <li><span>Monday</span><span>Closed</span></li>
+          <li><span>Tuesday – Friday</span><span>9am – 7pm</span></li>
+          <li><span>Saturday</span><span>8am – 5pm</span></li>
+          <li><span>Sunday</span><span>10am – 3pm</span></li>
+        </ul>
+        <div class="contact-list">
+          <a href="tel:+447700900201"><span>☎</span>07700 900201</a>
+          <a href="mailto:hello@example.com"><span>✉</span>hello@example.com</a>
+          <a href="#visit"><span>⌖</span>12 Example Street, Bristol</a>
+        </div>
+        <a href="https://wa.me/447700900201?text=Hi%20Sharp%20%26%20Co%2C%20I%27d%20like%20to%20book%20a%20cut." class="btn btn--gold" target="_blank" rel="noopener">Book your chair</a>
+      </div>
+      <div class="map"><iframe title="Map: Bristol" src="https://maps.google.com/maps?q=Bristol&z=13&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="wrap"><span>© <span id="y"></span> Sharp &amp; Co. Barbers</span><span>Website by Red Web Studio</span></div></footer>
+
+<a class="wa" href="https://wa.me/447700900201" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.2-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9 2 .9 2.8 1 3.9.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5l-.7-.4z"/></svg></a>
+
+<script>
+const b=document.getElementById('burger'),n=document.getElementById('nav');
+b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded',false)}));
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

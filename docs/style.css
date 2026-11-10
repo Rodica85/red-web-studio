@@ -2178,3 +2178,17 @@ a.nav-pill svg { width: 15px; height: 15px; margin-right: 7px; flex-shrink: 0; }
 
 /* About photo: a bit smaller */
 .about-img { width: 180px; height: 225px; }
+
+/* ===== Starter demos ===== */
+.demos { padding: 120px 0; background: var(--paper); }
+.demos-intro { max-width: 640px; margin: -32px 0 48px; color: var(--ink-soft); font-size: 1.05rem; line-height: 1.65; }
+.demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.demo-card .work-screenshot { height: 220px; width: 100%; aspect-ratio: auto; }
+.demo-card .work-screenshot img { object-position: top; }
+.demo-card h4 { font-size: 1.25rem; }
+.demo-card > p { padding-bottom: 28px; }
+.demos-more { text-align: center; margin-top: 44px; }
+.price-demo-link { display: block; text-align: center; margin-top: 14px; font-family: var(--font-sans); font-size: .9rem; font-weight: 600; color: var(--accent); }
+.price-demo-link:hover { color: var(--accent-deep); }
+@media (max-width: 980px) { .demo-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .demos { padding: 72px 0; } .demo-grid { grid-template-columns: 1fr; gap: 22px; } .demos-intro { margin-top: -20px; } }
