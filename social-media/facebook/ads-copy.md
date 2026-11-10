@@ -1,161 +1,131 @@
-# RED Web Studio — Facebook Ads Copy
+# RED Web Studio — Facebook Ads Copy (v2, new packages)
 
-Ready-to-use ad copy. Create matching visuals using cover-photo.html as template.
+Prices match [pricing-packages.md](../../plans/pricing-packages.md) and the live site. Copy each
+block straight into Ads Manager. Run ads only after the Pricing section is live on the site.
 
----
-
-## AD 1 — Problem / Solution (Awareness)
-**Objective:** Traffic
-**Budget:** £5-10/day
-**Audience:** Small business owners UK, 25-55, interests: Small business, Entrepreneurship, Shopify, Wix, Squarespace
-
-**Primary Text:**
-Still relying on word of mouth alone?
-
-In 2026, 81% of customers search online before buying. If your business doesn't have a professional website, you're losing customers every single day.
-
-At RED Web Studio, we build affordable, professional websites for small businesses across the UK.
-
-→ Custom design (not a template)
-→ SEO included (so people find you on Google)
-→ AI chatbot that answers customer questions 24/7
-→ Live in just 7 days
-→ Starting from £399
-
-Your website should be your hardest-working employee.
-
-Book a free consultation — no obligation, no pressure.
-
-**Headline:** Professional Websites From £399
-**Description:** Custom design. SEO included. 7-day delivery. Free consultation.
-**CTA Button:** Learn More
+Targeting: Facebook local radius around Abingdon / Oxfordshire (start 15 miles), owners of
+salons, trades, mobile services, clinics; or lead form with the Free Audit as the offer.
+Budget to start: £5/day.
 
 ---
 
-## AD 2 — Social Proof (Consideration)
-**Objective:** Traffic / Leads
-**Budget:** £5-10/day
-**Audience:** Retarget website visitors + lookalike audience
+## AD 1 — Entry offer (Starter)
 
-**Primary Text:**
-"RED built our website in just 5 days. We've had 30+ new enquiries this month alone!"
-— Sarah K., Beauty Salon Owner
+**Primary text**
 
-"The AI chatbot handles bookings while I sleep. Best investment I've made."
-— Marco A., Restaurant Owner
+```
+No website yet? Customers who can't find you online are booking someone else.
 
-"Better quality than agencies charging 3x more."
-— James P., Electrician
+RED Web Studio builds a custom one-page website for local businesses:
 
-We've helped 50+ small businesses across the UK get online and grow.
+→ £349 once, or £35/month over 12 months
+→ Contact form, WhatsApp and call button
+→ Shows up on Google (SEO included)
+→ Live in about 5 days
 
-Your turn?
+Message us "SITE" and we'll send you a sketch of your homepage.
+```
 
-→ Professional website from £399
-→ AI chatbot included from £799
-→ Free consultation — no strings attached
+**Headline**
 
-**Headline:** Trusted by 50+ UK Small Businesses
-**Description:** See why business owners love RED Web Studio.
-**CTA Button:** Get Quote
+```
+One-page website from £349
+```
 
----
+**Description**
 
-## AD 3 — Special Offer (Conversion)
-**Objective:** Leads
-**Budget:** £10-15/day
-**Audience:** Engaged audience + local targeting
-
-**Primary Text:**
-LIMITED OFFER: 20% off your new business website.
-
-→ Starter: £399 → £319
-→ Business + AI Chatbot: £799 → £639
-→ E-Commerce + AI: £1,499 → £1,199
-
-Every package includes:
-✓ Custom professional design
-✓ Mobile responsive
-✓ SEO optimisation
-✓ 7-day delivery
-
-Only 5 spots available at this price. First come, first served.
-
-DM us "DEAL" or book a free consultation below.
-
-**Headline:** 20% Off — Limited Spots Available
-**Description:** Professional website + AI chatbot from £319. Custom design, SEO included.
-**CTA Button:** Sign Up
+```
+Custom design. SEO included. Live in 5 days.
+```
 
 ---
 
-## AD 4 — AI Chatbot Feature (Awareness)
-**Objective:** Video views / Traffic
-**Budget:** £5/day
-**Audience:** Small business owners UK
+## AD 2 — Free audit (leads)
 
-**Primary Text:**
-What if your website could answer customer questions, book appointments, and capture leads... while you sleep?
+**Primary text**
 
-That's exactly what our AI chatbot does.
+```
+How fast is your website on a phone? Google measures it, and slow sites lose customers before the page even loads.
 
-→ Trained on YOUR business
-→ Answers FAQs automatically
-→ Books appointments 24/7
-→ Captures leads overnight
-→ Saves you 10+ hours per week
+Run the free audit at redwebstudio.com and see your real score in seconds. Then message us the result and we'll tell you what to fix first.
+```
 
-It's like hiring a receptionist that works 24/7 and never takes a day off.
+**Headline**
 
-Available as part of our Business package (£799) or as an add-on (£99).
+```
+Free website speed and SEO audit
+```
 
-See it in action on our website.
+**Description**
 
-**Headline:** Your 24/7 AI Employee
-**Description:** AI chatbot that answers questions, books appointments, captures leads.
-**CTA Button:** Learn More
+```
+See your Google score in 10 seconds.
+```
 
 ---
 
-## AD 5 — Retargeting (Conversion)
-**Objective:** Conversions
-**Budget:** £5-10/day
-**Audience:** Website visitors who didn't convert (last 30 days)
+## AD 3 — Proof (Business package)
 
-**Primary Text:**
-Still thinking about it?
+**Primary text**
 
-We noticed you checked out RED Web Studio. Here's a reminder of what we offer:
+```
+We built Gung Chaba Massage's website in Abingdon: booking by WhatsApp and email, gift vouchers, mobile-first. They're at 5.0★ on Google, and now their site matches.
 
-→ Custom website design (not templates)
-→ AI chatbot for 24/7 lead capture
-→ SEO so customers find you on Google
-→ All delivered in just 7 days
+A full 5-page business website from £790 (or £69/month over 12 months):
 
-Plus, book this week and get a free 1-month support package included.
+✓ Custom design, not a template
+✓ Booking or enquiry flow
+✓ SEO and Google Business Profile text
+✓ Customer-service chat included
+✓ Live in 7-10 days
 
-No risk. No obligation. Just a quick 15-minute call to discuss your business.
+See it live: gungchaba.online
+Want one like it? Message us "SITE".
+```
 
-**Headline:** Let's Build Your Website This Week
-**Description:** Free consultation. 7-day delivery. From £399.
-**CTA Button:** Book Now
+**Headline**
+
+```
+Full business website from £790
+```
+
+**Description**
+
+```
+5 pages, booking, SEO. Pay monthly if you prefer.
+```
 
 ---
 
-## TARGETING NOTES
+## AD 4 — Local search (Growth package)
 
-### Best Audiences for UK Small Business:
-- **Interests:** Small business, Entrepreneurship, Business owner, Self-employed, Startup, Shopify, Wix, WordPress, Google My Business
-- **Behaviours:** Small business owners, Page admins
-- **Demographics:** 25-55, UK, English
-- **Locations:** United Kingdom (or specific cities/regions)
+**Primary text**
 
-### Campaign Structure:
-1. **Week 1-2:** Run Ad 1 (Awareness) — build pixel data
-2. **Week 3-4:** Run Ad 2 (Social Proof) + Ad 4 (AI feature)
-3. **Month 2:** Add Ad 3 (Offer) + Ad 5 (Retargeting)
+```
+Show up when people search "[your service] in [your town]".
 
-### Budget Recommendation:
-- Start: £5-10/day (£150-300/month)
-- Scale what works: increase budget on best-performing ads
-- Always test 2-3 creatives per ad set
+We built Red Speed Rider's site with a dedicated page for each of their 16 service areas, so customers across Oxfordshire find them on Google, not just people who already knew the name.
+
+Growth package £1,290 (or £109/month over 12 months): up to 10 pages, local-SEO pages per service or area, articles, a quote flow and a customer-service chat.
+
+Message us "LOCAL" and we'll show you what it would look like for your business.
+```
+
+**Headline**
+
+```
+Get found in every town you serve
+```
+
+**Description**
+
+```
+Local SEO pages, quote flow, speed report.
+```
+
+---
+
+## Notes
+- Chat is included in Business and Growth, mention it in those ads. AI-powered versions are quoted per project. Live examples: redspeedrider.co.uk and doctorstanlarisa.ro.
+- Offer "Pay monthly" in the first line of any ad that mentions price, it lowers the barrier most.
+- After 2-3 weeks, keep the ad with the lowest cost per message and stop the others.

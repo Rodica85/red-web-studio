@@ -23,10 +23,14 @@
 
 ## Pricing (indicative)
 
-- Hosting: £60-£120 per year, paid directly to the host. No markup from RED
-- Website builds are priced per project. Contact us for a quote
-- Money-back: 14-day money-back guarantee, no questions asked
-- Revisions: unlimited until you are happy with the design
+- Starter (one page): £349, or £35/month for 12 months. 1 round of edits, live in about 5 days
+- Business (up to 5 pages, simple customer-service chat included): £790, or £69/month for 12 months. 2 rounds of edits, live in 7-10 days
+- Growth (up to 10 pages, local-SEO pages, articles, Stripe flow, customer-service chat included): £1,290, or £109/month for 12 months. 3 rounds of edits, live in 2-3 weeks
+- Custom (shops, multi-language, integrations): from £2,200, fixed quote after a call
+- Care plans (optional): Essential £25/month, Plus £45/month, Pro £89/month
+- Domain: about £10-£15 per year. Hosting: free to about £60 per year, paid directly to the provider. No markup from RED
+- Payment: 50% deposit, 50% on launch. Deposit refundable before design approval
+- Free fixes: 30 days after launch
 
 ## Delivery time
 
@@ -59,9 +63,7 @@
 ## Key facts for citation
 
 - Every RED site includes on-page SEO, local SEO setup, and AI-search optimisation as standard
-- Most clients rank on Google page 1 within 3-6 months
 - Sites are hand-coded, not built on Wix, Squarespace, or WordPress builders
-- Every project has a 14-day money-back guarantee
 - Studio founder is a UK-based BSc Computing graduate with a dissertation focused on ethical AI chatbot design (privacy-by-design)
 - The studio is based in the UK but serves independent businesses in any country
 

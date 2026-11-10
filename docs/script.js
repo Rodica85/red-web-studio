@@ -43,11 +43,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
         e.preventDefault();
         const t = document.querySelector(this.getAttribute('href'));
-        if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
+        if (t) {
+            // Land so the section's content sits just under the navbar (skip the section's own top padding)
+            const pad = parseFloat(getComputedStyle(t).paddingTop) || 0;
+            const nav = navbar ? navbar.offsetHeight : 80;
+            const top = t.getBoundingClientRect().top + window.scrollY + pad - nav - 24;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        }
     });
 });
 
-// ---- WhatsApp Submit Handler (shared by Contact + Audit forms) ----
+// ---- WhatsApp Submit Handler (Contact form) ----
 const WHATSAPP_NUMBER = '447424714686';
 
 function attachWhatsAppForm(formId, buildMessage) {
@@ -88,67 +94,6 @@ attachWhatsAppForm('contactForm', (data) => (
     `Message: ${data.get('message') || '-'}`
 ));
 
-// ---- Free Audit: automated PageSpeed Insights check ----
-const PSI_ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
-const PSI_API_KEY = 'AIzaSyB9nNIJUTXMEr0JwHxiXUQj_1yuWZAym0c';
-
-function normaliseUrl(raw) {
-    const url = raw.trim();
-    return /^https?:\/\//i.test(url) ? url : `https://${url}`;
-}
-
-async function runPageSpeedCheck(rawUrl) {
-    const params = new URLSearchParams();
-    params.append('url', normaliseUrl(rawUrl));
-    params.append('strategy', 'mobile');
-    params.append('key', PSI_API_KEY);
-    ['performance', 'seo', 'accessibility', 'best-practices'].forEach(c => params.append('category', c));
-
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 25000);
-    try {
-        const res = await fetch(`${PSI_ENDPOINT}?${params.toString()}`, { signal: controller.signal });
-        if (!res.ok) throw new Error('PSI request failed');
-        const data = await res.json();
-        const cats = data.lighthouseResult && data.lighthouseResult.categories;
-        if (!cats) throw new Error('No categories in PSI response');
-        const score = (c) => (cats[c] && cats[c].score != null) ? Math.round(cats[c].score * 100) : null;
-        return {
-            performance: score('performance'),
-            seo: score('seo'),
-            accessibility: score('accessibility'),
-            bestPractices: score('best-practices'),
-        };
-    } catch (err) {
-        return null;
-    } finally {
-        clearTimeout(timer);
-    }
-}
-
-attachWhatsAppForm('auditForm', async (data, setStatus) => {
-    const website = (data.get('website') || '').trim();
-    let scoreBlock = "Automated scan: couldn't complete in time, please check this one manually.";
-    if (website) {
-        setStatus('Analysing your site...');
-        const result = await runPageSpeedCheck(website);
-        if (result) {
-            scoreBlock =
-                `Automated scores (mobile, via Google PageSpeed):\n` +
-                `- Performance: ${result.performance ?? '-'}/100\n` +
-                `- SEO: ${result.seo ?? '-'}/100\n` +
-                `- Accessibility: ${result.accessibility ?? '-'}/100\n` +
-                `- Best Practices: ${result.bestPractices ?? '-'}/100`;
-        }
-    }
-    return `Hi RED Web Studio! I'd like a free website audit.\n\n` +
-        `Website: ${website || '-'}\n` +
-        `Name: ${data.get('name') || '-'}\n` +
-        `Email: ${data.get('email') || '-'}\n` +
-        `Business type: ${data.get('business_type') || '-'}\n\n` +
-        `${scoreBlock}`;
-});
-
 // ---- FAQ accordion: only one open at a time ----
 document.querySelectorAll('.faq-item').forEach(item => {
     item.addEventListener('toggle', () => {
@@ -168,9 +113,9 @@ const aiInput = document.getElementById('aiInput');
 const aiSend = document.getElementById('aiSend');
 
 const responses = {
-    'I need a website': "We design professional websites for small businesses across the UK: custom design, SEO, mobile-first, and an optional AI chatbot like me. Every project is quoted to your needs. What type of business do you have?",
-    'What are your prices?': "Every project is custom-quoted based on your needs: pages, features, integrations. The fastest way to get a real number is our free audit (scroll up) or the contact form below. We'll reply within 24 hours with a tailored quote.",
-    'Tell me about the AI chatbot': "Great question! We can integrate a smart AI assistant (like me!) on your website. It:\n\n1. Answers customer questions 24/7\n2. Books appointments automatically\n3. Captures leads while you sleep\n4. Is trained on YOUR business\n\nIt's available on every plan. Book a free consultation to see how it'd work for you.",
+    'I need a website': "We design professional websites for small businesses across the UK: custom design, SEO and mobile-first, from £349. What type of business do you have?",
+    'What are your prices?': "Starter (one page) £349, Business (up to 5 pages) £790, Growth (up to 10 pages) £1,290, or pay monthly over 12 months. Care plans from £25/month. Custom projects from £2,200. See the Pricing section above, or use the contact form and we'll reply within 24 hours.",
+    'Tell me about the AI chatbot': "Great question! We add a smart chat assistant to client websites. It:\n\n1. Answers customer questions 24/7\n2. Captures leads while you sleep\n3. Is trained on YOUR business\n\nA simple version is included free in the Business and Growth packages. Smarter AI-powered versions are quoted per project. Get in touch and we'll show you a live example.",
     'Book a free call': "Fill in the contact form below or email us at contact@redwebstudio.com. We'll get back within 24 hours!",
 };
 const defaults = [
