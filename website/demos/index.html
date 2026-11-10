@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starter Website Demos from £349 | RED Web Studio</title>
+<meta name="description" content="Live demo websites for the RED Web Studio Starter package: a custom one-page website for £349, live in about 5 days. Catering, barbers, trades, cleaning, cafés and personal trainers.">
+<link rel="canonical" href="https://redwebstudio.com/demos/">
+<meta property="og:title" content="Starter Website Demos from £349 | RED Web Studio">
+<meta property="og:description" content="Pick a style, we make it yours. Six live one-page website demos for small businesses.">
+<meta property="og:image" content="https://redwebstudio.com/demos/shots/catering.jpg">
+<meta property="og:url" content="https://redwebstudio.com/demos/">
+<link rel="icon" type="image/svg+xml" href="../logo-icon.svg">
+<meta name="theme-color" content="#F4EADE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F4EADE;--cream-deep:#EDE2D3;--white:#fff;--ink:#1F1B17;--ink-soft:#5C544B;--ink-mute:#8B8378;--accent:#C8453B;--accent-deep:#8B2F26;--accent-tint:#FBEAE7;--sage:#5F7A5A;--border:#E5DFD5;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--shadow-sm:0 1px 2px rgba(31,27,23,.04),0 1px 2px rgba(31,27,23,.03);--shadow-lg:0 24px 48px rgba(31,27,23,.10),0 6px 16px rgba(31,27,23,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0}
+.logo{display:flex;align-items:baseline;gap:6px}
+.logo b{font:800 1.5rem/1 var(--serif);color:var(--accent);letter-spacing:.02em}
+.logo span{font:500 .95rem/1 var(--sans);color:var(--ink-soft)}
+.back{font-weight:600;font-size:.92rem;color:var(--ink-soft)}.back:hover{color:var(--accent)}
+.hero{padding:48px 0 56px;max-width:760px}
+.kicker{display:inline-block;font-weight:600;font-size:.82rem;color:var(--accent);background:var(--accent-tint);padding:6px 14px;border-radius:4px;margin-bottom:18px}
+h1{font:700 clamp(2.3rem,5vw,3.6rem)/1.1 var(--serif);letter-spacing:-.01em}
+h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.hero p{color:var(--ink-soft);font-size:1.1rem;margin-top:18px;max-width:620px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-weight:600;font-size:.94rem}
+.facts li{list-style:none;display:flex;gap:8px;align-items:center}
+.facts li:before{content:"✓";color:var(--sage);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding-bottom:72px}
+.card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.4s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.shot{position:relative;height:230px;overflow:hidden;background:var(--cream-deep)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .shot img{transform:scale(1.05)}
+.badge{position:absolute;left:16px;bottom:16px;background:var(--white);color:var(--ink);padding:8px 16px;border-radius:4px;font-size:.82rem;font-weight:600;box-shadow:var(--shadow-sm);opacity:0;transform:translateY(8px);transition:.4s}
+.card:hover .badge{opacity:1;transform:none}
+.body{padding:22px 26px 26px;display:flex;flex-direction:column;flex:1}
+.tag{align-self:flex-start;font-size:.8rem;font-weight:600;color:var(--accent);background:var(--accent-tint);padding:4px 12px;border-radius:4px}
+.body h2{font:700 1.35rem/1.2 var(--serif);margin:14px 0 8px}
+.body p{color:var(--ink-soft);font-size:.95rem;flex:1}
+.body .more{margin-top:16px;font-weight:600;font-size:.92rem;color:var(--accent)}
+.cta{background:var(--ink);color:var(--cream);border-radius:20px;padding:48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;margin-bottom:56px}
+.cta h2{font:700 clamp(1.6rem,3vw,2.2rem)/1.2 var(--serif)}
+.cta p{color:#cfc6ba;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:15px 28px;border-radius:6px;font-weight:600;transition:.2s}
+.btn:hover{background:var(--accent-deep)}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--ink-mute);font-size:.86rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+@media (max-width:980px){.grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.grid{grid-template-columns:1fr;gap:22px}.hero{padding:24px 0 40px}.cta{padding:32px 24px}.shot{height:210px}}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <a href="/" class="logo"><b>RED</b><span>Web Studio</span></a>
+  <a href="/#pricing" class="back">← Back to pricing</a>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="kicker">Starter package · £349</span>
+    <h1>Pick a style. <em>We make it yours.</em></h1>
+    <p>Each demo is a real, working one-page website. Choose the one closest to your business and we customise it with your name, logo, photos, prices and contact details.</p>
+    <ul class="facts"><li>One-time £349</li><li>Live in about 5 days</li><li>Mobile-first</li><li>WhatsApp &amp; click-to-call</li></ul>
+  </section>
+
+  <section class="grid" aria-label="Demo websites">
+    <a class="card" href="catering/"><div class="shot"><img src="shots/catering.jpg" alt="Fire &amp; Feast catering demo website" loading="lazy"><span class="badge">View demo →</span></div><div class="body"><span class="tag">Catering &amp; events</span><h2>Fire &amp; Feast</h2><p>Dark, warm design for caterers and BBQ. Packages with prices, photo gallery, quote form and WhatsApp booking.</p><span class="more">View demo →</span></div></a>
+    <a class="card" href="barber/"><div class="shot"><img src="shots/barber.jpg" alt="Sharp &amp; Co. barbershop demo website" loading="lazy"><span class="badge">View demo →</span></div><div class="body"><span class="tag">Barber &amp; salon</span><h2>Sharp &amp; Co.</h2><p>Bold, classic barbershop look. Price list, gallery, opening hours and booking on WhatsApp.</p><span class="more">View demo →</span></div></a>
+    <a class="card" href="trades/"><div class="shot"><img src="shots/trades.jpg" alt="Brightline plumber and electrician demo website" loading="lazy"><span class="badge">View demo →</span></div><div class="body"><span class="tag">Trades &amp; home services</span><h2>Brightline</h2><p>Trust-first design for plumbers and electricians. Quote form, services with prices and areas covered.</p><span class="more">View demo →</span></div></a>
+    <a class="card" href="cleaning/"><div class="shot"><img src="shots/cleaning.jpg" alt="Fresh Nest cleaning company demo website" loading="lazy"><span class="badge">View demo →</span></div><div class="body"><span class="tag">Cleaning</span><h2>Fresh Nest</h2><p>Fresh, friendly design for cleaning companies. Price plans, room checklist and instant quote request.</p><span class="more">View demo →</span></div></a>
+    <a class="card" href="cafe/"><div class="shot"><img src="shots/cafe.jpg" alt="Crumb &amp; Co. bakery and café demo website" loading="lazy"><span class="badge">View demo →</span></div><div class="body"><span class="tag">Café &amp; bakery</span><h2>Crumb &amp; Co.</h2><p>Warm, editorial design for cafés and bakeries. Tabbed menu, live "open now" sign and map.</p><span class="more">View demo →</span></div></a>
+    <a class="card" href="fitness/"><div class="shot"><img src="shots/fitness.jpg" alt="Forge Fit personal trainer demo website" loading="lazy"><span class="badge">View demo →</span></div><div class="body"><span class="tag">Fitness &amp; coaching</span><h2>Forge Fit</h2><p>Bold, energetic design for personal trainers and gyms. Plans with prices, coach bio, FAQ and free consultation booking.</p><span class="more">View demo →</span></div></a>
+  </section>
+
+  <section class="cta">
+    <div><h2>Like one of these?</h2><p>Tell us which demo you like and a bit about your business. We'll reply within 24 hours.</p></div>
+    <a href="/#contact" class="btn">Get started →</a>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>All businesses, phone numbers and reviews on these demos are fictional. Photos from Unsplash.</span><span>© RED Web Studio</span></div></footer>
+</body>
+</html>
