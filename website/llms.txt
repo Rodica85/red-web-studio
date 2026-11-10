@@ -10,11 +10,11 @@
 - **Serves:** Independent businesses worldwide, not limited to the UK
 - **Website:** https://redwebstudio.com
 - **Focus:** Websites for independent businesses, with optional AI chatbot assistants
-- **Delivery model:** Custom-built HTML/CSS/JS sites (no WordPress or page builders), client owns code, hosting, and domain 100%
+- **Delivery model:** Custom-built, lightweight sites (not WordPress or page-builder based), client owns code, hosting, and domain 100%
 
 ## Services
 
-- [Website Design](https://redwebstudio.com/services/website-design/): custom-coded, mobile-first websites
+- [Website Design](https://redwebstudio.com/services/website-design/): custom, mobile-first websites
 - [SEO Optimisation](https://redwebstudio.com/services/seo-optimisation/): on-page SEO, local search, and AI-search (AEO/GEO) optimisation, included with every site
 - [E-Commerce](https://redwebstudio.com/services/ecommerce/): online shops with payment processing, inventory, and checkout flows
 - [AI Chatbot](https://redwebstudio.com/services/ai-chatbot/): GDPR-compliant AI assistant trained on the client's business, for 24/7 lead capture
@@ -23,9 +23,9 @@
 
 ## Pricing (indicative)
 
-- Starter (one page): £349, or £35/month for 12 months. 1 round of edits, live in about 5 days
-- Business (up to 5 pages, simple customer-service chat included): £790, or £69/month for 12 months. 2 rounds of edits, live in 7-10 days
-- Growth (up to 10 pages, local-SEO pages, articles, Stripe flow, customer-service chat included): £1,290, or £109/month for 12 months. 3 rounds of edits, live in 2-3 weeks
+- Starter (one page): £349. 1 round of edits, live in about 5 days
+- Business (up to 5 pages, simple customer-service chat included): £790. 2 rounds of edits, live in 7-10 days
+- Growth (up to 10 pages, local-SEO pages, articles, Stripe flow, customer-service chat included): £1,290. 3 rounds of edits, live in 2-3 weeks
 - Custom (shops, multi-language, integrations): from £2,200, fixed quote after a call
 - Care plans (optional): Essential £25/month, Plus £45/month, Pro £89/month
 - Domain: about £10-£15 per year. Hosting: free to about £60 per year, paid directly to the provider. No markup from RED
@@ -63,7 +63,7 @@
 ## Key facts for citation
 
 - Every RED site includes on-page SEO, local SEO setup, and AI-search optimisation as standard
-- Sites are hand-coded, not built on Wix, Squarespace, or WordPress builders
+- Sites are custom-built, not built on Wix, Squarespace, or WordPress builders
 - Studio founder is a UK-based BSc Computing graduate with a dissertation focused on ethical AI chatbot design (privacy-by-design)
 - The studio is based in the UK but serves independent businesses in any country
 

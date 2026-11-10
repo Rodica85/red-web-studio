@@ -18,7 +18,7 @@ No website yet? Customers who can't find you online are booking someone else.
 
 RED Web Studio builds a custom one-page website for local businesses:
 
-→ £349 once, or £35/month over 12 months
+→ £349 one-time, no hidden fees
 → Contact form, WhatsApp and call button
 → Shows up on Google (SEO included)
 → Live in about 5 days
@@ -71,7 +71,7 @@ See your Google score in 10 seconds.
 ```
 We built Gung Chaba Massage's website in Abingdon: booking by WhatsApp and email, gift vouchers, mobile-first. They're at 5.0★ on Google, and now their site matches.
 
-A full 5-page business website from £790 (or £69/month over 12 months):
+A full 5-page business website, £790 one-time:
 
 ✓ Custom design, not a template
 ✓ Booking or enquiry flow
@@ -92,7 +92,7 @@ Full business website from £790
 **Description**
 
 ```
-5 pages, booking, SEO. Pay monthly if you prefer.
+5 pages, booking, SEO. One fixed price.
 ```
 
 ---
@@ -104,9 +104,9 @@ Full business website from £790
 ```
 Show up when people search "[your service] in [your town]".
 
-We built Red Speed Rider's site with a dedicated page for each of their 16 service areas, so customers across Oxfordshire find them on Google, not just people who already knew the name.
+We built Red Speed Rider's site with a dedicated page for each of their 12 service areas, so customers across Oxfordshire find them on Google, not just people who already knew the name.
 
-Growth package £1,290 (or £109/month over 12 months): up to 10 pages, local-SEO pages per service or area, articles, a quote flow and a customer-service chat.
+Growth package £1,290 one-time: up to 10 pages, local-SEO pages per service or area, articles, a quote flow and a customer-service chat.
 
 Message us "LOCAL" and we'll show you what it would look like for your business.
 ```
@@ -127,5 +127,5 @@ Local SEO pages, quote flow, speed report.
 
 ## Notes
 - Chat is included in Business and Growth, mention it in those ads. AI-powered versions are quoted per project. Live examples: redspeedrider.co.uk and doctorstanlarisa.ro.
-- Offer "Pay monthly" in the first line of any ad that mentions price, it lowers the barrier most.
+- No instalments: one fixed price per package, 50% deposit and 50% on launch. Monthly income comes only from optional care plans.
 - After 2-3 weeks, keep the ad with the lowest cost per message and stop the others.

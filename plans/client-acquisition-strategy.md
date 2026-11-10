@@ -19,8 +19,8 @@ Every ad, post, profile and DM says the same thing.
 
 ## 2. Offer
 - Entry offer is the **Free Audit** (already live): a real score on their own site.
-- Packages: see [pricing-packages.md](pricing-packages.md). Add monthly payment option
-  (e.g. spread over 12 months) to lower the buying barrier.
+- Packages: see [pricing-packages.md](pricing-packages.md). One-off price per package, no instalments;
+  care plans are the only monthly item.
 - Care plan on every project, recurring revenue is what makes the studio stable.
 
 ## 3. Channels, ranked by return on effort
@@ -41,7 +41,7 @@ Do 1-3 now, set up 4-6 in parallel (one-off setup), turn on 7 only when proof ex
 1. **Hook:** Free Audit result, or a mention from a referrer.
 2. **Conversation:** 10-15 minute call or chat, understand their goal (more bookings, calls, quotes).
 3. **Proof:** send 2 relevant live sites + a homepage sketch.
-4. **Proposal:** one page, one recommended package, fixed price, monthly option.
+4. **Proposal:** one page, one recommended package, fixed price, optional care plan.
 5. **Close:** 50% deposit, kickoff within 3 days.
 6. **After launch:** testimonial request at day 14, referral ask at day 30, care plan offer at launch.
 
@@ -90,4 +90,4 @@ If replies are under 5%, the problem is the list or hook, not volume. If calls c
 ## Open decisions
 - Target area: local (Oxfordshire / Abingdon area, where the portfolio is) or Romania or both.
 - Hours per day available.
-- Whether to add the monthly payment option now.
+- (Decided: no instalment payments, care plans only.)

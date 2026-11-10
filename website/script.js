@@ -114,7 +114,7 @@ const aiSend = document.getElementById('aiSend');
 
 const responses = {
     'I need a website': "We design professional websites for small businesses across the UK: custom design, SEO and mobile-first, from £349. What type of business do you have?",
-    'What are your prices?': "Starter (one page) £349, Business (up to 5 pages) £790, Growth (up to 10 pages) £1,290, or pay monthly over 12 months. Care plans from £25/month. Custom projects from £2,200. See the Pricing section above, or use the contact form and we'll reply within 24 hours.",
+    'What are your prices?': "Starter (one page) £349, Business (up to 5 pages) £790, Growth (up to 10 pages) £1,290. Optional maintenance plans from £25/month. Custom projects from £2,200. See the Pricing section above, or use the contact form and we'll reply within 24 hours.",
     'Tell me about the AI chatbot': "Great question! We add a smart chat assistant to client websites. It:\n\n1. Answers customer questions 24/7\n2. Captures leads while you sleep\n3. Is trained on YOUR business\n\nA simple version is included free in the Business and Growth packages. Smarter AI-powered versions are quoted per project. Get in touch and we'll show you a live example.",
     'Book a free call': "Fill in the contact form below or email us at contact@redwebstudio.com. We'll get back within 24 hours!",
 };
@@ -151,3 +151,18 @@ document.querySelectorAll('.quick-btns button').forEach(b => {
 });
 aiSend.addEventListener('click', () => { const t = aiInput.value.trim(); if (t) { processMsg(t); aiInput.value = ''; } });
 aiInput.addEventListener('keypress', e => { if (e.key === 'Enter') { const t = aiInput.value.trim(); if (t) { processMsg(t); aiInput.value = ''; } } });
+
+
+// ---- Projects carousel arrows ----
+(function () {
+    const grid = document.querySelector('.work-grid');
+    if (!grid) return;
+    const step = () => {
+        const card = grid.querySelector('.work-card');
+        return card ? card.offsetWidth + 20 : 300;
+    };
+    const prev = document.querySelector('.work-prev');
+    const next = document.querySelector('.work-next');
+    if (prev) prev.addEventListener('click', () => grid.scrollBy({ left: -step(), behavior: 'smooth' }));
+    if (next) next.addEventListener('click', () => grid.scrollBy({ left: step(), behavior: 'smooth' }));
+})();

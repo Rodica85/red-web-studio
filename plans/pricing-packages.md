@@ -8,17 +8,17 @@ Hosting and domain are paid by the client directly (about £60-120/year).
   Freelancers on the wider UK market charge £1,500-3,000 for five pages.
 - Target: clearly cheaper than the freelancer market, level with the cheapest studios on
   the entry package, with real custom design and live proof behind it.
-- Local small businesses (massage, trades, mobile services) decide on monthly cost, so every
-  package can be paid monthly.
+- Payment is one-off per package (50% deposit, 50% on launch). No instalments, so there is no risk of
+  a client stopping part-way. Monthly income comes only from the optional care plans.
 
 ## Packages
 
-| Package | One-off | Or monthly (12 months) | What's included |
-|---|---|---|---|
-| **Starter** | £349 | £35 / month | One page, custom design, mobile-first, contact form + WhatsApp/call button, basic SEO, Google Business Profile setup. Live in 5 days |
-| **Business** | £790 | £69 / month | Up to 5 pages, custom design, enquiry or booking flow, simple customer-service chat, SEO, Google Analytics, Google Business Profile. Live in 7-10 days |
-| **Growth** | £1,290 | £109 / month | Up to 10 pages, local-SEO pages per service or area, articles section, quote/booking flow (GDPR), customer-service chat, speed optimisation. Live in 2 weeks |
-| **Custom** | from £2,200 | quote | Online shop, app or SaaS marketing site, integrations. Fixed quote after a call |
+| Package | Price (one-off) | What's included |
+|---|---|---|
+| **Starter** | £349 | One page, custom design, mobile-first, contact form + WhatsApp/call button, basic SEO, Google Business Profile setup. Live in 5 days |
+| **Business** | £790 | Up to 5 pages, custom design, enquiry or booking flow, simple customer-service chat, SEO, Google Analytics, Google Business Profile. Live in 7-10 days |
+| **Growth** | £1,290 | Up to 10 pages, local-SEO pages per service or area, articles section, quote/booking flow (GDPR), customer-service chat, speed optimisation. Live in 2 weeks |
+| **Custom** | from £2,200 | Online shop, app or SaaS marketing site, integrations. Fixed quote after a call |
 
 ## Care plans (optional, month-to-month)
 
