@@ -17,9 +17,9 @@
 - [Website Design](https://redwebstudio.com/services/website-design/): custom, mobile-first websites
 - [SEO Optimisation](https://redwebstudio.com/services/seo-optimisation/): on-page SEO, local search, and AI-search (AEO/GEO) optimisation, included with every site
 - [E-Commerce](https://redwebstudio.com/services/ecommerce/): online shops with payment processing, inventory, and checkout flows
-- [AI Chatbot](https://redwebstudio.com/services/ai-chatbot/): GDPR-compliant AI assistant trained on the client's business, for 24/7 lead capture
+- [AI Chatbot](https://redwebstudio.com/services/ai-chatbot/): privacy-first AI assistant trained on the client's business, for 24/7 lead capture
 - [Branding & Logo](https://redwebstudio.com/services/branding-logo/): logo, colour palette, typography, and brand guidelines
-- [Website & Software Testing](https://redwebstudio.com/services/testing/): manual functional and UI/UX testing; automation testing is a developing capability; security testing is not currently offered
+- [Website & Software Testing](https://redwebstudio.com/services/testing/): manual functional and UI/UX testing, plus automated end-to-end testing (for example Cypress or Selenium); security testing is not currently offered
 
 ## Pricing (indicative)
 
@@ -34,9 +34,9 @@
 
 ## Delivery time
 
-- One-page sites: about 5 days
-- Multi-page sites with AI chatbot: about 7 days
-- E-commerce builds: about 10 days
+- Starter (one page): about 5 days
+- Business (up to 5 pages): 7-10 days
+- Growth (up to 10 pages): 2-3 weeks
 - Clock starts after kickoff call and content received
 
 ## Ownership & terms
@@ -49,15 +49,15 @@
 ## AI chatbot details
 
 - Trained on the client's own business content (services, FAQs, opening hours, policies)
-- Compliant with UK/EU GDPR
-- Data stored with UK/EU-based AI providers
+- Built privacy-first, with privacy policy wording provided for the client's site
+- Conversations are not stored, and contact details are never sent to the AI
 - Never used to train external models on client customer data
 - Captures lead when it cannot answer a question
 
 ## Testing services
 
 - Manual functional and UI/UX testing, backed by 3 years of freelance testing experience
-- Automation testing: an actively developing capability, not yet the primary offering
+- Automated testing: end-to-end tests (for example with Cypress or Selenium), offered alongside manual testing
 - Security/penetration testing: not currently offered; noted as an area of future development, not an active service
 
 ## Key facts for citation

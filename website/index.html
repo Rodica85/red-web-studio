@@ -590,6 +590,7 @@
                         <textarea name="message" rows="4" placeholder="What does your business do? What do you need from your website?"></textarea>
                     </div>
                     <button type="submit" class="btn btn-accent btn-lg btn-block">Send Message <span class="btn-arrow">&rarr;</span></button>
+                    <p class="form-privacy-note">Sending opens WhatsApp with your message. See our <a href="/privacy-policy">Privacy Policy</a>.</p>
                 </form>
                 <div class="contact-info fall-in">
                     <div class="info-item">
@@ -639,6 +640,7 @@
                     <a href="/demos/">Demos</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
+                    <a href="/privacy-policy">Privacy</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -647,28 +649,8 @@
         </div>
     </footer>
 
-    <!-- AI Chat -->
-    <div class="ai-chat" id="aiChat">
-        <button class="ai-chat-toggle" id="aiChatToggle">
-            <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span class="chat-badge">AI</span>
-        </button>
-        <div class="chat-window" id="aiChatWindow">
-            <div class="chat-head"><strong>RED AI Assistant</strong><span class="online-dot"></span></div>
-            <div class="chat-body" id="aiChatBody">
-                <div class="ai-msg bot"><p>Hi! I'm RED's AI assistant. This is an example of what we can add to YOUR website. How can I help?</p>
-                    <div class="quick-btns">
-                        <button data-msg="I need a website">I need a website</button>
-                        <button data-msg="What are your prices?">Prices?</button>
-                        <button data-msg="Tell me about the AI chatbot">AI Chatbot?</button>
-                        <button data-msg="Book a free call">Book a call</button>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-input"><input type="text" id="aiInput" placeholder="Type a message..." autocomplete="off"><button id="aiSend">&rarr;</button></div>
-        </div>
-    </div>
+    <!-- Chat assistant -->
+    <script src="https://chat-widget.musteata-rodica.workers.dev/widget.js" data-client="redwebstudio" defer></script>
 
     <script src="script.js"></script>
 </body>
