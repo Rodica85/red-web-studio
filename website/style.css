@@ -1890,6 +1890,18 @@ a.nav-pill svg { width: 15px; height: 15px; margin-right: 7px; flex-shrink: 0; }
 .care-card p { color: rgba(244, 234, 222, 0.85); }
 @media (max-width: 640px) { .care { padding: 36px 18px 28px; } }
 
+/* Website Testing: light panel under Maintenance */
+.care.care-light { background: var(--white); border: 2px solid var(--accent); margin-top: 28px; }
+.care-light .care-title { color: var(--ink); }
+.care-light .care-title span { color: var(--accent-deep); }
+.care-light .care-card { background: var(--cream, #F4EADE); border-color: var(--border); }
+.care-light .care-card strong { color: var(--ink); }
+.care-light .care-card p { color: var(--ink-soft); }
+.care-light .care-price { color: var(--accent-deep); }
+.care-price.care-quote { font-size: 1.5rem; }
+.care-foot { margin-top: 22px; text-align: center; font-size: 0.95rem; color: var(--ink-soft); }
+.care-foot a { color: var(--accent-deep); font-weight: 600; text-decoration: underline; }
+
 /* ================================
    Projects: horizontal carousel on dark
    ================================ */
