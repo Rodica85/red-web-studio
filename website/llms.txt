@@ -1,11 +1,11 @@
 # RED Web Studio
 
-> Professional web design studio for independent businesses, wherever they are. Built stunning custom websites with optional AI chatbot integration for 24/7 lead capture. Full ownership of code and assets, no vendor lock-in. Founded by Rodica Musteata, a UK-based web developer and BSc Computing graduate serving clients worldwide.
+> Professional web design studio for independent businesses, wherever they are. Built stunning custom websites with optional AI chatbot integration for 24/7 lead capture. Full ownership of code and assets, no vendor lock-in. Founded by Rodica, a UK-based web developer and BSc Computing graduate serving clients worldwide.
 
 ## About the studio
 
 - **Studio name:** RED Web Studio
-- **Founder:** Rodica Musteata (BSc Hons Computing, top-up graduate 2026)
+- **Founder:** Rodica (BSc Hons Computing, top-up graduate 2026)
 - **Based in:** United Kingdom
 - **Serves:** Independent businesses worldwide, not limited to the UK
 - **Website:** https://redwebstudio.com
