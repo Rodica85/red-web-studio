@@ -23,7 +23,7 @@
 
 ## Pricing (indicative)
 
-- Starter (one page): £349. Page text written for you, 1 round of edits, live in about 5 days
+- Starter (one page): £349. Page text and a logo done for you, 1 round of edits, live in about 5 days
 - Business (up to 5 pages, simple customer-service chat included): £790. 2 rounds of edits, live in 7-10 days
 - Growth (up to 10 pages, local-SEO pages, articles, Stripe flow, customer-service chat included): £1,290. 3 rounds of edits, live in 2-3 weeks
 - Custom (shops, multi-language, integrations): from £2,200, fixed quote after a call
@@ -31,6 +31,7 @@
 - Domain: about £10-£15 per year. Hosting: free to about £60 per year, paid directly to the provider. No markup from RED
 - Payment: 50% deposit, 50% on launch. Deposit refundable before design approval
 - Website testing for any site, including sites built by others (manual testing, automated tests, or both): quoted per project, free quote
+- A logo is included in all three website packages; full branding beyond the logo is quoted per project
 - Free fixes: 30 days after launch
 
 ## Delivery time
