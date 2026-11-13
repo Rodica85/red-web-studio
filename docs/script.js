@@ -105,54 +105,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
     });
 });
 
-// ---- AI Chat ----
-const aiChat = document.getElementById('aiChat');
-const aiToggle = document.getElementById('aiChatToggle');
-const aiBody = document.getElementById('aiChatBody');
-const aiInput = document.getElementById('aiInput');
-const aiSend = document.getElementById('aiSend');
-
-const responses = {
-    'I need a website': "We design professional websites for small businesses across the UK: custom design, SEO and mobile-first, from £349. What type of business do you have?",
-    'What are your prices?': "Starter (one page) £349, Business (up to 5 pages) £790, Growth (up to 10 pages) £1,290. Optional maintenance plans from £25/month. Custom projects from £2,200. See the Pricing section above, or use the contact form and we'll reply within 24 hours.",
-    'Tell me about the AI chatbot': "Great question! We add a smart chat assistant to client websites. It:\n\n1. Answers customer questions 24/7\n2. Captures leads while you sleep\n3. Is trained on YOUR business\n\nA simple version is included free in the Business and Growth packages. Smarter AI-powered versions are quoted per project. Get in touch and we'll show you a live example.",
-    'Book a free call': "Fill in the contact form below or email us at contact@redwebstudio.com. We'll get back within 24 hours!",
-};
-const defaults = [
-    "Thanks! Book a free consultation. Scroll to the contact form below.",
-    "Great question! Our team would love to discuss. Want a 15-minute call?",
-    "Drop your details in the form below and we'll reply within 24 hours.",
-];
-
-aiToggle.addEventListener('click', () => { aiChat.classList.toggle('open'); if (aiChat.classList.contains('open')) aiInput.focus(); });
-
-function addMsg(text, bot = true) {
-    const d = document.createElement('div');
-    d.className = `ai-msg ${bot ? 'bot' : 'user'}`;
-    d.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`;
-    aiBody.appendChild(d);
-    aiBody.scrollTop = aiBody.scrollHeight;
-}
-
-function processMsg(text) {
-    addMsg(text, false);
-    const typing = document.createElement('div');
-    typing.className = 'ai-msg bot'; typing.id = 'typing';
-    typing.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
-    aiBody.appendChild(typing); aiBody.scrollTop = aiBody.scrollHeight;
-    setTimeout(() => {
-        typing.remove();
-        addMsg(responses[text] || defaults[Math.floor(Math.random() * defaults.length)]);
-    }, 800 + Math.random() * 800);
-}
-
-document.querySelectorAll('.quick-btns button').forEach(b => {
-    b.addEventListener('click', () => { processMsg(b.dataset.msg); b.closest('.quick-btns')?.remove(); });
-});
-aiSend.addEventListener('click', () => { const t = aiInput.value.trim(); if (t) { processMsg(t); aiInput.value = ''; } });
-aiInput.addEventListener('keypress', e => { if (e.key === 'Enter') { const t = aiInput.value.trim(); if (t) { processMsg(t); aiInput.value = ''; } } });
-
-
 // ---- Projects carousel arrows ----
 (function () {
     const grid = document.querySelector('.work-grid');
