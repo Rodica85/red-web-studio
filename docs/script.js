@@ -42,7 +42,13 @@ navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
         e.preventDefault();
-        const t = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        // A bare "#" (the logo) means "back to the top"; it is not a valid selector.
+        if (href === '#') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        const t = document.getElementById(href.slice(1));
         if (t) {
             // Land so the section's content sits just under the navbar (skip the section's own top padding)
             const pad = parseFloat(getComputedStyle(t).paddingTop) || 0;
