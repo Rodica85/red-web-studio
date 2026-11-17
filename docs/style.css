@@ -2016,6 +2016,20 @@ a.nav-pill svg { width: 15px; height: 15px; margin-right: 7px; flex-shrink: 0; }
 .demo-card h4 { font-size: 1.25rem; }
 .demo-card > p { padding-bottom: 28px; }
 .demos-more { text-align: center; margin-top: 44px; }
+/* Featured demo with online booking (wide card under the Starter grid) */
+.demo-feature { display: grid; grid-template-columns: 1.25fr 1fr; margin-top: 28px; }
+.demo-feature .work-screenshot { height: 100%; min-height: 300px; }
+.demo-feature .work-screenshot img { object-position: top; }
+.demo-feature-text { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.demo-feature-text .work-tag { align-self: flex-start; }
+.demo-feature-text h4 { font-size: 1.6rem; margin: 4px 0 0; }
+.demo-feature-text p { color: var(--ink-soft); margin: 0; }
+.demo-feature-link { color: var(--accent); font-weight: 600; margin-top: 6px; }
+@media (max-width: 760px) {
+    .demo-feature { grid-template-columns: 1fr; }
+    .demo-feature .work-screenshot { height: 220px; min-height: 0; }
+    .demo-feature-text { padding: 24px 26px 28px; }
+}
 .price-demo-link { display: block; text-align: center; margin-top: 14px; font-family: var(--font-sans); font-size: .9rem; font-weight: 600; color: var(--accent); }
 .price-demo-link:hover { color: var(--accent-deep); }
 @media (max-width: 980px) { .demo-grid { grid-template-columns: 1fr 1fr; } }
