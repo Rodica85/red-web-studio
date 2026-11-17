@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salon Dashboard Demo | RED Web Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/demos/salon/styles.css">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="/logo-icon.svg">
+  <style>
+    body { background: #f3efe9; }
+    .top { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; gap: 12px; }
+    .top .logo { font-size: 22px; }
+    .top .who { font-size: 14px; color: var(--muted); }
+    .bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 22px 0 16px; }
+    .bar h1 { font-family: var(--serif); font-weight: 500; font-size: 32px; margin: 0 auto 0 0; }
+    .bar input[type=date] { padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; font: inherit; background: #fff; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+    .stat { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; }
+    .stat small { color: var(--muted); font-size: 13px; }
+    .stat b { display: block; font-family: var(--serif); font-size: 30px; font-weight: 600; line-height: 1.1; }
+    .cal { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+    .cal-head, .cal-body { display: grid; }
+    .cal-head { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 3; }
+    .cal-head div { padding: 10px; font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .cal-head .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .times { position: relative; border-right: 1px solid var(--line); }
+    .times span { position: absolute; right: 6px; font-size: 11px; color: var(--muted); transform: translateY(-50%); }
+    .col { position: relative; border-right: 1px solid var(--line); cursor: copy; }
+    .col:last-child { border-right: 0; }
+    .appt { position: absolute; left: 4px; right: 4px; border-radius: 8px; padding: 4px 8px; font-size: 12px; line-height: 1.25;
+      color: #fff; overflow: hidden; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+    .appt b { display: block; font-size: 12.5px; }
+    .appt .tag { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; border-radius: 50%; background: #f0c75e; box-shadow: 0 0 0 2px rgba(255,255,255,.6); }
+    .appt b { padding-right: 10px; }
+    .times span[style="top:0px"] { transform: translateY(2px); }
+    .legend { display: inline-flex; align-items: center; gap: 6px; }
+    .legend i { width: 8px; height: 8px; border-radius: 50%; background: #f0c75e; display: inline-block; }
+    .appt.block { background: repeating-linear-gradient(135deg, #d9d2c8 0 6px, #e8e2da 6px 12px) !important; color: var(--ink); }
+    .appt.new { outline: 3px solid #f0c75e; }
+    .now { position: absolute; left: 0; right: 0; height: 2px; background: #d9534f; z-index: 2; pointer-events: none; }
+    .closed { padding: 60px 20px; text-align: center; color: var(--muted); }
+    .hint { font-size: 13px; color: var(--muted); margin: 10px 2px 40px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .hint button { background: none; border: 0; color: var(--sage-dark); text-decoration: underline; font-size: 13px; padding: 0; }
+    .modal { position: fixed; inset: 0; background: rgba(30,28,25,.45); display: none; align-items: center; justify-content: center; z-index: 50; padding: 16px; }
+    .modal.open { display: flex; }
+    .card { background: var(--paper); border-radius: 4px; width: 100%; max-width: 420px; padding: 22px; max-height: 92vh; overflow-y: auto; }
+    .card h3 { font-family: var(--serif); font-size: 28px; font-weight: 600; margin: 0 0 14px; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; flex-wrap: wrap; }
+    .btn.danger { background: #b0413e; }
+    .seg { display: flex; background: var(--cream); border-radius: 999px; padding: 4px; margin-bottom: 14px; }
+    .seg button { flex: 1; border: 0; background: transparent; border-radius: 999px; padding: 8px; font-weight: 600; color: var(--muted); }
+    .seg button.on { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 12px 18px;
+      border-radius: 12px; font-size: 14px; z-index: 60; opacity: 0; transition: opacity .2s; pointer-events: none; }
+    .toast.show { opacity: 1; }
+    @media (max-width: 700px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+      .bar h1 { font-size: 26px; width: 100%; }
+      .top .who { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">Demo salon dashboard by <span class="red">RED</span> Web Studio. Bookings are saved only in this browser. <a href="/demos/salon/">← Back to the salon website</a> · <a href="/#contact">Get this for your salon →</a></div>
+  <div class="top">
+    <div class="wrap">
+      <a class="logo" href="/demos/salon/">Willow <span>&amp;</span> Thames</a>
+      <div class="who">Logged in as Emma (owner)</div>
+      <button class="btn small" id="add-btn">+ New</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="bar">
+      <h1 id="day-title"></h1>
+      <button class="icon-btn" id="prev" aria-label="Previous day">‹</button>
+      <button class="btn small ghost" id="today">Today</button>
+      <button class="icon-btn" id="next" aria-label="Next day">›</button>
+      <input type="date" id="pick" aria-label="Pick a date">
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="cal" id="cal"></div>
+    <div class="hint">
+      <span class="legend"><i></i> booked online</span>
+      <span>Tip: tap an empty slot to add a phone booking or block time. Tap a booking to see details.</span>
+      <button id="reset">Reset demo data</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal"><div class="card" id="modal-card"></div></div>
+  <div class="toast" id="toast"></div>
+
+  <script src="/demos/salon/data.js"></script>
+  <script src="/demos/salon/admin.js"></script>
+</body>
+</html>

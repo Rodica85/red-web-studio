@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Willow &amp; Thames: Salon Website Demo | RED Web Studio</title>
+  <meta name="description" content="A live demo by RED Web Studio: a premium salon website with online booking built in. Try booking an appointment.">
+  <meta name="robots" content="noindex, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Salon website demo with online booking | RED Web Studio">
+  <meta property="og:description" content="Try it: a premium salon website where clients book directly, with no marketplace commission.">
+  <meta property="og:image" content="https://redwebstudio.com/demos/salon/img/hero.jpg">
+  <meta property="og:url" content="https://redwebstudio.com/demos/salon/">
+  <meta name="theme-color" content="#1d1916">
+  <link rel="icon" type="image/svg+xml" href="/logo-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/demos/salon/img/hero.jpg">
+  <link rel="stylesheet" href="/demos/salon/styles.css">
+</head>
+<body>
+  <div class="demo-bar" id="demo-bar"><span class="long">Live demo by <span class="red">RED</span> Web Studio: a fictional salon. Try booking, then <a href="/demos/salon/admin">see the salon's dashboard</a> · </span><span class="short">Demo by <span class="red">RED</span> Web Studio · <a href="/demos/salon/admin">Dashboard</a> · </span><a href="/#contact">Get a site like this →</a></div>
+
+  <header class="site" id="hdr">
+    <div class="wrap">
+      <a href="#top" class="logo">Willow <span>&amp;</span> Thames<small>Hair Studio · Abingdon</small></a>
+      <nav class="main">
+        <a href="#services">Services</a>
+        <a href="#gallery">Work</a>
+        <a href="#team">Team</a>
+        <a href="#visit">Visit</a>
+        <button class="btn small" data-book>Book now</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-img" role="img" aria-label="Stylist blow-drying a client's hair"></div>
+    <div class="wrap">
+      <div>
+        <div class="eyebrow reveal">Hair studio · Abingdon-on-Thames</div>
+        <h1 class="reveal d1">Hair that feels<br><em>effortlessly</em> you.</h1>
+        <p class="lead reveal d2">Considered cuts, lived-in colour and real care, on Market Place since 2014. Book online in under a minute, any time of day.</p>
+        <div class="ctas reveal d3">
+          <button class="btn light" data-book>Book an appointment</button>
+          <a class="btn ghost" href="#services">View prices</a>
+        </div>
+      </div>
+      <div class="hero-card reveal d3">
+        <div class="score">4.9</div>
+        <div class="stars">★★★★★</div>
+        <p>“Booked at 11pm, in the chair the next morning. So easy.” <br><span style="opacity:.7">Hannah P.</span></p>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </section>
+
+  <section class="block">
+    <div class="wrap intro">
+      <div class="intro-imgs reveal">
+        <img class="a" src="/demos/salon/img/interior.jpg" alt="Salon chairs in front of a long mirror" loading="lazy">
+        <img class="b" src="/demos/salon/img/tools.jpg" alt="Stylists holding brushes and scissors" loading="lazy">
+      </div>
+      <div>
+        <div class="eyebrow reveal">Our studio</div>
+        <h2 class="h2 reveal d1">A calm chair in the <em>middle of town.</em></h2>
+        <p class="reveal d2">Willow &amp; Thames is a small, independent studio where every appointment starts with a proper consultation. No rushing, no upselling, just hair that suits the way you live.</p>
+        <p class="reveal d2">We use vegan, ammonia-free colour and bond-building treatments as standard, so your hair leaves in better condition than it came in.</p>
+        <div class="stats reveal d3">
+          <div><b data-count="12">12</b><span>Years in Abingdon</span></div>
+          <div><b data-count="2400" data-suffix="+">2,400+</b><span>Happy clients</span></div>
+          <div><b>4.9</b><span>Google rating</span></div>
+        </div>
+        <div class="signature reveal d3">Emma, founder</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block cream" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow reveal">Services &amp; prices</div>
+        <h2 class="reveal d1">Simple, <em>honest</em> pricing.</h2>
+        <p class="reveal d2">What you see is what you pay. Pick a service, choose your stylist and a time that suits you.</p>
+      </div>
+      <div class="svc-wrap">
+        <div class="svc-photo reveal">
+          <img id="svc-img" src="/demos/salon/img/colour.jpg" alt="" loading="lazy">
+          <div class="cap" id="svc-cap">Cut &amp; Style</div>
+        </div>
+        <div class="reveal d1">
+          <div class="tabs" id="tabs" role="tablist"></div>
+          <div class="svc-list" id="svc-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block dark" id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow reveal">Recent work</div>
+        <h2 class="reveal d1">From the <em>chair.</em></h2>
+        <p class="reveal d2">A few favourites from the past month. See more on our Instagram.</p>
+      </div>
+      <div class="gallery">
+        <figure class="g g1 reveal" style="margin:0"><img src="/demos/salon/img/updo.jpg" alt="Stylist creating an updo" loading="lazy"><figcaption>Occasion up-do</figcaption></figure>
+        <figure class="g g2 reveal d1" style="margin:0"><img src="/demos/salon/img/colour.jpg" alt="Stylist blow-drying a client's bob" loading="lazy"><figcaption>Soft bob &amp; gloss</figcaption></figure>
+        <figure class="g g3 reveal d2" style="margin:0"><img src="/demos/salon/img/barber.jpg" alt="Barber detailing a skin fade" loading="lazy"><figcaption>Skin fade</figcaption></figure>
+        <figure class="g g4 reveal d1" style="margin:0"><img src="/demos/salon/img/wash.jpg" alt="Client at the wash basin" loading="lazy"><figcaption>Bond repair ritual</figcaption></figure>
+        <figure class="g g6 reveal d2" style="margin:0"><img src="/demos/salon/img/hero.jpg" alt="Round-brush blow-dry" loading="lazy"><figcaption>Bouncy blow-dry</figcaption></figure>
+        <figure class="g g7 reveal d3" style="margin:0"><img src="/demos/salon/img/interior-2.jpg" alt="Salon interior with round mirrors" loading="lazy"><figcaption>The studio</figcaption></figure>
+      </div>
+      <div class="insta reveal"><span>@willowandthames · tag us in your new look</span><button class="btn gold small" data-book>Book your look</button></div>
+    </div>
+  </section>
+
+  <section class="block" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow reveal">Meet the team</div>
+        <h2 class="reveal d1">The people <em>behind the chair.</em></h2>
+        <p class="reveal d2">Book with your favourite, or let us pick whoever is free first.</p>
+      </div>
+      <div class="team" id="team-grid"></div>
+    </div>
+  </section>
+
+  <section class="block dark" id="reviews">
+    <div class="wrap">
+      <div class="reviews">
+        <div class="eyebrow reveal" style="margin-bottom:30px">Kind words</div>
+        <div class="stars">★★★★★</div>
+        <div class="rv on"><q>Priya is a genius with colour. Best balayage I’ve ever had, and it grew out beautifully.</q><div class="who">Chloe B. · Abingdon</div></div>
+        <div class="rv"><q>I love that I can book online at midnight instead of calling. The reminder text the day before is so handy.</q><div class="who">Daniel W. · Drayton</div></div>
+        <div class="rv"><q>Friendly, relaxed and always on time. Tom does the best fade in Oxfordshire.</q><div class="who">James C. · Radley</div></div>
+        <div class="rv-dots" id="rv-dots"></div>
+        <div class="google"><b>4.9</b> ★★★★★ from 312 Google reviews <span style="opacity:.55">(sample)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner">
+    <div class="bg" id="parallax" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="eyebrow reveal" style="color:var(--gold-soft)">Online booking, 24/7</div>
+      <h2 class="h2 reveal d1">Your next appointment is <em>a minute away.</em></h2>
+      <p class="reveal d2">See real-time availability, pick your stylist and get a reminder the day before. No calls, no waiting.</p>
+      <button class="btn light reveal d3" data-book>Book now</button>
+    </div>
+  </section>
+
+  <section class="block" id="visit">
+    <div class="wrap visit">
+      <div>
+        <div class="eyebrow reveal">Visit us</div>
+        <h2 class="h2 reveal d1">Find the <em>studio.</em></h2>
+        <table class="hours reveal d2" id="hours"></table>
+        <div class="contact-lines reveal d2">
+          <div><small>Address</small><span id="addr"></span></div>
+          <div><small>Phone</small><span id="phone"></span></div>
+        </div>
+        <button class="btn reveal d3" data-book>Book online</button>
+      </div>
+      <div class="visit-img reveal d1">
+        <img src="/demos/salon/img/interior.jpg" alt="Inside the studio" loading="lazy">
+        <div class="pin"><b>Willow &amp; Thames</b>Market Place, two minutes from the County Hall</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>
+        <div class="logo">Willow <span>&amp;</span> Thames<small>Hair Studio · Abingdon</small></div>
+        <p style="max-width:320px;margin-top:20px">A fictional salon created to show what your website and online booking could look like.</p>
+      </div>
+      <div><h6>Studio</h6><a href="#services">Services &amp; prices</a><a href="#gallery">Our work</a><a href="#team">Team</a><a href="#visit">Opening hours</a></div>
+      <div><h6>For the salon</h6><a href="/demos/salon/admin">Salon dashboard (demo)</a><a href="/demos/">More demo websites</a><a href="/#pricing">Pricing</a></div>
+      <div class="made-by"><span>© Willow &amp; Thames (demo). Photos: Unsplash.</span><span>Designed &amp; built by <a href="/">RED Web Studio</a></span></div>
+    </div>
+  </footer>
+
+  <button class="btn gold mobile-cta" data-book>Book an appointment</button>
+
+  <!-- booking overlay -->
+  <div class="bk" id="booking" aria-hidden="true">
+    <div class="bk-panel" role="dialog" aria-modal="true" aria-labelledby="bk-title">
+      <div class="bk-hero"><span>Willow &amp; Thames</span></div>
+      <div class="bk-top">
+        <button class="icon-btn" id="bk-back" aria-label="Back">←</button>
+        <h3 id="bk-title">Book</h3>
+        <button class="icon-btn" id="bk-close" aria-label="Close">✕</button>
+      </div>
+      <div class="progress"><div id="bk-progress"></div></div>
+      <div class="bk-body" id="bk-body"></div>
+      <div class="bk-foot" id="bk-foot"></div>
+    </div>
+  </div>
+
+  <script src="/demos/salon/data.js"></script>
+  <script src="/demos/salon/site.js"></script>
+</body>
+</html>
