@@ -138,6 +138,7 @@
             <div class="hero-cta fall-in" data-delay="4">
                 <a href="https://wa.me/447424714686?text=Hi%20RED%20Web%20Studio!%20I'd%20like%20to%20talk%20about%20a%20website." target="_blank" rel="noopener" class="btn btn-accent btn-lg">Let's Talk <span class="btn-arrow">&rarr;</span></a>
                 <a href="/index.html#pricing" class="btn btn-ghost btn-lg">See Pricing</a>
+                <a href="/demos/salon/" class="btn btn-ghost btn-lg">Try the Live Demo</a>
             </div>
         </div>
     </section>
@@ -160,6 +161,13 @@
             <p class="fall-in">Your work is visual. A site built around your photos and your style makes a better first impression than a social feed.</p>
             <h2 class="fall-in">Fewer messages asking the same questions</h2>
             <p class="fall-in">Prices, hours and how to book are on the page, so the messages you get are people ready to book.</p>
+
+            <h2 class="fall-in">Try It: A Live Salon Demo</h2>
+            <p class="fall-in">Willow &amp; Thames is a fictional salon we built to show what your site could feel like. Book an appointment as a client would, then open the salon's dashboard and watch it appear in the calendar.</p>
+            <a class="local-proj fall-in" href="/demos/salon/">
+                <div class="lp-shot"><img src="/demos/shots/salon.jpg" alt="Willow &amp; Thames salon demo website" loading="lazy"></div>
+                <div class="lp-text"><span class="work-tag">Live Demo</span><h4>Willow &amp; Thames Hair Studio</h4><p>Premium design, prices by category, a gallery of work, and online booking with real-time availability and stylist choice.</p><span class="lp-link">Try the live demo &rarr;</span></div>
+            </a>
 
             <h2 class="fall-in">Prices</h2>
             <div class="local-prices fall-in">
@@ -225,6 +233,7 @@
                     <a href="/index.html#about">About</a>
                     <a href="/index.html#faq">FAQ</a>
                     <a href="/index.html#contact">Contact</a>
+                    <a href="/privacy-policy">Privacy</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -233,28 +242,8 @@
         </div>
     </footer>
 
-    <!-- AI Chat -->
-    <div class="ai-chat" id="aiChat">
-        <button class="ai-chat-toggle" id="aiChatToggle">
-            <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            <span class="chat-badge">AI</span>
-        </button>
-        <div class="chat-window" id="aiChatWindow">
-            <div class="chat-head"><strong>RED AI Assistant</strong><span class="online-dot"></span></div>
-            <div class="chat-body" id="aiChatBody">
-                <div class="ai-msg bot"><p>Hi! I'm RED's AI assistant. This is an example of what we can add to YOUR website. How can I help?</p>
-                    <div class="quick-btns">
-                        <button data-msg="I need a website">I need a website</button>
-                        <button data-msg="What are your prices?">Prices?</button>
-                        <button data-msg="Tell me about the AI chatbot">AI Chatbot?</button>
-                        <button data-msg="Book a free call">Book a call</button>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-input"><input type="text" id="aiInput" placeholder="Type a message..." autocomplete="off"><button id="aiSend">&rarr;</button></div>
-        </div>
-    </div>
+    <!-- Chat assistant -->
+    <script src="https://chat-widget.musteata-rodica.workers.dev/widget.js" data-client="redwebstudio" defer></script>
 
     <script src="/script.js"></script>
 </body>
