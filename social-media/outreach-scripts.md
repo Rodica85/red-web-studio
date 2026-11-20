@@ -6,7 +6,7 @@ about *their* current site. Specific > generic, every time.
 
 How to use this doc:
 1. Pick 5-10 prospects/day from the lists below.
-2. Run their URL through the Free Audit on https://redwebstudio.com (or PageSpeed Insights
+2. Run their URL through the Free Audit on https://www.redwebstudio.com (or PageSpeed Insights
    directly if they have no site at all — then use the "no website" script instead).
 3. Copy the matching template, swap in the bracketed details, personalise one line.
 4. Send it yourself from your own FB/Instagram/email/LinkedIn account — sending on your
@@ -38,7 +38,7 @@ How to use this doc:
 > descriptions"]. That's likely costing you visitors before they even see your page.
 >
 > No pitch attached — you can run the same free check yourself here:
-> https://redwebstudio.com/#contact (Free Audit section). If you ever want a hand
+> https://www.redwebstudio.com/#contact (Free Audit section). If you ever want a hand
 > fixing it, happy to chat, no pressure either way.
 
 ## Template B — No website at all
@@ -57,7 +57,7 @@ How to use this doc:
 
 > Thanks for the reply earlier — following up on what you asked about [topic]. If it's
 > useful, here's a quick free audit tool I built that checks any site's speed/SEO in
-> a few seconds: https://redwebstudio.com/#contact. No strings attached, just thought
+> a few seconds: https://www.redwebstudio.com/#contact. No strings attached, just thought
 > it might help since you mentioned [their pain point].
 
 ## Template D — Referral-style intro (for warm leads via existing clients)

@@ -50,4 +50,4 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-Sitemap: https://redwebstudio.com/sitemap.xml
+Sitemap: https://www.redwebstudio.com/sitemap.xml
