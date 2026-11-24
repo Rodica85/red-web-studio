@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Carpathia Deli | Romanian & European Food Shop in Ilford</title>
+<meta name="description" content="Carpathia Deli: Romanian and Eastern European groceries, fresh bakery, deli counter and party catering trays in Ilford. Open 7 days.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RED Web Studio">
+<meta property="og:title" content="Food shop website demo | RED Web Studio">
+<meta property="og:description" content="See how a food shop or deli website could look: open-now sign, weekly offers and party catering orders. A live demo by RED Web Studio.">
+<meta property="og:url" content="https://www.redwebstudio.com/demos/food-shop">
+<meta property="og:image" content="https://www.redwebstudio.com/demos/shots/food-shop.jpg">
+<meta property="og:image:secure_url" content="https://www.redwebstudio.com/demos/shots/food-shop.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="562">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Food shop website demo | RED Web Studio">
+<meta name="twitter:description" content="See how a food shop or deli website could look: open-now sign, weekly offers and party catering orders. A live demo by RED Web Studio.">
+<meta name="twitter:image" content="https://www.redwebstudio.com/demos/shots/food-shop.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "GroceryStore", "name": "Carpathia Deli", "telephone": "+447700900217", "address": {"@type": "PostalAddress", "streetAddress": "102 Example High Road", "addressLocality": "Ilford", "addressCountry": "GB"}, "openingHours": ["Mo-Sa 08:00-21:00", "Su 09:00-18:00"], "priceRange": "£"}
+</script>
+<style>
+:root{--bg:#fffaf1;--bg2:#f6eddc;--card:#fff;--line:#eadcc3;--text:#2a2118;--muted:#6f6252;--accent:#b4232c;--accent2:#951c24;--on-accent:#fff;--head:'Bitter',Georgia,serif;--body:'Inter',system-ui,sans-serif;--hw:800;--hls:-.01em;--radius:8px;--radius-lg:14px;--logo-radius:8px;--header-bg:rgba(255,250,241,.95);--menu-bg:#fffaf1;--hero-text:#fff;--hero-accent:#ffd36b;--hero-overlay:linear-gradient(90deg,rgba(35,25,15,.88),rgba(35,25,15,.5) 55%,rgba(35,25,15,.1));--hero-overlay-m:linear-gradient(0deg,rgba(35,25,15,.94),rgba(35,25,15,.55) 60%,rgba(35,25,15,.2));--badge-bg:#2f7d32;--badge-text:#fff;--star:#e0a100;--input-bg:#fff;--map-filter:none}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:104px}
+body{background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul{list-style:none}
+[hidden]{display:none!important}
+.wrap{width:min(1140px,100% - 32px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--head);font-weight:var(--hw);line-height:1.1;letter-spacing:var(--hls)}
+h2{font-size:clamp(2rem,4.4vw,3rem)}
+.eyebrow{color:var(--accent);font-weight:700;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:var(--radius);font-weight:700;font-size:.95rem;transition:.2s;border:2px solid var(--accent);cursor:pointer;font-family:var(--body)}
+.btn--main{background:var(--accent);color:var(--on-accent)}.btn--main:hover{background:var(--accent2);border-color:var(--accent2)}
+.btn--ghost{color:var(--hero-text);border-color:currentColor}.btn--ghost:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.demo-bar{position:fixed;inset:0 0 auto;z-index:70;height:32px;display:flex;align-items:center;justify-content:center;padding:0 12px;background:#f2c14e;color:#1a0e07;font:700 .72rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.header{position:fixed;top:32px;left:0;right:0;z-index:50;background:var(--header-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header__in{display:flex;align-items:center;gap:28px;height:72px}
+.logo{font-family:var(--head);font-weight:var(--hw);font-size:1.45rem;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.logo i{width:36px;height:36px;border-radius:var(--logo-radius);background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-style:normal;font-size:1.05rem}
+.nav{display:flex;gap:24px;margin-left:auto}
+.nav a{font-size:.92rem;color:var(--muted);font-weight:500}.nav a:hover{color:var(--text)}
+.header .btn{padding:10px 18px;font-size:.85rem}
+.burger{display:none;margin-left:auto;background:none;border:0;width:40px;height:40px;flex-direction:column;justify-content:center;gap:6px;padding:8px;cursor:pointer}
+.burger span{height:2px;background:var(--text)}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:150px 0 80px;overflow:hidden;color:var(--hero-text)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--hero-pos,center)}
+.hero:after{content:"";position:absolute;inset:0;background:var(--hero-overlay)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.7rem,7vw,5rem);max-width:720px}
+.hero h1 span{color:var(--hero-accent)}
+.hero p.lead{max-width:500px;font-size:1.12rem;margin:20px 0 30px;opacity:.92}
+.hero__btns{display:flex;flex-wrap:wrap;gap:14px}
+.hero__facts{display:flex;flex-wrap:wrap;gap:30px;margin-top:44px;font-size:.9rem;opacity:.9}
+.hero__facts b{display:block;font-family:var(--head);font-weight:var(--hw);font-size:1.8rem}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--badge-bg);color:var(--badge-text);padding:6px 14px;border-radius:999px;font-size:.82rem;font-weight:700;margin-bottom:18px}
+.section{padding:100px 0}
+.section--alt{background:var(--bg2)}
+.head{max-width:640px;margin-bottom:48px}
+.head p{color:var(--muted);margin-top:14px}
+.head--center{text-align:center;margin-inline:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px}
+.card h3{font-size:1.3rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem}
+.price-tag{font-family:var(--head);font-weight:var(--hw);font-size:1.7rem;color:var(--accent);margin:10px 0 4px}
+.price-tag small{font-family:var(--body);font-size:.85rem;color:var(--muted);font-weight:500}
+.photo{width:100%;border-radius:var(--radius-lg);object-fit:cover}
+.ticks{margin-top:22px;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:flex-start}
+.ticks li:before{content:"✓";color:var(--accent);font-weight:800}
+.about p{color:var(--muted);margin-top:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding-top:56px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:42px;height:42px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:800;font-family:var(--head)}
+.step h3{font-size:1.15rem;margin-bottom:6px}.step p{color:var(--muted);font-size:.94rem}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{width:100%;height:260px;object-fit:cover;border-radius:var(--radius)}
+.gallery img:first-child{grid-column:span 2}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px}
+.review .stars{color:var(--star);letter-spacing:3px;margin-bottom:12px}
+.review cite{display:block;margin-top:14px;color:var(--muted);font-style:normal;font-size:.88rem}
+.note{color:var(--muted);font-size:.82rem;margin-top:16px}
+table.ptable{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line)}
+.ptable th,.ptable td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line)}
+.ptable th{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);background:var(--bg2)}
+.ptable td:not(:first-child),.ptable th:not(:first-child){text-align:right}
+.ptable td b{display:block}.ptable td small{color:var(--muted)}
+.ptable tr:last-child td{border-bottom:0}
+.ptable .p{font-weight:800;color:var(--accent)}
+.menu-cat h3{font-size:1.35rem;margin-bottom:6px}
+.mrow{display:flex;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.mrow div{flex:1}.mrow small{display:block;color:var(--muted);font-size:.86rem}
+.mrow b{color:var(--accent);font-weight:800;white-space:nowrap}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:grid;gap:6px;font-size:.86rem;font-weight:700}
+.form .full{grid-column:1/-1}
+.form input,.form select,.form textarea{font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--input-bg);color:var(--text)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.form .hint{font-size:.82rem;color:var(--muted);font-weight:400}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:.9rem;font-weight:600}
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.hours li span:last-child{font-weight:700;color:var(--accent)}
+.contact-list{margin:26px 0;display:grid;gap:10px}
+.contact-list a{display:flex;gap:12px;align-items:center;font-weight:500}
+.contact-list a span{color:var(--accent);width:22px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;border-radius:var(--radius-lg);filter:var(--map-filter)}
+.footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.85rem}
+.footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(37,211,102,.6)}
+.wa svg{width:30px;fill:#fff}
+@media (max-width:900px){
+  .nav{position:fixed;top:104px;left:0;right:0;flex-direction:column;gap:0;background:var(--menu-bg);padding:8px 16px 20px;border-bottom:1px solid var(--line);transform:translateY(-130%);visibility:hidden;transition:.3s;z-index:-1}
+  .nav.open{transform:none;visibility:visible}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line);color:var(--text);font-size:1.05rem}
+  .header .btn{display:none}.burger{display:flex}
+  .grid2,.visit{grid-template-columns:1fr;gap:40px}
+  .grid3,.reviews{grid-template-columns:1fr}
+  .grid4,.steps{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr}.gallery img{height:190px}
+  .section{padding:76px 0}
+  .hero{align-items:flex-end;min-height:88vh}
+  .hero:after{background:var(--hero-overlay-m)}
+  .form{grid-template-columns:1fr}
+  .ptable th,.ptable td{padding:12px 10px;font-size:.92rem}
+}
+@media (max-width:520px){.grid4,.steps{grid-template-columns:1fr}}
+@media (max-width:400px){.demo-bar{font-size:.6rem;letter-spacing:.05em}}
+.open-sign{display:inline-flex;align-items:center;gap:8px}.open-sign:before{content:"";width:9px;height:9px;border-radius:50%;background:#7ee08a;box-shadow:0 0 0 4px rgba(126,224,138,.25)}
+.badge.closed{background:#5b4b3a}.badge.closed:before{background:#ffb4a8;box-shadow:0 0 0 4px rgba(255,180,168,.25)}
+.dept{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.dept .card{display:flex;gap:16px;align-items:flex-start}
+.dept .ico{font-size:1.8rem;line-height:1}
+.offer{position:relative;overflow:hidden}.offer .was{text-decoration:line-through;color:var(--muted);font-size:.9rem;margin-left:6px}
+.offer .flag{position:absolute;top:16px;right:-34px;transform:rotate(45deg);background:#2f7d32;color:#fff;font-size:.7rem;font-weight:800;padding:4px 40px;letter-spacing:.08em}
+@media (max-width:900px){.dept{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" role="note">Demo template · Starter £349 – by Red Web Studio</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a href="#top" class="logo"><i>C</i>Carpathia Deli</a>
+    <nav class="nav" id="nav"><a href="#shop">In store</a><a href="#offers">Offers</a><a href="#catering">Catering</a><a href="#reviews">Reviews</a><a href="#visit">Opening hours</a></nav>
+    <a href="#catering" class="btn btn--main">Order a tray</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1764955307141-056b240923a1?w=1800&q=80" alt="Inside a small grocery shop full of fresh produce">
+    <div class="wrap">
+      <span class="badge"><span class="open-sign" id="open-sign">Open today 8am – 9pm</span></span>
+      <p class="eyebrow" style="color:var(--hero-accent)">Romanian &amp; European food · Ilford</p>
+      <h1>A taste of <span>home</span>,<br>every day.</h1>
+      <p class="lead">Fresh bread and cozonac, cheeses and salami from the deli counter, and all the brands you grew up with. Plus party trays made to order.</p>
+      <div class="hero__btns">
+        <a href="https://wa.me/447700900217?text=Bun%C4%83%20ziua%2C%20a%C8%99%20dori%20s%C4%83%20comand%20de%20la%20Carpathia%20Deli." class="btn btn--main" target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a href="#visit" class="btn btn--ghost">Opening hours</a>
+      </div>
+      <div class="hero__facts"><div><b>4.8 ★</b>Google rating</div><div><b>2,000+</b>Products in store</div><div><b>7 days</b>Open every week</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="shop">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">In store</p><h2>Everything from home, under one roof</h2><p>Romanian, Moldovan, Bulgarian and Polish favourites, restocked every week.</p></div>
+      <div class="dept">
+        <div class="card"><span class="ico">🥖</span><div><h3>Bakery</h3><p>Fresh bread daily, cozonac, covrigi and plăcinte baked in store.</p></div></div>
+        <div class="card"><span class="ico">🧀</span><div><h3>Deli counter</h3><p>Telemea, cașcaval, smoked salami and pastramă, sliced to order.</p></div></div>
+        <div class="card"><span class="ico">🥩</span><div><h3>Butcher</h3><p>Fresh pork, chicken and lamb, mici and homemade sausages.</p></div></div>
+        <div class="card"><span class="ico">🍬</span><div><h3>Sweets &amp; snacks</h3><p>Rom bars, Măgura, Eugenia, halva and the biscuits you miss.</p></div></div>
+        <div class="card"><span class="ico">🥫</span><div><h3>Pantry</h3><p>Zacuscă, pickles, borș, flour, spices and Eastern European brands.</p></div></div>
+        <div class="card"><span class="ico">🍷</span><div><h3>Drinks</h3><p>Borsec, Ursus, Romanian wines and pălincă (Challenge 25).</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="offers">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">This week</p><h2>Weekly offers</h2><p>Updated every Monday. Follow us on Facebook so you never miss one.</p></div>
+      <div class="grid4">
+        <div class="card offer"><span class="flag">OFFER</span><h3>Cozonac with walnuts</h3><p>Baked in store, 800g</p><div class="price-tag">£6.99<span class="was">£8.49</span></div></div>
+        <div class="card offer"><span class="flag">OFFER</span><h3>Telemea cheese</h3><p>Sheep's milk, per kg</p><div class="price-tag">£9.50<span class="was">£11.00</span></div></div>
+        <div class="card offer"><span class="flag">OFFER</span><h3>Mici, 1kg pack</h3><p>Homemade, ready to grill</p><div class="price-tag">£7.99<span class="was">£9.49</span></div></div>
+        <div class="card offer"><span class="flag">OFFER</span><h3>Zacuscă</h3><p>Any 2 jars, 300g</p><div class="price-tag">£5.00<span class="was">£6.40</span></div></div>
+      </div>
+      <p class="note">Sample offers for this demo.</p>
+    </div>
+  </section>
+
+  <section class="section" id="catering">
+    <div class="wrap grid2" style="align-items:start">
+      <div>
+        <p class="eyebrow">Party catering</p>
+        <h2>Trays for christenings, birthdays &amp; Christmas</h2>
+        <p style="color:var(--muted);margin:14px 0 22px">Home-style dishes made to order in our kitchen. Order at least 3 days ahead, collect from the shop.</p>
+        <div class="menu-cat">
+          <div class="mrow"><div>Sarmale tray<small>40 pieces, with smântână</small></div><b>£45</b></div>
+          <div class="mrow"><div>Mici &amp; mustard platter<small>30 pieces</small></div><b>£35</b></div>
+          <div class="mrow"><div>Cold cuts &amp; cheese board<small>Serves 10–12</small></div><b>£40</b></div>
+          <div class="mrow"><div>Salată de boeuf<small>2kg bowl, decorated</small></div><b>£28</b></div>
+          <div class="mrow"><div>Cozonac &amp; cake box<small>Mixed, serves 15</small></div><b>£30</b></div>
+        </div>
+      </div>
+      <div class="form-card"><form class="form wa-form" data-wa="447700900217" data-intro="Bună ziua! I'd like to order catering from Carpathia Deli."><label>Your name *<input type="text" name="name" data-label="Your name" required placeholder=""></label><label>Collection date *<input type="date" name="date" data-label="Collection date" required placeholder=""></label><label class="full">What would you like?<select name="tray" data-label="What would you like?"><option>Sarmale tray</option><option>Mici & mustard platter</option><option>Cold cuts & cheese board</option><option>Salată de boeuf</option><option>Cozonac & cake box</option><option>A mix (tell us below)</option></select></label><label>Number of guests<input type="text" name="people" data-label="Number of guests" placeholder="e.g. 25"></label><label>Prefer to talk in<select name="lang" data-label="Prefer to talk in"><option>English</option><option>Română</option><option>Русский</option></select></label><label class="full">Notes<textarea name="notes" rows="3" data-label="Notes" placeholder="Quantities, allergies, special requests..."></textarea></label><p class="hint full">We confirm your order and price on WhatsApp within a few hours.</p><button class="btn btn--main full" type="submit">Send order on WhatsApp</button></form></div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="reviews">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Reviews</p><h2>What our customers say</h2></div>
+      <div class="reviews"><blockquote class="review"><div class="stars">★★★★★</div><p>"Finally a shop with proper telemea and fresh cozonac. Feels like the market back home."</p><cite>Sample review</cite></blockquote><blockquote class="review"><div class="stars">★★★★★</div><p>"Ordered sarmale and mici for my son's christening on WhatsApp. Everyone loved it."</p><cite>Sample review</cite></blockquote><blockquote class="review"><div class="stars">★★★★★</div><p>"Friendly staff who speak Romanian and English, and great weekly offers."</p><cite>Sample review</cite></blockquote></div>
+      <p class="note">Sample reviews for this demo. Your real Google reviews go here.</p>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="wrap visit">
+      <div>
+        <p class="eyebrow">Visit the shop</p>
+        <h2>Opening hours</h2>
+        
+        <ul class="hours" style="margin-top:24px"><li><span>Monday – Saturday</span><span>8am – 9pm</span></li><li><span>Sunday</span><span>9am – 6pm</span></li><li><span>Fresh bread</span><span>From 8am daily</span></li><li><span>Catering orders</span><span>3 days' notice</span></li></ul>
+        <div class="contact-list">
+          <a href="tel:+447700900217"><span>☎</span>07700 900217</a>
+          <a href="mailto:hello@example.com"><span>✉</span>hello@example.com</a>
+          <a href="#visit"><span>⌖</span>102 Example High Road, Ilford</a>
+        </div>
+        <a href="https://wa.me/447700900217?text=Bun%C4%83%20ziua%2C%20a%C8%99%20dori%20s%C4%83%20comand%20de%20la%20Carpathia%20Deli." class="btn btn--main" target="_blank" rel="noopener">Order on WhatsApp</a>
+      </div>
+      <div class="map"><iframe title="Map: Ilford" src="https://maps.google.com/maps?q=Ilford%2C%20London&z=13&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="wrap"><span>© <span id="y"></span> Carpathia Deli</span><span>Website by Red Web Studio</span></div></footer>
+
+<a class="wa" href="https://wa.me/447700900217" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1-.3-.2-.5-.2-.7.1l-1 1.3c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9 2 .9 2.8 1 3.9.8.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5l-.7-.4z"/></svg></a>
+
+<script>
+const b=document.getElementById('burger'),n=document.getElementById('nav');
+b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded',false)}));
+document.getElementById('y').textContent=new Date().getFullYear();
+// Forms send a ready-written WhatsApp message (no server needed)
+document.querySelectorAll('form.wa-form').forEach(f=>f.addEventListener('submit',e=>{
+  e.preventDefault();
+  const lines=[f.dataset.intro];
+  f.querySelectorAll('[name]').forEach(el=>{const v=el.value.trim();if(v)lines.push(el.dataset.label+': '+v)});
+  window.open('https://wa.me/'+f.dataset.wa+'?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');
+}));
+
+// "Open now" sign from the opening hours (UK time)
+(function(){const s=document.getElementById('open-sign');if(!s)return;
+ const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+ const d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),h=(+p.hour)+(+p.minute)/60,[o,c]=d===0?[9,18]:[8,21];
+ const fmt=x=>x>12?(x-12)+'pm':x+'am';
+ if(d<0||isNaN(h))return;
+ if(h>=o&&h<c)s.textContent='Open now · until '+fmt(c);
+ else{s.textContent='Closed now · opens '+(h<o?'today at ':'tomorrow at ')+fmt(h<o?o:(d===6?9:8));s.parentElement.classList.add('closed');}
+})();
+</script>
+</body>
+</html>
