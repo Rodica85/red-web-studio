@@ -1,0 +1,17 @@
+{
+  "name": "red-web-studio",
+  "private": true,
+  "description": "RED Web Studio website (static) and its automated tests",
+  "scripts": {
+    "serve": "serve website -l 4173",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:chromium": "playwright test --project=chromium",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.49.0",
+    "serve": "^14.2.4"
+  }
+}

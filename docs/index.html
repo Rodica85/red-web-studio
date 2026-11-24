@@ -205,7 +205,7 @@
             <h1>
                 <span class="fall-in" data-delay="1">Websites that get your</span>
                 <span class="fall-in" data-delay="2">business</span>
-                <span class="fall-in accent" data-delay="3"><span class="rot" aria-label="found, booked, chosen, trusted"><span class="rot-in" aria-hidden="true"><span>found</span><span>booked</span><span>chosen</span><span>trusted</span><span>found</span></span></span></span>
+                <span class="fall-in accent" data-delay="3"><span class="rot"><span class="sr-only">found, booked, chosen, trusted</span><span class="rot-in" aria-hidden="true"><span>found</span><span>booked</span><span>chosen</span><span>trusted</span><span>found</span></span></span></span>
             </h1>
             <p class="hero-sub fall-in" data-delay="4">Custom websites for independent businesses. Fixed prices, live in days, yours to keep.</p>
             <div class="hero-cta fall-in" data-delay="5">
@@ -668,27 +668,27 @@
                 <form class="contact-form fall-in" id="contactForm" novalidate>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" name="name" placeholder="John Smith">
+                            <label for="cf-name">Your Name</label>
+                            <input id="cf-name" type="text" name="name" placeholder="John Smith">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" name="email" placeholder="john@example.com">
+                            <label for="cf-email">Email</label>
+                            <input id="cf-email" type="email" name="email" placeholder="john@example.com">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" name="phone" placeholder="+44 7XXX XXXXXX">
+                            <label for="cf-phone">Phone</label>
+                            <input id="cf-phone" type="tel" name="phone" placeholder="+44 7XXX XXXXXX">
                         </div>
                         <div class="form-group">
-                            <label>Business Name</label>
-                            <input type="text" name="business" placeholder="Your Business Ltd">
+                            <label for="cf-business">Business Name</label>
+                            <input id="cf-business" type="text" name="business" placeholder="Your Business Ltd">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>What do you need?</label>
-                        <select name="service">
+                        <label for="cf-service">What do you need?</label>
+                        <select id="cf-service" name="service">
                             <option value="">Select a service...</option>
                             <option>Starter (one page)</option>
                             <option>Business (up to 5 pages)</option>
@@ -698,8 +698,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Tell us about your business</label>
-                        <textarea name="message" rows="4" placeholder="What does your business do? What do you need from your website?"></textarea>
+                        <label for="cf-message">Tell us about your business</label>
+                        <textarea id="cf-message" name="message" rows="4" placeholder="What does your business do? What do you need from your website?"></textarea>
                     </div>
                     <button type="submit" class="btn btn-accent btn-lg btn-block">Send Message <span class="btn-arrow">&rarr;</span></button>
                     <p class="form-privacy-note">Sending opens WhatsApp with your message. See our <a href="/privacy-policy">Privacy Policy</a>.</p>

@@ -110,7 +110,9 @@ burger.addEventListener('click', () => {
   const open = nav.classList.toggle('nav--open');
   burger.setAttribute('aria-expanded', open);
 });
-nav.addEventListener('click', e => { if (e.target.tagName === 'A') nav.classList.remove('nav--open'); });
+nav.addEventListener('click', e => {
+  if (e.target.tagName === 'A') { nav.classList.remove('nav--open'); burger.setAttribute('aria-expanded', false); }
+});
 
 // ---- Header on scroll ----
 const header = document.querySelector('.header');
