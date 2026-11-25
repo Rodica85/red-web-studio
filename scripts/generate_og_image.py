@@ -4,14 +4,19 @@
 Matches the live site UI: cream/editorial palette, Fraunces-style serif,
 terracotta + sage accents.
 
-Run: python3 scripts/generate_og_image.py
+Run: FONTS_DIR=/path/to/fonts python3 scripts/generate_og_image.py
+After changing the image, bump ?v= in the og:image / twitter:image tags
+so Facebook and WhatsApp fetch the new one.
 Outputs og-image.png into website/ and docs/.
 """
 import os
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1200, 630
-FONTS = "/mnt/skills/examples/canvas-design/canvas-fonts"
+# Fonts: Lora and Work Sans variable fonts from Google Fonts
+# (github.com/google/fonts: ofl/lora/Lora[wght].ttf, ofl/worksans/WorkSans[wght].ttf),
+# saved as Lora.ttf and WorkSans.ttf in the folder FONTS_DIR points at.
+FONTS = os.environ.get("FONTS_DIR", "fonts")
 
 # Live-site palette (from style.css :root)
 CREAM = (251, 247, 241)       # --cream  #FBF7F1
@@ -27,11 +32,15 @@ SAGE = (95, 122, 90)          # --sage  #5F7A5A
 BORDER = (229, 223, 213)      # --border
 
 def font(name, size):
-    return ImageFont.truetype(os.path.join(FONTS, name), size)
+    """name like 'Lora-Bold.ttf' or 'WorkSans-Medium.ttf'."""
+    family, style = name[:-4].split("-")
+    f = ImageFont.truetype(os.path.join(FONTS, family + ".ttf"), size)
+    f.set_variation_by_name(style)
+    return f
 
-# Fraunces -> Lora (serif). Inter -> Work Sans (sans).
+
 f_logo    = font("Lora-Bold.ttf", 58)
-f_studio  = font("WorkSans-Medium.ttf", 24) if os.path.exists(os.path.join(FONTS, "WorkSans-Medium.ttf")) else font("WorkSans-Regular.ttf", 24)
+f_studio  = font("WorkSans-Medium.ttf", 24)
 f_tagline = font("WorkSans-Bold.ttf", 16)
 f_head    = font("Lora-Bold.ttf", 74)
 f_sub     = font("WorkSans-Regular.ttf", 30)
@@ -102,7 +111,7 @@ draw.rounded_rectangle([MARGIN, by, MARGIN + pill_w, by + ph], radius=30, fill=A
 draw.text((MARGIN + pad_x, by + pad_y), url, font=f_pill, fill=PAPER)
 
 # Feature chip (sage outline)
-chip = "Free website audit"
+chip = "Websites from £349"
 chx = MARGIN + pill_w + 26
 chip_tw = draw.textbbox((0, 0), chip, font=f_chip)[2]
 draw.rounded_rectangle([chx, by + 6, chx + chip_tw + 50, by + ph - 6],
