@@ -43,13 +43,42 @@ test.describe('Every main page', () => {
         for (const block of blocks) expect(() => JSON.parse(block)).not.toThrow();
       });
 
-      test('Open Graph image exists', async ({ page, request }) => {
+      test('link preview card (Facebook, WhatsApp, X, iMessage) is complete', async ({ page, request }) => {
         await page.goto(path);
-        const tag = page.locator('meta[property="og:image"]');
-        test.skip((await tag.count()) === 0, 'page has no og:image');
-        const og = await tag.getAttribute('content');
-        const local = new URL(og!).pathname;
-        expect((await request.get(local)).status(), `og:image ${local}`).toBe(200);
+        const meta = async (attr: string, key: string) => {
+          const tag = page.locator(`meta[${attr}="${key}"]`);
+          expect(await tag.count(), `${key} appears once`).toBe(1);
+          const v = (await tag.getAttribute('content'))!;
+          expect(v.trim(), `${key} is filled in`).not.toBe('');
+          return v;
+        };
+        for (const k of ['og:type', 'og:site_name', 'og:title', 'og:description', 'og:image:alt', 'og:image:type']) await meta('property', k);
+        const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
+        expect(await meta('property', 'og:url'), 'og:url matches the canonical URL').toBe(canonical);
+        const img = await meta('property', 'og:image');
+        expect(img, 'og:image is an absolute https www URL').toMatch(/^https:\/\/www\.redwebstudio\.com\//);
+        expect(await meta('property', 'og:image:secure_url')).toBe(img);
+        expect(await meta('name', 'twitter:card')).toBe('summary_large_image');
+        expect(await meta('name', 'twitter:image')).toBe(img);
+        expect(await meta('name', 'twitter:title')).toBe(await meta('property', 'og:title'));
+        expect(await meta('name', 'twitter:description')).toBe(await meta('property', 'og:description'));
+        await meta('name', 'twitter:image:alt');
+
+        // The image exists, is not too big for WhatsApp and has the size the tags say.
+        const res = await request.get(new URL(img).pathname + new URL(img).search);
+        expect(res.status(), `og:image ${img}`).toBe(200);
+        const body = await res.body();
+        expect(body.length, 'og:image under 300 KB (WhatsApp limit)').toBeLessThan(300_000);
+        expect(res.headers()['content-type']).toBe(await meta('property', 'og:image:type'));
+        const size = await page.evaluate(async (src) => {
+          const i = new Image(); i.src = src; await i.decode(); return [i.naturalWidth, i.naturalHeight];
+        }, new URL(img).pathname + new URL(img).search);
+        expect(size.map(String)).toEqual([await meta('property', 'og:image:width'), await meta('property', 'og:image:height')]);
+        expect(size[0], 'wide enough for a large card').toBeGreaterThanOrEqual(600);
+
+        // WhatsApp only reads the start of the page: tags must be near the top.
+        const html = await (await request.get(path)).text();
+        expect(html.indexOf('og:image'), 'og:image in the first 4 KB').toBeLessThan(4096);
       });
     });
   }
