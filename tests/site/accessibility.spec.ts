@@ -2,7 +2,8 @@ import AxeBuilder from '@axe-core/playwright';
 import { test, expect, PAGES, STARTER_DEMOS, revealAll } from '../helpers';
 
 // Accessibility checks (WCAG 2.1 A/AA) with axe-core, the engine behind Lighthouse.
-// Only "critical" and "serious" problems fail the test; the rest are attached to the report.
+// "Critical" and "serious" problems (including colour contrast) fail the test;
+// the full list is attached to the report.
 const pages = [...PAGES, ...STARTER_DEMOS.map((d) => `/demos/${d.slug}/`), '/demos/salon/', '/demos/salon/admin'];
 
 test.describe('Accessibility', () => {
@@ -22,13 +23,7 @@ test.describe('Accessibility', () => {
         examples: v.nodes.slice(0, 3).map((n) => n.target.join(' ')),
       }));
       await testInfo.attach('axe-violations.json', { body: JSON.stringify(summary, null, 2), contentType: 'application/json' });
-      // KNOWN ISSUE: some text colours are too light (colour contrast). Reported as a
-      // warning until the design is updated; remove this exception afterwards.
-      const contrast = summary.filter((v) => v.id === 'color-contrast');
-      if (contrast.length) {
-        testInfo.annotations.push({ type: 'warning', description: `colour contrast: ${contrast[0].count} element(s), e.g. ${contrast[0].examples.join(', ')}` });
-      }
-      const blocking = summary.filter((v) => (v.impact === 'critical' || v.impact === 'serious') && v.id !== 'color-contrast');
+      const blocking = summary.filter((v) => v.impact === 'critical' || v.impact === 'serious');
       expect(blocking, 'critical/serious accessibility problems').toEqual([]);
     });
   }

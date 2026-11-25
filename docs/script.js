@@ -69,18 +69,32 @@ function attachWhatsAppForm(formId, buildMessage) {
     const orig = btn.innerHTML;
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const missing = [...form.querySelectorAll('[required]')].filter(el => !el.value.trim());
-        if (missing.length) {
+        const fields = [...form.querySelectorAll('input, select, textarea')];
+        // Empty required fields, and badly typed emails
+        const bad = fields.filter(el => (el.required && !el.value.trim()) || (el.value.trim() && !el.checkValidity()));
+        // Groups where at least one field must be filled (e.g. email or phone)
+        const groups = {};
+        fields.filter(el => el.dataset.oneOf).forEach(el => (groups[el.dataset.oneOf] = groups[el.dataset.oneOf] || []).push(el));
+        Object.values(groups).forEach(g => { if (g.every(el => !el.value.trim())) bad.push(...g); });
+        const errorBox = form.querySelector('.form-error');
+        if (bad.length) {
+            const emailBad = bad.find(el => el.type === 'email' && el.value.trim());
+            const text = emailBad ? 'Please check the email address.'
+                : bad.some(el => el.dataset.oneOf) && !bad.some(el => el.required) ? 'Please leave an email or a phone number so we can reply.'
+                : 'Please fill in the fields marked *.';
             btn.innerHTML = 'Please fill in the fields above';
-            btn.style.background = '#FF6B6B'; btn.style.color = '#fff';
-            missing.forEach(el => el.style.borderColor = '#FF6B6B');
-            missing[0].focus();
+            btn.style.background = '#A4281F'; btn.style.color = '#fff';
+            bad.forEach(el => { el.style.borderColor = '#A4281F'; el.setAttribute('aria-invalid', 'true'); });
+            if (errorBox) { errorBox.textContent = text; errorBox.hidden = false; }
+            bad[0].focus();
             setTimeout(() => {
                 btn.innerHTML = orig; btn.style.background = ''; btn.style.color = '';
-                missing.forEach(el => el.style.borderColor = '');
+                bad.forEach(el => el.style.borderColor = '');
             }, 2500);
             return;
         }
+        fields.forEach(el => el.removeAttribute('aria-invalid'));
+        if (errorBox) { errorBox.hidden = true; errorBox.textContent = ''; }
         btn.disabled = true;
         const setStatus = (text) => { btn.innerHTML = text; };
         const message = await buildMessage(new FormData(form), setStatus);

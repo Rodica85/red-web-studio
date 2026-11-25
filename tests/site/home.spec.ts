@@ -1,4 +1,5 @@
 import { test, expect, openedUrls, parseWhatsApp, STUDIO_WHATSAPP, revealAll, hasNoHorizontalOverflow } from '../helpers';
+import type { Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -136,11 +137,60 @@ test.describe('Homepage: contact form', () => {
     ]));
   });
 
-  test('KNOWN GAP: an empty form can still be sent (no required fields)', async ({ page }) => {
-    // Documents current behaviour: the form has no required fields, so an empty
-    // submit opens WhatsApp with dashes. Change this test if fields become required.
-    await page.locator('#contactForm button[type="submit"]').click();
-    await expect.poll(() => openedUrls(page)).toHaveLength(1);
-    expect(parseWhatsApp((await openedUrls(page))[0]).text).toContain('Name: -');
+  const submit = (page: Page) => page.locator('#contactForm button[type="submit"]').click();
+  const field = (page: Page, name: string) => page.locator(`#contactForm [name="${name}"]`);
+
+  test('an empty form is not sent and says which fields are missing', async ({ page }) => {
+    await submit(page);
+    await expect(page.locator('#cf-error')).toBeVisible();
+    await expect(page.locator('#cf-error')).toHaveText('Please fill in the fields marked *.');
+    for (const name of ['name', 'message', 'email', 'phone']) {
+      await expect(field(page, name)).toHaveAttribute('aria-invalid', 'true');
+    }
+    await expect(field(page, 'name')).toBeFocused();
+    expect(await openedUrls(page)).toEqual([]);
   });
+
+  test('name and message are marked as required', async ({ page }) => {
+    await expect(field(page, 'name')).toHaveAttribute('required', '');
+    await expect(field(page, 'message')).toHaveAttribute('required', '');
+    await expect(page.locator('label[for="cf-name"]')).toContainText('*');
+    await expect(page.locator('label[for="cf-message"]')).toContainText('*');
+  });
+
+  test('needs an email or a phone number to reply to', async ({ page }) => {
+    await field(page, 'name').fill('Jane Tester');
+    await field(page, 'message').fill('Hello');
+    await submit(page);
+    await expect(page.locator('#cf-error')).toHaveText('Please leave an email or a phone number so we can reply.');
+    await expect(field(page, 'email')).toBeFocused();
+    expect(await openedUrls(page)).toEqual([]);
+  });
+
+  test('rejects a badly typed email', async ({ page }) => {
+    await field(page, 'name').fill('Jane Tester');
+    await field(page, 'message').fill('Hello');
+    await field(page, 'email').fill('jane@');
+    await submit(page);
+    await expect(page.locator('#cf-error')).toHaveText('Please check the email address.');
+    expect(await openedUrls(page)).toEqual([]);
+  });
+
+  for (const [contact, value] of [['phone', '07700 900000'], ['email', 'jane@example.com']]) {
+    test(`is sent with only name, message and ${contact}`, async ({ page }) => {
+      await submit(page); // show the error first, then fix it
+      await expect(page.locator('#cf-error')).toBeVisible();
+      await field(page, 'name').fill('Jane Tester');
+      await field(page, 'message').fill('Hello');
+      await field(page, contact).fill(value);
+      await submit(page);
+      await expect.poll(() => openedUrls(page)).toHaveLength(1);
+      const wa = parseWhatsApp((await openedUrls(page))[0]);
+      expect(wa.text).toContain('Name: Jane Tester');
+      expect(wa.text).toContain(`${contact === 'phone' ? 'Phone' : 'Email'}: ${value}`);
+      expect(wa.text).toContain('Business: -');
+      await expect(page.locator('#cf-error')).toBeHidden();
+      await expect(field(page, 'name')).not.toHaveAttribute('aria-invalid', 'true');
+    });
+  }
 });

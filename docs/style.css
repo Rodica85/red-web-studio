@@ -12,13 +12,13 @@
     /* Ink */
     --ink: #1F1B17;
     --ink-soft: #5C544B;
-    --ink-mute: #8B8378;
+    --ink-mute: #69635A;
 
     /* Brand */
-    --accent: #C8453B;
+    --accent: #BA3E34;
     --accent-deep: #8B2F26;
     --accent-tint: #FBEAE7;
-    --sage: #5F7A5A;
+    --sage: #566E51;
     --sage-tint: #E8EFE5;
 
     /* Surface details */
@@ -1306,6 +1306,10 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 .service-related-links a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-tint); }
 
 /* ---- Small print: form note and policy pages ---- */
+.contact-form .req { color: var(--accent-deep); }
+.form-hint { margin: 0 0 14px; font-size: 0.85rem; color: var(--ink-soft); }
+.form-error { margin: 0 0 14px; padding: 10px 14px; border-radius: 4px; background: var(--accent-tint); color: var(--accent-deep); font-size: 0.9rem; font-weight: 600; }
+.form-error[hidden] { display: none; }
 .form-privacy-note { margin-top: 12px; font-size: 0.85rem; color: var(--ink-mute); text-align: center; }
 .form-privacy-note a, .policy a { color: var(--accent-deep); text-decoration: underline; }
 .policy ul { margin: 0 0 1.2em 1.2em; padding: 0; list-style: disc; }
@@ -1651,7 +1655,7 @@ a.with-ico .ico-phone { width: 17px; height: 17px; color: var(--accent); flex-sh
     align-items: center;
     gap: 10px;
     padding: 9px 18px 9px 14px;
-    background: #1FA855;
+    background: #1A8544;
     color: var(--white);
     border-radius: 4px;
     font-family: var(--font-sans);
@@ -1663,7 +1667,7 @@ a.with-ico .ico-phone { width: 17px; height: 17px; color: var(--accent); flex-sh
 }
 .social-row .social-wa svg { width: 20px; height: 20px; flex-shrink: 0; }
 .social-row .social-wa:hover {
-    background: #198A45;
+    background: #146C37;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(31, 168, 85, 0.38);
 }
@@ -1674,14 +1678,14 @@ a.with-ico .ico-phone { width: 17px; height: 17px; color: var(--accent); flex-sh
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #1FA855;
+    background: #1A8544;
     color: var(--white);
     border-radius: 50%;
     transition: all 0.3s var(--ease);
 }
 .footer-social .social-wa svg { width: 20px; height: 20px; }
 .footer-social .social-wa:hover {
-    background: #198A45;
+    background: #146C37;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(31, 168, 85, 0.38);
 }
