@@ -2,3 +2,9 @@
 node_modules/
 
 marketing/
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

@@ -2082,3 +2082,6 @@ a.nav-pill svg { width: 15px; height: 15px; margin-right: 7px; flex-shrink: 0; }
 .price-demo-link:hover { color: var(--accent-deep); }
 @media (max-width: 980px) { .demo-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .demos { padding: 72px 0; } .demo-grid { grid-template-columns: 1fr; gap: 22px; } .demos-intro { margin-top: -20px; } }
+
+/* Text for screen readers only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
