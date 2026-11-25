@@ -124,6 +124,10 @@ export async function hasNoHorizontalOverflow(page: Page): Promise<boolean> {
 /** Show elements that only appear on scroll, so they can be checked straight away. */
 export async function revealAll(page: Page) {
   await page.evaluate(() => {
+    // Skip fade-in animations so checks see the final colours.
+    const s = document.createElement("style");
+    s.textContent = "*,*::before,*::after{transition:none!important;animation:none!important}";
+    document.head.appendChild(s);
     document.documentElement.style.scrollBehavior = 'auto';
     document.querySelectorAll('.fall-in, .reveal').forEach((el) => el.classList.add('visible', 'in'));
   });
